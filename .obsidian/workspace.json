@@ -13,15 +13,82 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "knowledge/zettelkasten/permanent/context_engineering_human_role_ssot_20260104183000.md",
+                "file": "knowledge/tasks/projects/project_kaggle_disaster_tweets.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "context_engineering_human_role_ssot_20260104183000"
+              "title": "project_kaggle_disaster_tweets"
+            }
+          },
+          {
+            "id": "5d37ff17de3e55e7",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "knowledge/tasks/projects/project_kaggle_disaster_tweets.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "project_kaggle_disaster_tweets"
+            }
+          },
+          {
+            "id": "8f9afa66fe332bb7",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "knowledge/tasks/_MASTER_TASKS.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "_MASTER_TASKS"
+            }
+          },
+          {
+            "id": "f687360b0f4f98e1",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "knowledge/zettelkasten/permanent/disaster_tweets_eda_20260105180000.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "disaster_tweets_eda_20260105180000"
+            }
+          },
+          {
+            "id": "dad92de015317648",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "docs/project_architecture.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "project_architecture"
+            }
+          },
+          {
+            "id": "cdae21ede835555a",
+            "type": "leaf",
+            "state": {
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "グラフビュー"
             }
           }
-        ]
+        ],
+        "currentTab": 5
       }
     ],
     "direction": "vertical"
@@ -53,7 +120,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "tag:#zettelkasten",
+                "query": "tag:#organization",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -79,7 +146,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 269.5
   },
   "right": {
     "id": "285deb46a5ccc1c0",
@@ -184,44 +251,44 @@
       "bases:Create new base": false
     }
   },
-  "active": "ec552ee9f7724cee",
+  "active": "cdae21ede835555a",
   "lastOpenFiles": [
-    "knowledge/zettelkasten/index/_template_index.md",
-    "knowledge/zettelkasten/structure/_template_structure.md",
-    "knowledge/zettelkasten/references/_template_reference.md",
-    "knowledge/zettelkasten/permanent/_template_permanent.md",
-    "knowledge/tasks/projects/_template_project.md",
-    "knowledge/tasks/completed/_template_task_completed.md",
-    "knowledge/tasks/someday/_template_task_someday.md",
-    "knowledge/tasks/waiting/_template_task_waiting.md",
-    "knowledge/tasks/active/_template_task_active.md",
-    "knowledge/inbox/archive/_template_archive_log.md",
-    "knowledge/inbox/_template_task_candidate.md",
-    "knowledge/inbox/_template_aphorism.md",
-    "knowledge/inbox/_template_reference.md",
-    "knowledge/inbox/_template_memo.md",
-    "knowledge/inbox/_template_idea.md",
-    "knowledge/inbox/archive/dummy_idea_automation_20260105000110.md",
-    "knowledge/zettelkasten/permanent/automation_watchdog_vs_manual_20260105.md",
+    "knowledge/tasks/projects/project_kaggle_disaster_tweets.md",
+    "knowledge/zettelkasten/references/ruminant_machines_20251228.md",
     "knowledge/tasks/_MASTER_TASKS.md",
-    "knowledge/inbox/archive/dummy_memo_learning_20260105000120.md",
-    "knowledge/zettelkasten/permanent/xgboost_early_stopping_feature_importance_20260105.md",
-    "knowledge/zettelkasten/references/note_quality_network_links_20260104235020.md",
-    "knowledge/zettelkasten/permanent/context_engineering_human_role_ssot_20260104183000.md",
-    "knowledge/zettelkasten/references/lichtenberg_notebooks_20251228.md",
-    "knowledge/tasks/active/task_001_git_setup_20251228.md",
-    "knowledge/inbox/archive/dummy_reference_paper_20260105000130.md",
-    "knowledge/zettelkasten/references/reference_form_test_paper_20260105000130.md",
-    "src/review_mode.py",
-    "plan-template/docs/tasks",
-    "plan-template/docs/reports",
-    "plan-template/docs",
-    "plan-template",
-    "src/sync_project_links.py",
-    "knowledge/tasks/projects/archive",
-    "knowledge/tasks/projects",
-    "tasks/current_sprint.json",
-    "tasks",
+    "knowledge/zettelkasten/permanent/disaster_tweets_eda_20260105180000.md",
+    "docs/project_architecture.md",
+    "knowledge/inbox/idea_task_completed_color_change_20260106033232.md",
+    "knowledge/tasks/active/task_disaster_tweets_baseline_submit_20260105120020.md",
+    "knowledge/tasks/completed/task_disaster_tweets_baseline_submit_20260105120020.md",
+    "results/exp20260106030720_baseline_tfidf_lr/exp20260106030720_submission.csv",
+    "results/exp20260106030720_baseline_tfidf_lr/exp20260106030720_model.pkl",
+    "results/exp20260106030720_baseline_tfidf_lr/exp20260106030720_cv_results.json",
+    "results/exp20260106030720_baseline_tfidf_lr/exp20260106030720_metrics.json",
+    "experiments/exp20260106030720_baseline_tfidf_lr/exp20260106030720_predict.py",
+    "experiments/exp20260106030720_baseline_tfidf_lr/exp20260106030720_train.py",
+    "experiments/exp20260106030720_baseline_tfidf_lr/exp20260106030720_report.md",
+    "experiments/exp20260106030720_baseline_tfidf_lr/exp20260106030720_config.yaml",
+    "results/exp20260106030720_baseline_tfidf_lr",
+    "experiments/exp20260106030720_baseline_tfidf_lr",
+    "knowledge/zettelkasten/permanent/disaster_tweets_baseline_submit_strategy_20260106000000.md",
+    "knowledge/tasks/completed/task_disaster_tweets_experiment_management_20260105180000.md",
+    "knowledge/tasks/active/task_disaster_tweets_experiment_management_20260105180000.md",
+    "knowledge/inbox/idea_toon_usage_20260106015954.md",
+    "knowledge/inbox/reference_experiment_workflow_comparison_20260105.md",
+    "knowledge/tasks/completed/task_disaster_tweets_eda_20260105170000.md",
+    "knowledge/tasks/active/task_disaster_tweets_overview_20260105120010.md",
+    "knowledge/tasks/active/task_disaster_tweets_eda_20260105170000.md",
+    "knowledge/tasks/completed/task_disaster_tweets_overview_20260105120010.md",
+    "knowledge/tasks/projects/project_kaggle.md",
+    "knowledge/tasks/someday/task_003_baseline_model_20251228.md",
+    "knowledge/inbox/reference_candidate_zettelkasten_method_20260105.md",
+    "knowledge/inbox/task_candidate_improve_project_file_20260105232436.md",
+    "knowledge/templates/zettelkasten/structure/_template_structure.md",
+    "knowledge/templates/zettelkasten/structure",
+    "knowledge/templates/zettelkasten/index/_template_index.md",
+    "knowledge/templates/zettelkasten/references/_template_reference.md",
+    "knowledge/templates/zettelkasten/permanent/_template_permanent.md",
     "無題のファイル.canvas",
     "無題のファイル 1.canvas"
   ]

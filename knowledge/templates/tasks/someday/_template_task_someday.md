@@ -3,9 +3,9 @@ type: task
 id: task-YYYYMMDDHHMMSS
 title: ""
 author: takeikumi
-status: someday
+status: template
 priority: medium
-project: ""
+project: null
 mode: ""
 context: []
 dependencies: []
@@ -27,6 +27,17 @@ updated: YYYY-MM-DD
 
 ## 参考
 - 
+
+## 結果（実施報告）
+- （完了後に記入）
+
+## 学び
+- （完了後に記入）
+
+## 次のアクション
+- （必要なら新規タスク化。無ければ「なし」）
+
+
 
 
 

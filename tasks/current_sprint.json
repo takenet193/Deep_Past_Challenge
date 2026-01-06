@@ -1,6 +1,62 @@
 {
-  "generated_at": "2026-01-05T11:12:28",
+  "generated_at": "2026-01-06T03:29:41",
   "tasks": [
+    {
+      "assigned_agent": null,
+      "assignee": null,
+      "context": [
+        "project_kaggle_disaster_tweets"
+      ],
+      "dependencies": [
+        "task-20260105120010",
+        "task-20260105170000"
+      ],
+      "due_date": null,
+      "id": "task-20260105120011",
+      "mode": "research",
+      "priority": "high",
+      "project": "kaggle_disaster_tweets",
+      "related_notes": [
+        "project_kaggle_disaster_tweets"
+      ],
+      "source_file": "knowledge/tasks/active/task_disaster_tweets_find_discussions_20260105120011.md",
+      "status": "in_progress",
+      "tags": [
+        "kaggle",
+        "kaggle_disaster_tweets",
+        "discussion"
+      ],
+      "title": "Disaster Tweets: 参考にすべきDiscussion/Notebookを見つける",
+      "type": "task",
+      "updated_at": "2026-01-05T00:00:00"
+    },
+    {
+      "assigned_agent": null,
+      "assignee": null,
+      "context": [
+        "project_kaggle_disaster_tweets"
+      ],
+      "dependencies": [
+        "task-20260105120020"
+      ],
+      "due_date": null,
+      "id": "task-20260105120030",
+      "mode": "experiment",
+      "priority": "medium",
+      "project": "kaggle_disaster_tweets",
+      "related_notes": [
+        "project_kaggle_disaster_tweets"
+      ],
+      "source_file": "knowledge/tasks/active/task_disaster_tweets_improvement_loop_20260105120030.md",
+      "status": "in_progress",
+      "tags": [
+        "kaggle",
+        "kaggle_disaster_tweets"
+      ],
+      "title": "Disaster Tweets: 改善ループ（ディスカッション収集→実験→記録）を回す",
+      "type": "task",
+      "updated_at": "2026-01-05T00:00:00"
+    },
     {
       "assigned_agent": "developer",
       "assignee": null,
@@ -129,6 +185,144 @@
       "assigned_agent": null,
       "assignee": null,
       "context": [
+        "project_kaggle_disaster_tweets"
+      ],
+      "dependencies": [
+        "task-20260105120011",
+        "task-20260105180000"
+      ],
+      "due_date": null,
+      "id": "task-20260105120020",
+      "mode": "experiment",
+      "priority": "high",
+      "project": "kaggle_disaster_tweets",
+      "related_notes": [
+        "project_kaggle_disaster_tweets",
+        "disaster_tweets_eda_20260105180000"
+      ],
+      "source_file": "knowledge/tasks/completed/task_disaster_tweets_baseline_submit_20260105120020.md",
+      "status": "completed",
+      "tags": [
+        "kaggle",
+        "kaggle_disaster_tweets",
+        "baseline"
+      ],
+      "title": "Disaster Tweets: 提出して結果を記録する",
+      "type": "task",
+      "updated_at": "2026-01-06T00:00:00"
+    },
+    {
+      "assigned_agent": null,
+      "assignee": null,
+      "context": [
+        "project_kaggle_disaster_tweets"
+      ],
+      "dependencies": [],
+      "due_date": null,
+      "id": "task-20260105120010",
+      "mode": "setup",
+      "priority": "high",
+      "project": "kaggle_disaster_tweets",
+      "related_notes": [
+        "project_kaggle_disaster_tweets"
+      ],
+      "source_file": "knowledge/tasks/completed/task_disaster_tweets_overview_20260105120010.md",
+      "status": "completed",
+      "tags": [
+        "kaggle",
+        "kaggle_disaster_tweets",
+        "data"
+      ],
+      "title": "Disaster Tweets: データをダウンロードして配置を確定する",
+      "type": "task",
+      "updated_at": "2026-01-05T00:00:00"
+    },
+    {
+      "assigned_agent": null,
+      "assignee": null,
+      "context": [
+        "project_kaggle_disaster_tweets"
+      ],
+      "dependencies": [],
+      "due_date": null,
+      "id": "task-20260105121000",
+      "mode": "review",
+      "priority": "high",
+      "project": "kaggle_disaster_tweets",
+      "related_notes": [
+        "project_kaggle_disaster_tweets"
+      ],
+      "source_file": "knowledge/tasks/completed/task_disaster_tweets_competition_rules_metrics_20260105121000.md",
+      "status": "completed",
+      "tags": [
+        "kaggle",
+        "kaggle_disaster_tweets"
+      ],
+      "title": "Disaster Tweets: コンペ内容（ルール/評価基準/提出形式）を調べて確定する",
+      "type": "task",
+      "updated_at": "2026-01-05T00:00:00"
+    },
+    {
+      "assigned_agent": null,
+      "assignee": null,
+      "context": [
+        "project_kaggle_disaster_tweets"
+      ],
+      "dependencies": [],
+      "due_date": null,
+      "id": "task-20260105170000",
+      "mode": "experiment",
+      "priority": "high",
+      "project": "kaggle_disaster_tweets",
+      "related_notes": [
+        "project_kaggle_disaster_tweets"
+      ],
+      "source_file": "knowledge/tasks/completed/task_disaster_tweets_eda_20260105170000.md",
+      "status": "completed",
+      "tags": [
+        "kaggle",
+        "kaggle_disaster_tweets",
+        "eda"
+      ],
+      "title": "Disaster Tweets: EDA（データ概観とベースライン設計の当たりを付ける）",
+      "type": "task",
+      "updated_at": "2026-01-05T00:00:00"
+    },
+    {
+      "assigned_agent": null,
+      "assignee": null,
+      "context": [
+        "project_kaggle_disaster_tweets",
+        "disaster_tweets_eda_20260105180000"
+      ],
+      "dependencies": [
+        "task-20260105170000"
+      ],
+      "due_date": null,
+      "id": "task-20260105180000",
+      "mode": "setup",
+      "priority": "high",
+      "project": "kaggle_disaster_tweets",
+      "related_notes": [
+        "project_kaggle_disaster_tweets",
+        "disaster_tweets_eda_20260105180000"
+      ],
+      "source_file": "knowledge/tasks/completed/task_disaster_tweets_experiment_management_20260105180000.md",
+      "status": "completed",
+      "tags": [
+        "kaggle",
+        "kaggle_disaster_tweets",
+        "experiment",
+        "management"
+      ],
+      "title": "Disaster Tweets: 実験管理方法を確定する",
+      "type": "task",
+      "updated_at": "2026-01-05T00:00:00"
+    },
+    {
+      "assigned_agent": null,
+      "assignee": null,
+      "context": [
         "gtd_implementation_plan_20260101",
         "obsidian_gtd_dataview_20251228"
       ],
@@ -151,5 +345,5 @@
       "updated_at": "2026-01-05T00:00:00"
     }
   ],
-  "total_tasks": 6
+  "total_tasks": 13
 }

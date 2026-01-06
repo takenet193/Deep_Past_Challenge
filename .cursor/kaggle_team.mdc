@@ -49,6 +49,7 @@ project: "house_prices"
 - 役割: データ処理、特徴量生成、モデル訓練のPython実装と実行。
 - 出力: 1) Pythonコードブロック、2) `[Result:]` 実行結果要約。
 - 禁止: 評価ロジックの断定・長文の考察・Markdown長文レポート。
+- **実験運用ルール**: `.cursor/developer_experiment_rules.mdc` を必ず参照し、実験作成・実行時に従うこと。
 
 ### 詳細仕様
 | 役割 | 役割の焦点 |
@@ -127,7 +128,9 @@ project: "house_prices"
 
 - **基本ルール（チーム憲法）**: `.cursor/kaggle_team.mdc`
 - **Experiment実行手順**: `.cursor/experiment_flow_instructions.mdc`
+- **Developer 実験運用ルール（運用規約 / SSOT）**: `.cursor/developer_experiment_rules.mdc`
 - **Docs Manager ルール（運用規約 / SSOT）**: `.cursor/docs_manager_rules.mdc`
 - **Docs Manager ルール（人間向け入口）**: `docs/docs_manager_rules.md`
 
-**すべてのエージェントは、experimentを実行する際は上記の実行手順に従うこと。**
+**すべてのエージェントは、experimentを実行する際は上記の実行手順に従うこと。**  
+**Developerは、実験作成・実行時に `.cursor/developer_experiment_rules.mdc` を必ず参照すること。**

@@ -25,8 +25,9 @@ type: "rules"
   - **知識のSSOT**: `knowledge/zettelkasten/` のノート（用途別に配置）
   - **JSONは生成物**: `tasks/current_sprint.json` は **手編集しない**
 - **テンプレは“ノート構造SSOT”として参照する**
-  - 各フォルダに置いた `_template_*.md`（例: `knowledge/zettelkasten/permanent/_template_permanent.md`）を、**新規ノート作成・整形時の規範（SSOT）**として扱う
-  - Docs Managerは、ノートを作る/整えるとき **必ず該当フォルダのテンプレを参照**し、frontmatterキー名・必須項目・見出し構造を揃える
+  - テンプレは `knowledge/templates/` 配下に集約し、**ノート構造のSSOT**として扱う（例: `knowledge/templates/zettelkasten/permanent/_template_permanent.md`）
+  - `knowledge/templates/` は、`knowledge/` の運用フォルダ構成（inbox/tasks/zettelkasten）を **ミラー**し、対応する `_template_*.md` を置く
+  - Docs Managerは、ノートを作る/整えるとき **必ず対応テンプレを参照**し、frontmatterキー名・必須項目・見出し構造を揃える
   - テンプレ自体の変更は、既存ノートやDataview/変換スクリプトに影響し得るため、**ユーザー明示指示がない限り勝手に改変しない**
 - **Inboxは“入口”であって“住処”ではない**
   - `knowledge/inbox/` は **一時置き場**。定期レビューで必ず仕分ける。
@@ -143,6 +144,26 @@ type: "rules"
   - `created`, `updated`（推奨）
 - **本文の必須セクション**
   - `目的` / `手順` / `結果` / `学び`
+
+#### タスク完了時の「実施報告」（必須 / 全タスク）
+
+- **方針**: タスクを完了（`status: completed`）にするときは、**別ファイルに分離せず**、そのタスクノート本文に **最小の実施報告**を残す（タスクノートがログ＝帳簿になる）。
+- **適用範囲**: 原則 **全タスク**（例外を作るならユーザーが明示する）。
+- **責務**: タスクを実行したエージェント（または人間）は、完了時にこの実施報告を必ず追記する。
+- **ゲート**: 実施報告が無い状態で `status: completed` にしない（完了の根拠が残らないため）。
+
+**実施報告テンプレ（コピペ用）**
+
+```markdown
+## 結果（実施報告）
+- （何をやったか。3行以内でOK）
+
+## 学び
+- （次回に効く1行）
+
+## 次のアクション
+- （必要なら新規タスク化。無ければ「なし」と書く）
+```
 
 ### Zettelkastenノート（推奨）
 

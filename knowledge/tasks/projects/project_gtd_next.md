@@ -59,3 +59,4 @@ SORT choice(status="active",0, choice(status="waiting",1, choice(status="someday
 - [[task_gtd_next_master_note_name_20260104170000|task-20260104170000: マスターノートのファイル名/配置を確定する]]
 <!-- AUTO:tasks:end -->
 
+

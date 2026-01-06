@@ -17,14 +17,14 @@ SSOTは `knowledge/tasks/` のタスクノートで、ここは「表示（生�
 
 ```dataview
 TABLE WITHOUT ID
-  project,
+  link("knowledge/tasks/projects/project_" + project + ".md", project) AS project,
   length(filter(rows, (r) => r.status = "active")) AS active,
   length(filter(rows, (r) => r.status = "waiting")) AS waiting,
   length(filter(rows, (r) => r.status = "someday")) AS someday,
   length(filter(rows, (r) => r.status = "completed")) AS completed,
   length(rows) AS total
 FROM "knowledge/tasks"
-WHERE type = "task" AND project != null
+WHERE type = "task" AND project != null AND status != "template" AND !startswith(file.name, "_")
 GROUP BY project
 SORT active DESC, waiting DESC, someday DESC, completed DESC, project ASC
 ```
@@ -33,12 +33,12 @@ SORT active DESC, waiting DESC, someday DESC, completed DESC, project ASC
 
 ```dataview
 TABLE WITHOUT ID
-  project,
+  link("knowledge/tasks/projects/project_" + project + ".md", project) AS project,
   length(rows) AS total,
   length(filter(rows, (r) => r.status = "waiting")) AS waiting,
   length(filter(rows, (r) => r.status = "someday")) AS someday
 FROM "knowledge/tasks"
-WHERE type = "task" AND project != null
+WHERE type = "task" AND project != null AND status != "template" AND !startswith(file.name, "_")
 GROUP BY project
 WHERE length(filter(rows, (r) => r.status = "active")) = 0
 SORT waiting DESC, someday DESC, project ASC
