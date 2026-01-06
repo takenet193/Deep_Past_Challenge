@@ -1,0 +1,33 @@
+---
+description: "Project Rules for Kaggle NLP Getting Started (Disaster Tweets)"
+globs: ["**/*.md", "**/*.mdc", "knowledge/**/*.md", "docs/**/*.md"]
+alwaysApply: true
+priority: high
+team: "kaggle"
+version: "1.0"
+type: "rules"
+project: "kaggle_disaster_tweets"
+---
+
+# Kaggle: Disaster Tweets（プロジェクト固有ルール）
+
+## タグ運用
+
+- **このコンペ（NLP Getting Started / Disaster Tweets）に固有の内容を扱うノートには、必ず `#kaggle_disaster_tweets` を付与する**
+  - 目的: 後から転用可能な部分を探しやすくする（プロジェクト固有部分の抽出）
+  - 例（OK）:
+    - ノート本文の先頭付近に `#kaggle_disaster_tweets`
+    - frontmatter を持つノートでは `tags:` に `kaggle_disaster_tweets` を入れ、本文にも `#kaggle_disaster_tweets` を置く（推奨）
+
+## 対象（このタグを付けるもの）
+
+- `knowledge/tasks/**/task_*.md` のうち、このコンペに関するタスク
+- `knowledge/tasks/projects/**` のうち、このコンペのプロジェクト・ハブ
+- `knowledge/zettelkasten/**` のうち、このコンペのデータ/特徴量/モデル/エラー分析/実験結果などに直接関係するノート
+- `docs/**` のうち、このコンペ向けに書いたガイドや手順書
+
+## 対象外（このタグを付けないもの）
+
+- GTDやZettelkasten運用など、他プロジェクトにも転用できる一般ノート
+- インフラ/共通スクリプト/汎用テンプレに関するノート（必要なら別タグで管理）
+
