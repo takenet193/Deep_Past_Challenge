@@ -197,7 +197,30 @@ type: "rules"
 1. Inboxの内容を整理し、タスクとして成立する形（目的/完了条件が明確）にする
 2. **重要（プロジェクト確認）**: タスクに `project` フィールドを設定する場合は、**必ずユーザーに確認**してから設定する。勝手に推測して設定しない。
 3. `knowledge/tasks/{active|waiting|someday}/` に **新規タスクとしてコピー**（ここがSSOT）
-4. Inbox原本を `knowledge/inbox/archive/` に移動し、可能なら以下を追記する
+4. **重要（リンク同期）**: タスクに `project` フィールドが設定されている場合、**必ず `python scripts/workflow/sync_project_links.py` を実行**して、プロジェクトノートとタスクファイルの相互リンクを更新する。
+5. Inbox原本を `knowledge/inbox/archive/` に移動し、可能なら以下を追記する
+
+### リンク同期の実行タイミング
+
+以下のいずれかの場合、`sync_project_links.py`を実行すること：
+- ✅ タスクを確定（コピー）した後（`project`フィールドが設定されている場合）
+- ✅ タスクの`project`フィールドを変更した後
+- ✅ プロジェクトノートを作成・更新した後
+- ✅ タスクのステータスを変更した後（active ↔ waiting ↔ someday ↔ completed）
+
+**実行方法**:
+```bash
+python scripts/workflow/sync_project_links.py
+```
+
+**確認方法**:
+- プロジェクトノートの「タスク一覧（AUTO）」セクションにタスクが表示されること
+- タスクファイルの「AUTO:project」セクションにプロジェクトノートへのリンクがあること
+
+**注意**:
+- スクリプトは`knowledge/tasks/`配下のすべてのタスクとプロジェクトを処理する（一括処理）
+- `project`フィールドがないタスクはスキップされる
+- 既存のAUTOセクションの内容は完全に置換される（マーカーは保持される）
 
 ### archive側に残すと良い情報（推奨）
 

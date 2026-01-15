@@ -1,0 +1,63 @@
+# Experiment Configuration
+# Keyword Feature Addition Experiment
+
+experiment:
+  id: "exp20260112174906"  # タイムスタンプ形式
+  name: "keyword_tfidf_lr"
+  description: "text + keyword + TF-IDF(1-2gram) + LogisticRegression"
+  created_at: "2026-01-12T17:49:06"
+  parent_experiment: "exp20260106030720"  # ベースライン実験
+  tags:
+    - improvement
+    - keyword
+    - feature-engineering
+
+data:
+  train_path: "data/raw/train.csv"  # リポジトリルート基準の相対パス
+  test_path: "data/raw/test.csv"    # リポジトリルート基準の相対パス
+
+preprocessing:
+  # NLP用
+  lowercase: true
+  remove_urls: true
+  remove_mentions: true
+  remove_hashtags: false
+  remove_emojis: false
+  # 汎用
+  missing_value_strategy: "unknown"  # keywordの欠損値は"unknown"として扱う
+
+feature_engineering:
+  type: "tfidf_keyword"  # TF-IDF + keyword
+  params:
+    max_features: 20000  # EDAで決定
+    ngram_range: [1, 2]  # EDAで決定
+    min_df: 2
+  keyword_encoding:
+    method: "target_encoding"  # ターゲットエンコーディング
+    missing_value_strategy: "unknown"  # 欠損値は"unknown"として新しいカテゴリとして扱う
+    smoothing: 1.0  # ターゲットエンコーディングの平滑化パラメータ（オプション）
+
+model:
+  type: "LogisticRegression"  # or: LinearSVC, XGBoost, LightGBM, BERT
+  params:
+    C: 1.0
+    max_iter: 2000
+    random_state: 42
+
+validation:
+  method: "stratified_kfold"  # or: kfold, holdout
+  n_folds: 5
+  shuffle: true
+  random_state: 42
+
+output:
+  results_dir: "./results/"
+  save_model: true
+  save_predictions: true
+  save_plots: false
+
+seed: 42
+
+
+
+

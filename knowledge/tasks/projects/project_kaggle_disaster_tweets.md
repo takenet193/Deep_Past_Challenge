@@ -13,6 +13,7 @@ tags:
 links: []
 ---
 
+ 
 # Project: kaggle_disaster_tweets
 
 #kaggle_disaster_tweets
@@ -35,21 +36,6 @@ SORT choice(status="active",0, choice(status="waiting",1, choice(status="someday
   due_date ASC,
   updated DESC
 ```
-
-<!-- AUTO:tasks:start -->
-## タスク一覧（AUTO）
-
-### active
-- [[task_disaster_tweets_find_discussions_20260105120011|task-20260105120011: Disaster Tweets: 参考にすべきDiscussion/Notebookを見つける]]
-- [[task_disaster_tweets_improvement_loop_20260105120030|task-20260105120030: Disaster Tweets: 改善ループ（ディスカッション収集→実験→記録）を回す]]
-
-### completed
-- [[task_disaster_tweets_overview_20260105120010|task-20260105120010: Disaster Tweets: データをダウンロードして配置を確定する]]
-- [[task_disaster_tweets_baseline_submit_20260105120020|task-20260105120020: Disaster Tweets: 提出して結果を記録する]]
-- [[task_disaster_tweets_competition_rules_metrics_20260105121000|task-20260105121000: Disaster Tweets: コンペ内容（ルール/評価基準/提出形式）を調べて確定する]]
-- [[task_disaster_tweets_eda_20260105170000|task-20260105170000: Disaster Tweets: EDA（データ概観とベースライン設計の当たりを付ける）]]
-- [[task_disaster_tweets_experiment_management_20260105180000|task-20260105180000: Disaster Tweets: 実験管理方法を確定する]]
-<!-- AUTO:tasks:end -->
 
 ## 目的 / 成果物
 - まずは「動く」最小ベースライン（学習・CV・推論・提出ファイル作成）を作り、以降の改善の比較基準にする
@@ -142,7 +128,11 @@ SORT choice(status="active",0, choice(status="waiting",1, choice(status="someday
 ### Git管理方針
 - **コミット対象**: 実験コード（`.py`）、`config.yaml`、`README.md`、軽量な結果ファイル（`metrics.json`, `submission.csv`）
 - **除外対象**: モデルファイル（`.pkl`）、ログファイル（`.log`）※`.gitignore` で除外
-- **コミットメッセージ**: `[expID] 実験内容の要約`
+- **コミットメッセージ**: `exp(<scope>): <説明> <実験ID>` (Conventional Commits準拠)
+  - スコープは実験の種類や変更内容を表す（例: `baseline`, `feature`, `hyperparameter`, `data`, `model`, `preprocessing`, `ensemble`）
+  - 例: `exp(baseline): ベースラインTF-IDF+LRモデル exp20260106030720`
+  - 例: `exp(feature): keyword特徴量追加 exp20260112174906`
+  - 例: `exp(hyperparameter): C値グリッドサーチ exp20260112201310`
 
 ### 実験ノートとの連携
 - **実験README**: `experiments/_template_experiment/README.md` テンプレートを使用
@@ -160,5 +150,22 @@ SORT choice(status="active",0, choice(status="waiting",1, choice(status="someday
 - `docs/project_architecture.md`
 - `knowledge/zettelkasten/permanent/kaggle_basics_20240101.md`
 - `knowledge/zettelkasten/permanent/model_selection_20240103.md`
+- [[disaster_tweets_baseline_improvement_ideas_20260112162435|ベースラインからの改善案]]
+
+<!-- AUTO:tasks:start -->
+## タスク一覧（AUTO）
+
+### active
+- [[task_disaster_tweets_find_discussions_20260105120011|task-20260105120011: Disaster Tweets: 参考にすべきDiscussion/Notebookを見つける]]
+- [[task_disaster_tweets_baseline_submit_20260105120020|task-20260105120020: Disaster Tweets: 提出して結果を記録する]]
+- [[task_disaster_tweets_improvement_loop_20260105120030|task-20260105120030: Disaster Tweets: 改善ループ（ディスカッション収集→実験→記録）を回す]]
+
+### completed
+- [[task_disaster_tweets_overview_20260105120010|task-20260105120010: Disaster Tweets: データをダウンロードして配置を確定する]]
+- [[task_disaster_tweets_baseline_submit_20260105120020|task-20260105120020: Disaster Tweets: 提出して結果を記録する]]
+- [[task_disaster_tweets_competition_rules_metrics_20260105121000|task-20260105121000: Disaster Tweets: コンペ内容（ルール/評価基準/提出形式）を調べて確定する]]
+- [[task_disaster_tweets_eda_20260105170000|task-20260105170000: Disaster Tweets: EDA（データ概観とベースライン設計の当たりを付ける）]]
+- [[task_disaster_tweets_experiment_management_20260105180000|task-20260105180000: Disaster Tweets: 実験管理方法を確定する]]
+<!-- AUTO:tasks:end -->
 
 

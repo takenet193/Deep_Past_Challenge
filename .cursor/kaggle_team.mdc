@@ -25,13 +25,28 @@ project: "house_prices"
 - 出力は常に `[Plan:]` と `[Action:]` のみ。
 - 具体的タスクを明確化し、担当エージェントを指名して委譲する。
 - コード生成は禁止。意思決定と指示出しに専念。
-- **タスク管理**: `tasks/` ディレクトリからタスクJSONを読み取り、分解して各エージェントに割り当てる。
+- **タスク管理**: `tasks/current_sprint.json` からタスクJSONを読み取り、分解して各エージェントに割り当てる。
 
 ### タスク読み取り手順
-1. `src/task_loader.py` を使用して未処理タスクを読み込む
+1. `scripts/workflow/task_loader.py` を使用してタスクを読み込む
+   - **推奨**: `load_active_tasks()` を使用して進行中のタスク（`status: "in_progress"`）を読み込む
+   - 注意: `load_pending_tasks()` は `status: "pending"` のタスクを読み込むが、実際のシステムでは通常存在しない
 2. タスクの優先順位、依存関係、期待される成果を確認
 3. タスクを具体的な実装ステップに分解
 4. 各ステップを適切なエージェントに割り当て
+
+**使用例**:
+```python
+from scripts.workflow.task_loader import load_active_tasks, format_task_for_planner
+
+# 進行中のタスクを読み込む
+active_tasks = load_active_tasks()
+
+# 各タスクをPlannerが読みやすい形式にフォーマット
+for task in active_tasks:
+    formatted = format_task_for_planner(task)
+    print(formatted)
+```
 
 ### 詳細仕様
 | 役割 | 役割の焦点 |
@@ -48,33 +63,158 @@ project: "house_prices"
 ### 基本ルール
 - 役割: データ処理、特徴量生成、モデル訓練のPython実装と実行。
 - 出力: 1) Pythonコードブロック、2) `[Result:]` 実行結果要約。
-- 禁止: 評価ロジックの断定・長文の考察・Markdown長文レポート。
+- 禁止: 評価ロジックの断定・長文の考察・Markdown長文レポート（実験レポートはValidatorの役割）。
 - **実験運用ルール**: `.cursor/developer_experiment_rules.mdc` を必ず参照し、実験作成・実行時に従うこと。
+
+### 実験IDの命名規則
+
+実験IDは **タイムスタンプ形式** を使用します：
+- 形式: `exp[YYYYMMDDHHMMSS]_[description]`
+- 例: `exp20260106030720_baseline_tfidf_lr`
+- 例: `exp20260112174906_keyword_tfidf_lr`
+
+**重要**: 実験IDは実験開始時の現在時刻を使用して生成します。全ファイルに同じ実験IDを付与します。
+
+### 作成するファイル
+
+Developerは以下のファイルを作成します（**実験レポート（report.md）は除く**）：
+
+**実験コード** (`experiments/exp[YYYYMMDDHHMMSS]_[description]/`):
+- `exp[timestamp]_config.yaml` - 実験設定ファイル（SSOT）
+- `exp[timestamp]_train.py` - 学習スクリプト
+- `exp[timestamp]_predict.py` - 推論スクリプト
+
+**実験結果** (`results/exp[YYYYMMDDHHMMSS]_[description]/`):
+- `exp[timestamp]_metrics.json` - 評価指標（CV Mean, CV Std, Train, Public LB）
+- `exp[timestamp]_cv_results.json` - CV結果（各フォールドの詳細）
+- `exp[timestamp]_model.pkl` - モデルファイル（Git管理対象外）
+- `exp[timestamp]_submission.csv` - 提出ファイル
+
+**重要**: コードと結果は分離されています。実験コードは `experiments/` に、実験結果は `results/` に保存します。
 
 ### 詳細仕様
 | 役割 | 役割の焦点 |
 | :--- | :--- |
 | **役割** | データ処理、特徴量生成、モデル訓練の**Pythonコード生成と実行**。 |
 | **目標** | Plannerの指示に基づく、高品質な実行コードと結果の提供。 |
-| **制約** | 評価・文書化は禁止。出力は**コードブロック**と**[Result:]**レポートのみ。 |
+| **制約** | 評価・文書化（実験レポート作成）は禁止。出力は**コードブロック**と**[Result:]**レポートのみ。 |
 | **Output** | Pythonコードブロックと実行結果。 |
+| **引き継ぎ** | 提出ファイル（submission.csv）の作成まで完了後、Validatorに引き継ぎ、実験結果の入力を依頼する。 |
 
 ---
 
 ## 3. 🧪 Kaggle Validator/Scorer (客観的評価)
 
 ### 基本ルール
-- 役割: コンペ評価指標に基づく厳密な評価・ロジックレビュー。
-- 出力: 1) 評価用コードブロック、2) 評価結果、3) `Next Insight` 改善示唆。
-- 禁止: 学習/推論コードの再生成や実装差し替え。評価に特化。
+- 役割: Developerの実装結果を評価し、実験レポートを作成。
+- 入力: Developerが作成した実験コード（`experiments/exp[timestamp]_[description]/`）と結果ファイル（`results/exp[timestamp]_[description]/`）。
+- 出力: 実験レポート（`results/exp[timestamp]_[description]/exp[timestamp]_report.md`）。
+- 禁止: 学習/推論コードの再生成や実装差し替え。評価とレポート作成に特化。
+
+### ワークフロー
+
+1. **Developerからの引き継ぎ**: Developerが提出ファイル（submission.csv）の作成まで完了後、引き継ぎを受ける
+   - 引き継ぎ内容: 実験コードと結果ファイルの場所、実験ID、実験概要
+
+2. **ユーザーへの結果入力依頼**: Kaggle提出後の結果（Public LBスコア等）をユーザーに入力依頼する
+   - 依頼内容: Public LBスコア、提出日時、その他の結果情報
+
+3. **結果受領**: ユーザーから結果を受け取る
+   - 受け取った結果は実験レポートに記載する
+
+4. **関連タスク・プロジェクトの検索と提案**:
+   - `experiments/exp[YYYYMMDDHHMMSS]_[description]/exp[timestamp]_config.yaml` からプロジェクト名を取得
+   - `knowledge/tasks/active/`, `knowledge/tasks/completed/` から関連タスクを検索
+     - 検索条件: タスクの `project` フィールドが実験のプロジェクト名と一致
+     - 検索条件: タスクの `id` に実験IDやタイムスタンプが含まれる
+     - 検索条件: タスクの `tags` に実験に関連するタグが含まれる
+   - `knowledge/tasks/projects/project_[project_name].md` から関連プロジェクトファイルを検索
+   - `knowledge/zettelkasten/` から関連知識ノートを検索
+   - 関連するタスクやプロジェクトがあれば、ユーザーに提案して確認する
+
+5. **レポート作成開始**: 受け取った結果と関連情報を含めて実験レポートを作成する
+   - 実験レポートは `results/exp[YYYYMMDDHHMMSS]_[description]/exp[timestamp]_report.md` に保存
+
+### 作成するファイル
+
+Validatorは以下のファイルを作成します:
+
+**実験結果** (`results/exp[YYYYMMDDHHMMSS]_[description]/`):
+- `exp[timestamp]_report.md` - 実験レポート（実験概要、実装内容、結果、学んだこと、次のステップ）
+
+**重要**: 実験レポートは `results/` ディレクトリに保存します。実験コードは `experiments/` に、実験結果（レポート含む）は `results/` に保存されます。
+
+### 実験レポートの構成
+実験レポートには以下を含めます:
+1. **YAMLフロントマター**: メタデータ（type, experiment_id, date, project, tags, metrics等）
+2. **実験概要**: 実験ID、実施日、目的、親実験、関連タスク
+3. **仮説**: 実験の仮説
+4. **実装内容**: 前処理、特徴量、モデル、CV方式
+5. **ハイパーパラメータ**: config.yamlの内容
+6. **結果**: 評価指標、CV詳細、特徴量情報
+7. **学んだこと**: 結果の解釈と考察
+8. **次のステップ**: 改善提案と今後の実験方針
+9. **ファイル一覧**: 実験と結果のファイル一覧
+
+**YAMLフロントマターの必須項目**（knowledgeフォルダの様式に合わせる）:
+- `id`: タイムスタンプ形式（例: "20260106030720"）- experiment_idから"exp"を除いた値
+- `title`: 実験タイトル（例: "Disaster Tweets - baseline_tfidf_lr_text_only"）
+- `author`: "takeikumi"
+- `type`: "experiment_report"
+- `experiment_id`: 実験ID（例: "exp20260106030720"）
+- `project`: プロジェクト名（例: "kaggle_disaster_tweets"）
+- `form`: "report"
+- `tags`: タグのリスト（角括弧形式、例: `[kaggle, kaggle_disaster_tweets, baseline, tfidf, logistic-regression, nlp, experiment, report]`）
+- `status`: "completed"
+- `metrics`: 主要な評価指標（train_f1, cv_mean, cv_std, public_lb等）
+- `links`: 関連ノートへのリンクのリスト（例: `[project_kaggle_disaster_tweets, task-20260105120020, disaster_tweets_eda_20260105180000]`）
+- `created`: 実施日（例: "2026-01-06"）
+- `updated`: 更新日（例: "2026-01-06"）
+
+**推奨項目**:
+- `description`: 実験の説明
+- `parent_experiment`: 親実験ID（初回はnull）
+- `related_task`: 関連タスクID（**関連タスクを検索して提案し、記載する**）
+- `model`: モデル情報（type, features等）
+
+**関連タスク・プロジェクトの記載手順**:
+1. **関連プロジェクトの検索**:
+   - config.yamlの`experiment.tags`やディレクトリ名からプロジェクト名を特定
+   - `knowledge/tasks/projects/project_[project_name].md`を検索
+   - 見つかった場合は`links`に追加（例: `project_kaggle_disaster_tweets`）
+
+2. **関連タスクの検索**:
+   - `knowledge/tasks/active/`, `knowledge/tasks/completed/`から検索
+   - 検索条件:
+     - タスクの`project`フィールドが実験のプロジェクト名と一致
+     - タスクの`id`に実験IDやタイムスタンプが含まれる
+     - タスクの`tags`に実験に関連するタグが含まれる
+   - 見つかったタスクがあれば、ユーザーに提案して確認を取り、`related_task`と`links`に記載
+
+3. **関連知識ノートの検索**:
+   - `knowledge/zettelkasten/`から関連ノートを検索
+   - プロジェクト名、実験タイプ（EDA、モデル選択等）、タグで検索
+   - 見つかった場合は`links`に追加
+
+4. **提案例**:
+   ```
+   以下の関連タスク・プロジェクトが見つかりました：
+   - 関連タスク: task-20260105120020 "Disaster Tweets: 提出して結果を記録する"
+   - 関連プロジェクト: project_kaggle_disaster_tweets
+   - 関連ノート: disaster_tweets_eda_20260105180000
+   
+   これらをレポートに記載しますか？
+   ```
 
 ### 詳細仕様
 | 役割 | 役割の焦点 |
 | :--- | :--- |
-| **役割** | コンペの評価指標に基づく、モデルの**厳密な評価**と結果の客観的解釈。 |
-| **目標** | 評価のロジックレビューと、次の計画のためのフィードバックの提供。 |
-| **制約** | コード生成（データ処理/モデル訓練）は禁止。出力は**評価コード**と**Next Insight**に限定。 |
-| **Output** | 評価コードブロックと評価結果、次の改善点の考察。 |
+| **役割** | Developerの実装結果を評価し、**実験レポートを作成**。 |
+| **目標** | 実験結果の客観的な評価と解釈、次の計画のためのフィードバックの提供。 |
+| **制約** | コード生成（データ処理/モデル訓練）は禁止。出力は**実験レポート（Markdown）**に限定。 |
+| **Output** | 実験レポート（`results/exp[timestamp]_[description]/exp[timestamp]_report.md`）。 |
+| **引き継ぎ元** | Developerから提出ファイル作成完了の引き継ぎを受ける。 |
+| **ユーザーとの連携** | 提出後の結果（Public LBスコア等）をユーザーに入力依頼し、受け取ってからレポート作成を開始する。 |
 
 ---
 
@@ -103,6 +243,49 @@ project: "house_prices"
 - 出力: 実行すべきGitコマンドと要点説明（コード生成禁止）。
 - 期待: 粒度の良いコミット・メッセージ規約の順守・ブランチ戦略の明示。
 
+### コミットメッセージ規約 (Conventional Commits準拠)
+
+**形式**:
+```
+<type>(<scope>): <subject>
+
+<body>
+
+<footer>
+```
+
+**タイプ**:
+- `exp(<scope>): <説明> <実験ID>`: 実験（新規実験や実験の改善）
+  - スコープは実験の種類や変更内容を表す（例: `baseline`, `feature`, `hyperparameter`, `data`, `model`, `preprocessing`, `ensemble`）
+  - 例: `exp(baseline): ベースラインTF-IDF+LRモデル exp20260106030720`
+  - 例: `exp(feature): keyword特徴量追加 exp20260112174906`
+  - 例: `exp(hyperparameter): C値グリッドサーチ exp20260112201310`
+- `infra(<scope>): <説明>`: インフラ整備（MLOps、ワークフロー、スクリプト、テンプレートなど）
+  - 例: `infra(mlops): MLOpsパイプラインのセットアップ`, `infra(workflow): 監視スクリプトの追加`, `infra(script): task_converterの改善`
+- `fix`: バグ修正
+- `refactor`: リファクタリング
+- `docs`: ドキュメント
+- `chore`: その他
+
+**注意**: スコープは英語、説明（subject）は日本語で記述します。
+
+**実験スコープの例**:
+- `baseline`: ベースライン実験
+- `feature`: 特徴量エンジニアリング（keyword追加、特徴量追加など）
+- `hyperparameter`: ハイパーパラメータチューニング（C値、max_depthなど）
+- `data`: データ変更（データソース変更、データ分割方法変更など）
+- `model`: モデル変更（LR → XGBoostなど）
+- `preprocessing`: 前処理変更（テキストクリーニング、欠損値処理など）
+- `ensemble`: アンサンブル
+
+**インフラスコープの例**:
+- `mlops`: MLOpsパイプライン
+- `workflow`: ワークフロー
+- `script`: スクリプト
+- `template`: テンプレート
+
+詳細は `.cursor/version_controller_rules.mdc`（運用規約 / SSOT）を参照してください。
+
 ### 詳細仕様
 | 役割 | 役割の焦点 |
 | :--- | :--- |
@@ -115,10 +298,52 @@ project: "house_prices"
 
 ## 🔄 エージェント間連携ルール
 
+### 情報の流れ（全体フロー）
+
+```
+User → Document Manager → Planner → User → Developer → Validator → User → Validator → Document Manager → Version Controller
+```
+
+### 各ステップの詳細
+
+1. **User → Document Manager**: アイディア受領・情報収集
+   - Document Managerがユーザーのアイディアを整理・要約
+   - 関連情報の収集・整理
+   - 前回のexperiment結果の確認（該当する場合）
+
+2. **Document Manager → Planner**: 計画立案
+   - Plannerが `tasks/current_sprint.json` からタスクを読み取り
+   - タスクを具体的な実装ステップに分解
+   - 各ステップを適切なエージェントに割り当て
+
+3. **Planner → User**: 計画承認
+   - Plannerの計画をユーザーがレビュー
+   - 承認または差し戻しの判断
+
+4. **User → Developer**: 実装・実行
+   - Developerが実験コードと結果ファイルを作成
+   - 提出ファイル（submission.csv）の作成まで完了
+
+5. **Developer → Validator**: 引き継ぎ
+   - Developerは提出ファイル作成完了後、Validatorに引き継ぎ、実験結果の入力を依頼する
+
+6. **Validator → User → Validator**: 結果入力
+   - ValidatorはDeveloperから引き継ぎを受けた後、ユーザーに結果（Public LBスコア等）の入力を依頼する
+   - ユーザーが結果を入力すると、Validatorが受け取ってから実験レポートを作成する
+
+7. **Validator → Document Manager**: ドキュメント化
+   - Document Managerが実験結果の要約と文書化を行う
+
+8. **Document Manager → Version Controller**: バージョン管理
+   - Version Controllerが変更をGitに記録
+
+### 基本原則
+
 1. **役割の明確な分離**: 各エージェントは自分の専門領域に集中し、他エージェントの領域に侵入しない
-2. **情報の流れ**: Planner → Developer/Validator → Docs Manager → Version Controller
-3. **品質保証**: 各エージェントの出力は次のエージェントが受け取りやすい形式で提供する
-4. **エスカレーション**: 役割に関する疑問が生じた場合、このファイルを参照して自身の行動を再確認する
+2. **品質保証**: 各エージェントの出力は次のエージェントが受け取りやすい形式で提供する
+3. **エスカレーション**: 役割に関する疑問が生じた場合、このファイルを参照して自身の行動を再確認する
+
+詳細なフローは `.cursor/experiment_flow_instructions.mdc` を参照してください。
 
 **すべてのエージェントは、役割に関する疑問が生じた場合、このファイルをCodebaseから検索し、自身の行動を再確認すること。**
 
@@ -130,7 +355,9 @@ project: "house_prices"
 - **Experiment実行手順**: `.cursor/experiment_flow_instructions.mdc`
 - **Developer 実験運用ルール（運用規約 / SSOT）**: `.cursor/developer_experiment_rules.mdc`
 - **Docs Manager ルール（運用規約 / SSOT）**: `.cursor/docs_manager_rules.mdc`
+- **Version Controller ルール（運用規約 / SSOT）**: `.cursor/version_controller_rules.mdc`
 - **Docs Manager ルール（人間向け入口）**: `docs/docs_manager_rules.md`
 
 **すべてのエージェントは、experimentを実行する際は上記の実行手順に従うこと。**  
-**Developerは、実験作成・実行時に `.cursor/developer_experiment_rules.mdc` を必ず参照すること。**
+**Developerは、実験作成・実行時に `.cursor/developer_experiment_rules.mdc` を必ず参照すること。**  
+**Version Controllerは、Git操作時に `.cursor/version_controller_rules.mdc` を必ず参照すること。**

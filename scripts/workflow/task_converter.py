@@ -13,7 +13,7 @@ from typing import Any, Dict, Iterable, List, Optional, Tuple
 import yaml
 
 
-REPO_ROOT = Path(__file__).resolve().parents[1]
+REPO_ROOT = Path(__file__).resolve().parents[2]
 
 # Human-facing folder status -> AI-facing JSON status vocabulary
 STATUS_DIR_TO_JSON_STATUS: Dict[str, str] = {
@@ -229,6 +229,7 @@ def convert_tasks_to_current_sprint_json(
         変換されたタスクのリスト
     """
     tasks: List[Dict[str, Any]] = []
+    task_id_to_files: Dict[str, List[Path]] = {}  # 重複チェック用
 
     for status_dir_name, json_status in STATUS_DIR_TO_JSON_STATUS.items():
         status_dir = knowledge_tasks_dir / status_dir_name
@@ -238,9 +239,31 @@ def convert_tasks_to_current_sprint_json(
         for md_file in _iter_task_files(status_dir):
             try:
                 task_json = parse_task_markdown(md_file, json_status=json_status)
+                task_id = task_json.get("id")
+                
+                # 重複チェック: 同じタスクIDが複数のディレクトリに存在する場合
+                if task_id:
+                    if task_id not in task_id_to_files:
+                        task_id_to_files[task_id] = []
+                    task_id_to_files[task_id].append(md_file)
+                
                 tasks.append(task_json)
             except Exception as e:
                 print(f"Error processing {md_file}: {e}")
+
+    # 重複を検出して警告
+    duplicates_found = False
+    for task_id, files in task_id_to_files.items():
+        if len(files) > 1:
+            duplicates_found = True
+            print(f"\n警告: タスクID '{task_id}' が複数のディレクトリに存在します:")
+            for file_path in files:
+                # どのディレクトリに存在するかを表示
+                rel_path = file_path.relative_to(knowledge_tasks_dir)
+                status_dir = rel_path.parts[0] if len(rel_path.parts) > 0 else "unknown"
+                print(f"  - {status_dir}/: {file_path.name}")
+            print(f"  推奨: 完了したタスクは 'completed/' にのみ存在すべきです。")
+            print(f"        重複ファイルを確認し、不要な方を削除してください。\n")
 
     tasks.sort(key=_task_sort_key)
 

@@ -1,0 +1,60 @@
+# Experiment Configuration
+# C値チューニング実験
+
+experiment:
+  id: "exp20260112201310"  # タイムスタンプ形式
+  name: "lr_c_tuning_text_only"
+  description: "textのみ + TF-IDF + LogisticRegression (C値グリッドサーチ)"
+  created_at: "2026-01-12T20:13:10"
+  parent_experiment: "exp20260106030720"  # ベースライン実験
+  tags:
+    - improvement
+    - hyperparameter-tuning
+    - c-tuning
+
+data:
+  train_path: "data/raw/train.csv"  # リポジトリルート基準の相対パス
+  test_path: "data/raw/test.csv"    # リポジトリルート基準の相対パス
+
+preprocessing:
+  # NLP用
+  lowercase: true
+  remove_urls: true
+  remove_mentions: true
+  remove_hashtags: false
+  remove_emojis: false
+  # 汎用
+  missing_value_strategy: "median"  # or: mean, mode, drop
+
+feature_engineering:
+  type: "tfidf"  # or: count, embeddings, transformers
+  params:
+    max_features: 20000  # EDAで決定
+    ngram_range: [1, 2]  # EDAで決定
+    min_df: 2
+
+model:
+  type: "LogisticRegression"  # or: LinearSVC, XGBoost, LightGBM, BERT
+  params:
+    C: 1.0           # デフォルト（ベースライン値）
+    max_iter: 2000
+    random_state: 42
+  c_grid: [0.1, 0.5, 1.0, 2.0, 5.0, 10.0]  # C値のグリッドサーチ候補
+
+validation:
+  method: "stratified_kfold"  # or: kfold, holdout
+  n_folds: 5
+  shuffle: true
+  random_state: 42
+
+output:
+  results_dir: "./results/"
+  save_model: true
+  save_predictions: true
+  save_plots: false
+
+seed: 42
+
+
+
+

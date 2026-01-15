@@ -66,16 +66,17 @@ cv_folds: 5
 ## ファイル一覧
 
 ```
-expYYYYMMDDHHMMSS_[description]/
-├── expYYYYMMDDHHMMSS_README.md         # このファイル（実験IDをファイル名に含める）
+experiments/expYYYYMMDDHHMMSS_[description]/
 ├── expYYYYMMDDHHMMSS_config.yaml       # 設定ファイル（実験IDをファイル名に含める）
 ├── expYYYYMMDDHHMMSS_train.py          # 学習スクリプト（実験IDをファイル名に含める）
-├── expYYYYMMDDHHMMSS_predict.py        # 推論スクリプト（実験IDをファイル名に含める）
-└── results/
-    ├── expYYYYMMDDHHMMSS_metrics.json  # 評価指標（実験IDをファイル名に含める）
-    ├── expYYYYMMDDHHMMSS_cv_results.json  # CV結果（実験IDをファイル名に含める）
-    ├── expYYYYMMDDHHMMSS_submission.csv  # 提出ファイル（実験IDをファイル名に含める）
-    └── expYYYYMMDDHHMMSS_model.pkl  # モデルファイル（実験IDをファイル名に含める）
+└── expYYYYMMDDHHMMSS_predict.py        # 推論スクリプト（実験IDをファイル名に含める）
+
+results/expYYYYMMDDHHMMSS_[description]/
+├── expYYYYMMDDHHMMSS_report.md         # 実験レポート（Validatorが作成、実験IDをファイル名に含める）
+├── expYYYYMMDDHHMMSS_metrics.json      # 評価指標（実験IDをファイル名に含める）
+├── expYYYYMMDDHHMMSS_cv_results.json   # CV結果（実験IDをファイル名に含める）
+├── expYYYYMMDDHHMMSS_submission.csv    # 提出ファイル（実験IDをファイル名に含める）
+└── expYYYYMMDDHHMMSS_model.pkl         # モデルファイル（実験IDをファイル名に含める）
 ```
 
 **注意**: 同じディレクトリ内の全てのファイルに同じタイムスタンプ（実験ID）を付与する

@@ -201,10 +201,16 @@ data:
 - ❌ **コミットしない**: モデルファイル（`.pkl`）※`.gitignore` で除外
 - ❌ **コミットしない**: ログファイル（`.log`）※`.gitignore` で除外
 
-### 2. コミットメッセージ
+### 2. コミットメッセージ (Conventional Commits準拠)
 
-- 形式: `[expID] 実験内容の要約`
-- 例: `[exp20260105180000] baseline: TF-IDF + LogisticRegression`
+- **実験の場合**: `exp(<scope>): <説明> <実験ID>`
+  - スコープは実験の種類や変更内容を表す（例: `baseline`, `feature`, `hyperparameter`, `data`, `model`, `preprocessing`, `ensemble`）
+  - 例: `exp(baseline): ベースラインTF-IDF+LRモデル exp20260106030720`
+  - 例: `exp(feature): keyword特徴量追加 exp20260112174906`
+  - 例: `exp(hyperparameter): C値グリッドサーチ exp20260112201310`
+- **インフラ整備の場合**: `infra(<scope>): <説明>`
+  - 例: `infra(script): task_converterの改善`
+- **注意**: スコープは英語、説明（subject）は日本語で記述します。
 
 ---
 

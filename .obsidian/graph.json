@@ -1,6 +1,6 @@
 {
   "collapse-filter": false,
-  "search": "path:knowledge/ -path:archive/  -file:_guide",
+  "search": "path:knowledge/ -path:inbox/ -path:archive/ -path:templates/ -file:_guide -file:*template* OR path:results/ file:report.md",
   "showTags": true,
   "showAttachments": true,
   "hideUnresolved": true,
@@ -25,7 +25,7 @@
       "query": "[\"type\": permanent",
       "color": {
         "a": 1,
-        "rgb": 6053078
+        "rgb": 5658327
       }
     },
     {
@@ -41,11 +41,18 @@
         "a": 1,
         "rgb": 1085940
       }
+    },
+    {
+      "query": "[\"type\": report",
+      "color": {
+        "a": 1,
+        "rgb": 12171493
+      }
     }
   ],
   "collapse-display": false,
   "showArrow": false,
-  "textFadeMultiplier": -0.8,
+  "textFadeMultiplier": -2,
   "nodeSizeMultiplier": 2.32350260416667,
   "lineSizeMultiplier": 4.03060709635417,
   "collapse-forces": false,
@@ -53,6 +60,6 @@
   "repelStrength": 20,
   "linkStrength": 1,
   "linkDistance": 500,
-  "scale": 0.1102657729840103,
-  "close": true
+  "scale": 0.3869668512486387,
+  "close": false
 }

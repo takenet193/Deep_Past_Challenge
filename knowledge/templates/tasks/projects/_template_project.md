@@ -11,15 +11,6 @@ links: []
 
 # Project: （project）
 
-## 目的 / 成果物
-- 
-
-## 状態メモ
-- 
-
-## 関連ノート（情報ハブ）
-- 
-
 ## タスク一覧（Dataview）
 
 ```dataview
@@ -39,6 +30,17 @@ SORT choice(status="active",0, choice(status="waiting",1, choice(status="someday
   updated DESC
 ```
 
+## 目的 / 成果物
+- 
+
+## 状態メモ
+- 
+
+## 関連ノート（情報ハブ）
+- 
+
+<!-- AUTO:tasks:start -->
+<!-- AUTO:tasks:end -->
 
 
 

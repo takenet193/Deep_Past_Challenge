@@ -25,8 +25,10 @@ type: "experiment_flow"
 
 ### 情報の流れ
 ```
-User → Document Manager → Planner → User → Developer → Validator → Document Manager → Version Controller
+User → Document Manager → Planner → User → Developer → Validator → User → Validator → Document Manager → Version Controller
 ```
+
+**注意**: Validatorは、Developerから引き継ぎを受けた後、ユーザーに結果（Public LBスコア等）の入力を依頼し、受け取ってからレポート作成を開始する。
 
 ---
 
@@ -60,6 +62,15 @@ User → Document Manager → Planner → User → Developer → Validator → D
 **入力**:
 - Document Managerからの整理されたアイディア
 - 関連情報の要約
+- **タスク情報**: `tasks/current_sprint.json` から読み込んだタスク情報
+
+**タスク読み取り手順**:
+1. `scripts/workflow/task_loader.py` を使用してタスクを読み込む
+   - **推奨**: `load_active_tasks()` を使用して進行中のタスク（`status: "in_progress"`）を読み込む
+   - 注意: `load_pending_tasks()` は `status: "pending"` のタスクを読み込むが、実際のシステムでは通常存在しない
+2. タスクの優先順位、依存関係、期待される成果を確認
+3. タスクを具体的な実装ステップに分解
+4. 各ステップを適切なエージェントに割り当て
 
 **処理**:
 1. 実装の目的と仮説を明確化
@@ -105,58 +116,98 @@ User → Document Manager → Planner → User → Developer → Validator → D
 - 承認された計画
 
 **処理**:
-1. `experimentN/`ディレクトリの作成
-2. コードの実装・実行
+1. `experiments/exp[timestamp]_[description]/`ディレクトリの作成
+2. コードの実装・実行（train.py, predict.py）
 3. 結果ファイルの生成
+4. **提出ファイル（submission.csv）の作成まで完了**
+
+**実験IDの命名規則**:
+- 形式: `exp[YYYYMMDDHHMMSS]_[description]`（タイムスタンプ形式）
+- 例: `exp20260106030720_baseline_tfidf_lr`
+- 例: `exp20260112174906_keyword_tfidf_lr`
+- **重要**: 実験IDは実験開始時の現在時刻を使用して生成します。全ファイルに同じ実験IDを付与します。
 
 **ディレクトリ構造**:
 ```
-experimentN/
-├── model.py          # モデル実装
-├── train.py          # 訓練スクリプト
-├── predict.py        # 推論スクリプト
-├── results/          # 結果ファイル
-│   ├── predictions.csv
-│   ├── metrics.json
-│   └── plots/
-└── README.md         # 実験概要
+experiments/exp[YYYYMMDDHHMMSS]_[description]/
+├── exp[timestamp]_config.yaml  # 設定ファイル（SSOT）
+├── exp[timestamp]_train.py     # 訓練スクリプト
+└── exp[timestamp]_predict.py   # 推論スクリプト
+
+results/exp[YYYYMMDDHHMMSS]_[description]/
+├── exp[timestamp]_metrics.json      # 評価指標（CV Mean, CV Std, Train, Public LB）
+├── exp[timestamp]_cv_results.json   # CV結果（各フォールドの詳細）
+├── exp[timestamp]_model.pkl         # モデルファイル（Git管理対象外）
+├── exp[timestamp]_submission.csv    # 提出ファイル
+└── exp[timestamp]_report.md         # 実験レポート（Validatorが作成）
 ```
+
+**重要**: コードと結果は分離されています。実験コードは `experiments/` に、実験結果（レポート含む）は `results/` に保存されます。
 
 **出力**:
 - Pythonコードブロック
-- `[Result:]` 実行結果要約
+- `[Result:]` 実行結果要約（提出ファイル作成完了まで）
 
 **品質チェック**:
 - [ ] コードが正常に実行される
 - [ ] 結果ファイルが適切に生成される
+- [ ] 提出ファイル（submission.csv）が生成される
 - [ ] エラーが発生していない
 
-### Step 5: 結果評価
+**引き継ぎ**:
+- Developer → Validator: 提出ファイル作成完了後、Validatorに引き継ぎ、実験結果の入力を依頼する
+
+### Step 5: 結果入力依頼・レポート作成
 **担当**: Validator
 
 **入力**:
-- Developerの実装結果
+- Developerが作成した実験コードと結果ファイル
+- **ユーザーから提供される提出後の結果**（Public LBスコア等）
 
 **処理**:
-1. モデル性能の客観的評価
-2. 評価指標の計算
-3. 結果の解釈と分析
+1. Developerからの引き継ぎを受ける
+2. **ユーザーに結果入力を依頼する**: Kaggle提出後の結果（Public LBスコア等）をユーザーに入力依頼する
+   - 例: "Kaggleに提出された結果（Public LBスコア等）を教えてください"
+3. **ユーザーから結果を受け取る**
+4. **関連タスク・プロジェクトの検索と提案**:
+   - `experiments/exp[YYYYMMDDHHMMSS]_[description]/exp[timestamp]_config.yaml` からプロジェクト名を取得
+   - `knowledge/tasks/projects/project_[project_name].md` を検索して関連プロジェクトを特定
+   - `knowledge/tasks/active/`, `knowledge/tasks/completed/` から関連タスクを検索
+     - 検索条件: タスクの `project` フィールドが実験のプロジェクト名と一致
+     - 検索条件: タスクの `id` に実験IDやタイムスタンプが含まれる場合
+     - 検索条件: タスクの `tags` に実験に関連するタグが含まれる場合
+   - `knowledge/zettelkasten/` から関連知識ノートを検索
+   - 見つかった関連タスク・プロジェクト・ノートがあれば、ユーザーに提案して確認する
+     - 例: "以下の関連タスク・プロジェクトが見つかりました：task-20260105120020, project_kaggle_disaster_tweets。これらをレポートに記載しますか？"
+5. モデル性能の客観的評価（CV結果、Public LBスコア等を含む）
+6. 結果の解釈と分析
+7. 実験レポートの作成（関連タスク・プロジェクト・ノートを含む）
 
 **評価項目**:
-- RMSE（Root Mean Square Error）
-- クロスバリデーション結果
-- 特徴量重要度
-- 予測分布の分析
+- CV結果（各フォールドのスコア、平均、標準偏差）
+- Public LBスコア（ユーザー入力）
+- 特徴量情報
+- モデルの特徴
 
 **出力**:
-- 評価用コードブロック
-- 評価結果
-- `Next Insight` 改善示唆
+- 実験レポート（`results/exp[YYYYMMDDHHMMSS]_[description]/exp[timestamp]_report.md`）
+  - **保存場所**: `results/` ディレクトリに保存されます
+  - YAMLフロントマター（metricsにPublic LBスコアを含む）
+  - 実験概要、実装内容、結果、学んだこと、次のステップ
+  - 関連タスク・プロジェクト・ノートへのリンク
 
 **品質チェック**:
-- [ ] 評価指標が適切に計算されている
+- [ ] ユーザーから結果（Public LBスコア等）を受け取った
+- [ ] 関連タスク・プロジェクト・ノートを検索し、提案した
+- [ ] ユーザーに確認を取り、関連情報をレポートに記載した
+- [ ] YAMLフロントマターの`related_task`と`links`に適切な情報を記載した
+- [ ] 評価指標が適切に記載されている
 - [ ] 結果の解釈が客観的
 - [ ] 改善点が明確に示されている
+- [ ] YAMLフロントマターがknowledgeフォルダの様式に合っている
+
+**引き継ぎ**:
+- Validator → Docs Manager: 実験レポート作成完了後、Docs Managerに引き継ぎ、知識化を依頼する
 
 ### Step 6: ドキュメント化
 **担当**: Document Manager
@@ -191,15 +242,55 @@ experimentN/
 2. 適切なコミットメッセージの生成
 3. Gitコミットの実行
 
-**コミットメッセージ例**:
-```
-feat(experiment): カテゴリカル変数の特徴量エンジニアリングを追加
+**コミットメッセージ規約** (Conventional Commits準拠):
 
-- カテゴリカル特徴量のターゲットエンコーディングを実装
-- 数値変数の多項式特徴量を追加
-- RMSEが0.15から0.12に改善
-- クロスバリデーションスコア: 0.118 ± 0.008
+詳細な規約は `.cursor/version_controller_rules.mdc`（運用規約 / SSOT）を参照してください。
+
+**基本形式**:
 ```
+<type>(<scope>): <subject>
+
+<body>
+
+<footer>
+```
+
+**実験の場合**:
+```
+exp(feature): keyword特徴量追加 exp20260112174906
+
+- keywordカラムをターゲットエンコーディングで特徴量化
+- CV F1 Score: 0.7501 ± 0.0123
+- Public LB: 0.80123
+- ベースラインから0.00044改善
+
+Closes: task-20260112170000
+```
+
+**実験スコープの例**:
+- `exp(baseline): ...`: ベースライン実験
+- `exp(feature): ...`: 特徴量エンジニアリング（keyword追加、特徴量追加など）
+- `exp(hyperparameter): ...`: ハイパーパラメータチューニング（C値、max_depthなど）
+- `exp(data): ...`: データ変更（データソース変更、データ分割方法変更など）
+- `exp(model): ...`: モデル変更（LR → XGBoostなど）
+- `exp(preprocessing): ...`: 前処理変更（テキストクリーニング、欠損値処理など）
+- `exp(ensemble): ...`: アンサンブル
+
+**インフラ整備の場合**:
+```
+infra(workflow): 監視スクリプトの追加
+
+- task_watcher.pyを実装
+- 自動タスク変換機能を追加
+```
+
+**インフラスコープの例**:
+- `infra(mlops): ...`: MLOpsパイプライン
+- `infra(workflow): ...`: ワークフロー
+- `infra(script): ...`: スクリプト
+- `infra(template): ...`: テンプレート
+
+**注意**: スコープは英語、説明（subject）は日本語で記述します。
 
 **出力**:
 - Gitコマンド
@@ -235,7 +326,7 @@ feat(experiment): カテゴリカル変数の特徴量エンジニアリング�
 - 評価に失敗した場合
   - 基本的な評価指標から開始
   - 段階的に詳細な評価を追加
-１
+
 #### Document Manager
 - 文書化に失敗した場合
   - 最低限の情報から開始
@@ -333,13 +424,35 @@ feat(experiment): カテゴリカル変数の特徴量エンジニアリング�
 
 ### 関連ドキュメント
 - **基本ルール（チーム憲法）**: `.cursor/kaggle_team.mdc`
+- **Developer 実験運用ルール（運用規約 / SSOT）**: `.cursor/developer_experiment_rules.mdc`
 - **Docs Manager ルール（運用規約 / SSOT）**: `.cursor/docs_manager_rules.mdc`
+- **Version Controller ルール（運用規約 / SSOT）**: `.cursor/version_controller_rules.mdc`
 - **Docs Manager ルール（人間向け入口）**: `docs/docs_manager_rules.md`
 
 ### 実験管理
-- **命名規則**: `experiment{N}_{description}`
-- **ディレクトリ構造**: 標準的な構造に従う
-- **結果記録**: JSON形式でメトリクスを管理
+
+**実験IDの命名規則**:
+- 形式: `exp[YYYYMMDDHHMMSS]_[description]`（タイムスタンプ形式）
+- 例: `exp20260106030720_baseline_tfidf_lr`
+- 例: `exp20260112174906_keyword_tfidf_lr`
+- **重要**: 実験IDは実験開始時の現在時刻を使用して生成します。全ファイルに同じ実験IDを付与します。
+
+**ディレクトリ構造**:
+- **実験コード**: `experiments/exp[YYYYMMDDHHMMSS]_[description]/`
+  - `exp[timestamp]_config.yaml` - 設定ファイル（SSOT）
+  - `exp[timestamp]_train.py` - 訓練スクリプト
+  - `exp[timestamp]_predict.py` - 推論スクリプト
+- **実験結果**: `results/exp[YYYYMMDDHHMMSS]_[description]/`
+  - `exp[timestamp]_metrics.json` - 評価指標（CV Mean, CV Std, Train, Public LB）
+  - `exp[timestamp]_cv_results.json` - CV結果（各フォールドの詳細）
+  - `exp[timestamp]_model.pkl` - モデルファイル（Git管理対象外）
+  - `exp[timestamp]_submission.csv` - 提出ファイル
+  - `exp[timestamp]_report.md` - 実験レポート（Validatorが作成）
+
+**結果記録**:
+- JSON形式でメトリクスを管理（`exp[timestamp]_metrics.json`）
+- CV結果は詳細に記録（`exp[timestamp]_cv_results.json`）
+- 実験レポートはMarkdown形式（`exp[timestamp]_report.md`）
 
 ### 品質保証
 - **チェックリスト**: 各ステップで必ず確認

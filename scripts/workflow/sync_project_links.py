@@ -29,7 +29,7 @@ from typing import Any, Dict, Iterable, List, Optional, Tuple
 import yaml
 
 
-REPO_ROOT = Path(__file__).resolve().parents[1]
+REPO_ROOT = Path(__file__).resolve().parents[2]
 TASKS_ROOT = REPO_ROOT / "knowledge" / "tasks"
 PROJECTS_DIR = TASKS_ROOT / "projects"
 

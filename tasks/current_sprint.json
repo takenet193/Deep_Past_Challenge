@@ -1,6 +1,73 @@
 {
-  "generated_at": "2026-01-06T03:29:41",
+  "generated_at": "2026-01-14T14:03:16",
   "tasks": [
+    {
+      "assigned_agent": null,
+      "assignee": null,
+      "context": [
+        "project_kaggle_disaster_tweets_baseline_improvement",
+        "project_kaggle_disaster_tweets"
+      ],
+      "dependencies": [
+        "exp20260106030720_report"
+      ],
+      "due_date": null,
+      "id": "task-20260112173705",
+      "mode": "experiment",
+      "priority": "high",
+      "project": "kaggle_disaster_tweets_baseline_improvement",
+      "related_notes": [
+        "disaster_tweets_baseline_improvement_ideas_20260112162435",
+        "exp20260106030720_report",
+        "disaster_tweets_eda_20260105180000"
+      ],
+      "source_file": "knowledge/tasks/active/task_disaster_tweets_keyword_feature_20260112173705.md",
+      "status": "in_progress",
+      "tags": [
+        "kaggle",
+        "kaggle_disaster_tweets",
+        "improvement",
+        "feature-engineering",
+        "keyword",
+        "experiment"
+      ],
+      "title": "Disaster Tweets: keyword特徴量の追加実験",
+      "type": "task",
+      "updated_at": "2026-01-12T00:00:00"
+    },
+    {
+      "assigned_agent": null,
+      "assignee": null,
+      "context": [
+        "project_kaggle_disaster_tweets_baseline_improvement",
+        "project_kaggle_disaster_tweets"
+      ],
+      "dependencies": [
+        "exp20260106030720_report"
+      ],
+      "due_date": null,
+      "id": "task-20260112182239",
+      "mode": "experiment",
+      "priority": "high",
+      "project": "kaggle_disaster_tweets_baseline_improvement",
+      "related_notes": [
+        "disaster_tweets_baseline_improvement_ideas_20260112162435",
+        "exp20260106030720_report"
+      ],
+      "source_file": "knowledge/tasks/active/task_disaster_tweets_lr_c_tuning_20260112182239.md",
+      "status": "in_progress",
+      "tags": [
+        "kaggle",
+        "kaggle_disaster_tweets",
+        "improvement",
+        "hyperparameter",
+        "logistic-regression",
+        "experiment"
+      ],
+      "title": "Disaster Tweets: LogisticRegressionのC値チューニング",
+      "type": "task",
+      "updated_at": "2026-01-12T00:00:00"
+    },
     {
       "assigned_agent": null,
       "assignee": null,
@@ -27,6 +94,36 @@
         "discussion"
       ],
       "title": "Disaster Tweets: 参考にすべきDiscussion/Notebookを見つける",
+      "type": "task",
+      "updated_at": "2026-01-05T00:00:00"
+    },
+    {
+      "assigned_agent": null,
+      "assignee": null,
+      "context": [
+        "project_kaggle_disaster_tweets"
+      ],
+      "dependencies": [
+        "task-20260105120011",
+        "task-20260105180000"
+      ],
+      "due_date": null,
+      "id": "task-20260105120020",
+      "mode": "experiment",
+      "priority": "high",
+      "project": "kaggle_disaster_tweets",
+      "related_notes": [
+        "project_kaggle_disaster_tweets",
+        "disaster_tweets_eda_20260105180000"
+      ],
+      "source_file": "knowledge/tasks/active/task_disaster_tweets_baseline_submit_20260105120020.md",
+      "status": "in_progress",
+      "tags": [
+        "kaggle",
+        "kaggle_disaster_tweets",
+        "baseline"
+      ],
+      "title": "Disaster Tweets: 提出して結果を記録する",
       "type": "task",
       "updated_at": "2026-01-05T00:00:00"
     },
@@ -78,6 +175,24 @@
       "title": "Git初期設定とブランチ戦略策定",
       "type": "task",
       "updated_at": "2026-01-05T00:00:00"
+    },
+    {
+      "assigned_agent": null,
+      "assignee": null,
+      "context": [],
+      "dependencies": [],
+      "due_date": null,
+      "id": "task-20260113000005",
+      "mode": "documentation",
+      "priority": "medium",
+      "project": "docs_revision",
+      "related_notes": [],
+      "source_file": "knowledge/tasks/active/task_docs_revision_experiment_flow_20260113000005.md",
+      "status": "in_progress",
+      "tags": [],
+      "title": ".cursor/experiment_flow_instructions.mdc の改訂",
+      "type": "task",
+      "updated_at": "2026-01-14T00:00:00"
     },
     {
       "assigned_agent": "planner",
@@ -180,6 +295,42 @@
       "title": "task_converter.py の実装",
       "type": "task",
       "updated_at": "2026-01-04T00:00:00"
+    },
+    {
+      "assigned_agent": null,
+      "assignee": null,
+      "context": [],
+      "dependencies": [],
+      "due_date": null,
+      "id": "task-20260113000000",
+      "mode": "documentation",
+      "priority": "high",
+      "project": "docs_revision",
+      "related_notes": [],
+      "source_file": "knowledge/tasks/completed/task_docs_revision_readme_20260113000000.md",
+      "status": "completed",
+      "tags": [],
+      "title": "README.md の改訂",
+      "type": "task",
+      "updated_at": "2026-01-14T00:00:00"
+    },
+    {
+      "assigned_agent": null,
+      "assignee": null,
+      "context": [],
+      "dependencies": [],
+      "due_date": null,
+      "id": "task-20260113000001",
+      "mode": "documentation",
+      "priority": "high",
+      "project": "docs_revision",
+      "related_notes": [],
+      "source_file": "knowledge/tasks/completed/task_docs_revision_project_architecture_20260113000001.md",
+      "status": "completed",
+      "tags": [],
+      "title": "docs/project_architecture.md の改訂",
+      "type": "task",
+      "updated_at": "2026-01-14T00:00:00"
     },
     {
       "assigned_agent": null,
@@ -322,6 +473,60 @@
     {
       "assigned_agent": null,
       "assignee": null,
+      "context": [],
+      "dependencies": [],
+      "due_date": null,
+      "id": "task-20260113000002",
+      "mode": "documentation",
+      "priority": "medium",
+      "project": "docs_revision",
+      "related_notes": [],
+      "source_file": "knowledge/tasks/completed/task_docs_revision_workflow_guide_20260113000002.md",
+      "status": "completed",
+      "tags": [],
+      "title": "docs/workflow_guide.md の改訂",
+      "type": "task",
+      "updated_at": "2026-01-14T00:00:00"
+    },
+    {
+      "assigned_agent": null,
+      "assignee": null,
+      "context": [],
+      "dependencies": [],
+      "due_date": null,
+      "id": "task-20260113000003",
+      "mode": "documentation",
+      "priority": "medium",
+      "project": "docs_revision",
+      "related_notes": [],
+      "source_file": "knowledge/tasks/completed/task_docs_revision_scripts_guide_20260113000003.md",
+      "status": "completed",
+      "tags": [],
+      "title": "docs/scripts_guide.md の改訂",
+      "type": "task",
+      "updated_at": "2026-01-14T00:00:00"
+    },
+    {
+      "assigned_agent": null,
+      "assignee": null,
+      "context": [],
+      "dependencies": [],
+      "due_date": null,
+      "id": "task-20260113000004",
+      "mode": "documentation",
+      "priority": "medium",
+      "project": "docs_revision",
+      "related_notes": [],
+      "source_file": "knowledge/tasks/completed/task_docs_revision_kaggle_team_20260113000004.md",
+      "status": "completed",
+      "tags": [],
+      "title": ".cursor/kaggle_team.mdc の改訂",
+      "type": "task",
+      "updated_at": "2026-01-14T00:00:00"
+    },
+    {
+      "assigned_agent": null,
+      "assignee": null,
       "context": [
         "gtd_implementation_plan_20260101",
         "obsidian_gtd_dataview_20251228"
@@ -345,5 +550,5 @@
       "updated_at": "2026-01-05T00:00:00"
     }
   ],
-  "total_tasks": 13
+  "total_tasks": 22
 }

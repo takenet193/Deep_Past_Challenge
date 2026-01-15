@@ -111,7 +111,7 @@ tags: [kaggle, kaggle_disaster_tweets, baseline]
 ### 7. Git管理
 - [ ] 実験コード（`.py`）、`config.yaml`、`exp20260106030720_report.md` をコミット
 - [ ] 結果ファイル（`metrics.json`, `submission.csv`）をコミット
-- [ ] コミットメッセージ: `[exp20260106030720] baseline: TF-IDF + LogisticRegression`
+- [ ] コミットメッセージ: `exp(baseline): ベースラインTF-IDF+LRモデル exp20260106030720`
 
 ## 実現可能性の検討
 
@@ -150,6 +150,7 @@ tags: [kaggle, kaggle_disaster_tweets, baseline]
 - 実験管理ルール: `.cursor/developer_experiment_rules.mdc`
 - テンプレート: `experiments/_template_experiment/`
 - プロジェクトノート: [[project_kaggle_disaster_tweets|project: kaggle_disaster_tweets]]
+- 改善案: [[disaster_tweets_baseline_improvement_ideas_20260112162435|ベースラインからの改善案]]
 
 ## 結果（実施報告）
 - ベースライン実験（exp20260106030720）を実装・実行完了

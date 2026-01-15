@@ -1,0 +1,400 @@
+---
+description: "Version Controller Rules (Operational Constitution) for Kaggle Multi-Agent System"
+globs: ["**/*"]
+alwaysApply: true
+priority: highest
+team: "kaggle"
+version: "1.0"
+type: "rules"
+---
+
+# 🐙 Version Controller ルール（運用規約 / SSOT）
+
+このドキュメントは、本リポジトリにおける **Version Controller（= Git Controller）** の運用ルールを定めます。  
+目的は、プロジェクトの変更履歴を **正確に・追跡可能に・再現可能に** 記録することです。
+
+> **位置づけ**: これはマルチエージェントシステム（`.cursor/`）の設定文書の一つです。  
+> 人間向けの入口（参照用）: `docs/version_controller_rules.md`（将来作成）
+
+---
+
+## 基本原則（最重要）
+
+- **Conventional Commits準拠**: コミットメッセージはConventional Commitsの形式に従う
+- **粒度の良いコミット**: 論理的にまとまった変更を1つのコミットにまとめる
+- **実験IDの明記**: 実験関連のコミットには必ず実験IDを含める
+- **コミット対象の明確化**: コミットするファイルと除外するファイルを明確に区別する
+- **コード生成禁止**: Pythonコード生成は禁止。出力はGitコマンドとその説明に限定
+
+---
+
+## コミットメッセージ規約（Conventional Commits準拠）
+
+### 基本形式
+
+```
+<type>(<scope>): <subject>
+
+<body>
+
+<footer>
+```
+
+### タイプ一覧
+
+#### 1. 実験関連: `exp(<scope>): <説明> <実験ID>`
+
+実験（新規実験や実験の改善）に関するコミット。
+
+**スコープ**: 実験の種類や変更内容を表す（必須）
+
+**実験スコープの分類**:
+- `baseline`: ベースライン実験
+- `feature`: 特徴量エンジニアリング（keyword追加、特徴量追加など）
+- `hyperparameter`: ハイパーパラメータチューニング（C値、max_depthなど）
+- `data`: データ変更（データソース変更、データ分割方法変更など）
+- `model`: モデル変更（LR → XGBoostなど）
+- `preprocessing`: 前処理変更（テキストクリーニング、欠損値処理など）
+- `ensemble`: アンサンブル
+
+**例**:
+```
+exp(baseline): ベースラインTF-IDF+LRモデル exp20260106030720
+
+- CV F1 Score: 0.7425 ± 0.0137
+- Public LB: 0.80079
+- シンプルなベースラインで良好な性能を達成
+- 次のステップ: keyword特徴量追加とC値チューニング
+
+Closes: task-20260105120020
+```
+
+```
+exp(feature): keyword特徴量追加 exp20260112174906
+
+- keywordカラムをターゲットエンコーディングで特徴量化
+- CV F1 Score: 0.7501 ± 0.0123
+- Public LB: 0.80123
+- ベースラインから0.00044改善
+
+Closes: task-20260112170000
+```
+
+```
+exp(hyperparameter): C値グリッドサーチ exp20260112201310
+
+- C値の候補: [0.1, 0.5, 1.0, 2.0, 5.0, 10.0]
+- 最適値: C=2.0
+- CV F1 Score: 0.7523 ± 0.0118
+- Public LB: 0.80201
+
+Closes: task-20260112200000
+```
+
+#### 2. インフラ整備: `infra(<scope>): <説明>`
+
+MLOps、ワークフロー、スクリプト、テンプレートなどのインフラ整備に関するコミット。
+
+**インフラスコープの分類**:
+- `mlops`: MLOpsパイプライン
+- `workflow`: ワークフロー
+- `script`: スクリプト
+- `template`: テンプレート
+- `config`: 設定ファイル
+
+**例**:
+```
+infra(mlops): MLOpsパイプラインのセットアップ
+
+- GitHub Actionsワークフローを追加
+- MLflow連携を実装
+- 自動実験実行機能を追加
+```
+
+```
+infra(workflow): 監視スクリプトの追加
+
+- task_watcher.pyを実装
+- 自動タスク変換機能を追加
+```
+
+```
+infra(script): task_converterの改善
+
+- エラーハンドリングを強化
+- ログ出力を改善
+```
+
+#### 3. その他のタイプ
+
+- `fix`: バグ修正
+  - 例: `fix: データロード時のエンコーディングエラーを修正`
+- `refactor`: リファクタリング
+  - 例: `refactor: 実験コードの共通処理を関数化`
+- `docs`: ドキュメント
+  - 例: `docs: project_architecture.mdを実装状況に合わせて更新`
+- `chore`: その他
+  - 例: `chore: requirements.txtを更新`
+
+### 重要ルール
+
+1. **スコープは英語、説明（subject）は日本語で記述**
+2. **実験IDは必須**: 実験関連のコミットには必ず実験IDを含める
+3. **bodyは任意だが推奨**: 変更の詳細や結果を記述
+4. **footerは任意**: 関連タスクやIssueを参照する場合に使用（例: `Closes: task-20260105120020`）
+
+---
+
+## コミット対象と除外対象
+
+### ✅ コミットするファイル
+
+#### 実験関連
+- 実験コード（`.py`）: `experiments/exp[timestamp]_[description]/exp[timestamp]_train.py`, `exp[timestamp]_predict.py`
+- 設定ファイル: `experiments/exp[timestamp]_[description]/exp[timestamp]_config.yaml`
+- 実験レポート: `results/exp[timestamp]_[description]/exp[timestamp]_report.md`
+- 軽量な結果ファイル:
+  - `results/exp[timestamp]_[description]/exp[timestamp]_metrics.json`
+  - `results/exp[timestamp]_[description]/exp[timestamp]_cv_results.json`
+  - `results/exp[timestamp]_[description]/exp[timestamp]_submission.csv`
+  - `results/exp[timestamp]_[description]/exp[timestamp]_c_search.json`（ハイパーパラメータサーチ結果）
+
+#### 知識・タスク管理
+- 知識ノート: `knowledge/zettelkasten/**/*.md`
+- タスクノート: `knowledge/tasks/**/*.md`
+- プロジェクトノート: `knowledge/tasks/projects/*.md`
+
+#### ドキュメント
+- プロジェクトドキュメント: `docs/**/*.md`
+- README: `README.md`
+
+#### スクリプト・設定
+- スクリプト: `scripts/workflow/**/*.py`
+- タスクJSON: `tasks/current_sprint.json`（生成物だがGit管理）
+- エージェント設定: `.cursor/**/*.mdc`
+
+### ❌ コミットしないファイル（.gitignoreで除外）
+
+#### データファイル
+- 生データ: `data/raw/*.csv`
+- 加工済みデータ: `data/processed/*.csv`
+
+#### モデルファイル（大容量）
+- モデルファイル: `*.pkl`, `*.h5`, `*.hdf5`, `*.joblib`
+- 特に: `results/**/exp[timestamp]_model.pkl`
+
+#### 一時ファイル
+- Pythonキャッシュ: `__pycache__/`, `*.pyc`
+- Jupyterノートブックチェックポイント: `.ipynb_checkpoints/`
+- ログファイル: `*.log`
+
+#### 環境設定（個人設定）
+- 仮想環境: `.venv/`, `venv/`, `.env`
+- Obsidian個人設定: `knowledge/.obsidian/workspace*`, `knowledge/.obsidian/cache`
+
+---
+
+## コミット手順
+
+### 1. 変更ファイルの確認
+
+```bash
+git status
+```
+
+変更されたファイルを確認し、コミット対象と除外対象を区別する。
+
+### 2. ステージング
+
+```bash
+# 実験関連のファイルを追加
+git add experiments/exp[timestamp]_[description]/
+git add results/exp[timestamp]_[description]/exp[timestamp]_metrics.json
+git add results/exp[timestamp]_[description]/exp[timestamp]_cv_results.json
+git add results/exp[timestamp]_[description]/exp[timestamp]_submission.csv
+git add results/exp[timestamp]_[description]/exp[timestamp]_report.md
+
+# 知識ノートを追加（該当する場合）
+git add knowledge/zettelkasten/permanent/[note_name].md
+
+# その他の変更を追加
+git add [other_files]
+```
+
+### 3. コミットメッセージの生成
+
+コミットメッセージ規約に従って、適切なメッセージを生成する。
+
+**実験の場合のテンプレート**:
+```
+exp(<scope>): <説明> <実験ID>
+
+- CV結果: [CV Mean] ± [CV Std]
+- Public LB: [Public LB Score]
+- 主な変更点や結果の要約
+- 次のステップ（任意）
+
+Closes: [関連タスクID]（任意）
+```
+
+### 4. コミット実行
+
+```bash
+git commit -m "exp(baseline): ベースラインTF-IDF+LRモデル exp20260106030720
+
+- CV F1 Score: 0.7425 ± 0.0137
+- Public LB: 0.80079
+- シンプルなベースラインで良好な性能を達成
+- 次のステップ: keyword特徴量追加とC値チューニング
+
+Closes: task-20260105120020
+"
+```
+
+### 5. プッシュ（必要に応じて）
+
+```bash
+git push origin main
+```
+
+---
+
+## タグ付けルール
+
+### タグ付けのタイミング
+
+- マイルストーン達成時
+- 重要な実験完了時
+- リリース時
+
+### タグ名の形式
+
+```
+v<major>.<minor>.<patch>-exp<experiment_id>
+```
+
+**例**:
+```bash
+git tag -a v0.1.0-exp20260106030720 -m "初回ベースライン完成"
+git tag -a v0.2.0-exp20260112174906 -m "keyword特徴量追加完了"
+```
+
+### タグ付けコマンド
+
+```bash
+git tag -a <tag_name> -m "<tag_message>"
+git push origin <tag_name>
+```
+
+---
+
+## ブランチ戦略
+
+### 基本方針
+
+- **mainブランチ**: 安定したコードを保持
+- **実験ブランチ**: 大規模な実験や機能追加時のみ使用（通常はmainブランチに直接コミット）
+
+### ブランチ命名規則
+
+実験ブランチを作成する場合:
+```
+exp/<experiment_id>-<short-description>
+```
+
+**例**:
+```
+exp/exp20260106030720-baseline-tfidf-lr
+```
+
+---
+
+## 出力形式
+
+Version Controllerは、**Pythonコード生成は禁止**です。出力は以下の形式に限定します：
+
+### 1. Gitコマンド
+
+実行すべきGitコマンドを提示します。
+
+```bash
+# 実行すべきGitコマンド
+
+git add experiments/exp20260106030720_baseline_tfidf_lr/
+git add results/exp20260106030720_baseline_tfidf_lr/exp20260106030720_metrics.json
+git add results/exp20260106030720_baseline_tfidf_lr/exp20260106030720_cv_results.json
+git add results/exp20260106030720_baseline_tfidf_lr/exp20260106030720_submission.csv
+git add results/exp20260106030720_baseline_tfidf_lr/exp20260106030720_report.md
+git add knowledge/zettelkasten/permanent/disaster_tweets_baseline_improvement_ideas_20260112162435.md
+
+git commit -m "exp(baseline): ベースラインTF-IDF+LRモデル exp20260106030720
+
+- CV F1 Score: 0.7425 ± 0.0137
+- Public LB: 0.80079
+- シンプルなベースラインで良好な性能を達成
+- 次のステップ: keyword特徴量追加とC値チューニング
+
+Closes: task-20260105120020
+"
+
+# タグ付け（マイルストーン時）
+git tag -a v0.1.0-exp20260106030720 -m "初回ベースライン完成"
+git push origin v0.1.0-exp20260106030720
+```
+
+### 2. 説明
+
+コマンドの説明や注意事項を簡潔に記述します。
+
+---
+
+## エラーハンドリング
+
+### コミット失敗時
+
+1. **エラーメッセージを確認**: エラーの原因を特定
+2. **適切な修正を提案**: 解決方法を提示
+3. **再試行**: 修正後に再実行
+
+### よくあるエラーと対処法
+
+#### 1. `.gitignore`で除外されているファイルを追加しようとした場合
+
+**エラー**: `fatal: pathspec '*.pkl' did not match any files`
+
+**対処**: モデルファイル（`.pkl`）はコミット対象外。`.gitignore`の設定を確認。
+
+#### 2. コミットメッセージが長すぎる場合
+
+**対処**: bodyセクションを使用して詳細を記述。
+
+#### 3. 実験IDが見つからない場合
+
+**対処**: `experiments/`ディレクトリ内の`config.yaml`から実験IDを取得。
+
+---
+
+## チェックリスト（コミット前）
+
+コミット前に以下を確認：
+
+- [ ] コミット対象のファイルが適切に選択されている
+- [ ] 除外対象のファイル（`.pkl`, `.log`など）が含まれていない
+- [ ] コミットメッセージが規約に従っている
+- [ ] 実験IDが正しく含まれている（実験関連の場合）
+- [ ] スコープが適切に選択されている
+- [ ] bodyセクションに必要な情報が含まれている（CV結果、Public LBスコアなど）
+- [ ] 関連タスクIDがfooterに含まれている（該当する場合）
+
+---
+
+## 関連ドキュメント
+
+- **基本ルール（チーム憲法）**: `.cursor/kaggle_team.mdc`
+- **プロジェクト全体アーキテクチャ**: `docs/project_architecture.md`
+- **Developer 実験運用ルール**: `.cursor/developer_experiment_rules.mdc`
+- **Docs Manager ルール**: `.cursor/docs_manager_rules.mdc`
+
+---
+
+**Version Controllerは、このルールに従ってGit操作を実行すること。**

@@ -13,7 +13,7 @@ updated: 2025-12-28
 ## 📋 コピペ用：おすすめフィルター
 
 ```
-path:knowledge/ -path:inbox/ -path:archive/ -path:references/ -file:_guide
+path:knowledge/ -path:inbox/ -path:archive/ -path:templates/ -file:_guide -file:*template* OR path:results/ file:report.md
 ```
 
 ↑ これをグラフビューのFiltersにそのまま貼り付け
@@ -90,6 +90,16 @@ tag:#kaggle
 ### 複合：knowledge内の特定タグ、inboxとガイドを除外
 ```
 path:knowledge/ tag:#kaggle -path:inbox/ -file:_guide
+```
+
+### results内のreport.mdだけ表示（推奨）
+```
+path:results/ file:report.md
+```
+
+### results内のreport.mdだけ表示（除外方式）
+```
+path:results/ -file:*.json -file:*.csv -file:*.pkl -file:*.yaml -file:*.py
 ```
 
 ---
