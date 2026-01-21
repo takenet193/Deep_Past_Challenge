@@ -1,112 +1,55 @@
 {
   "main": {
-    "id": "c02646f845932251",
+    "id": "8274161fe2ab7695",
     "type": "split",
     "children": [
       {
-        "id": "fe6b50c269735993",
+        "id": "e1fa089305f98c29",
         "type": "tabs",
         "children": [
           {
-            "id": "58cff198f1e36156",
+            "id": "c346cbab2968ee3a",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "knowledge/tasks/active/task_disaster_tweets_bert_discussion_20260114141258.md",
+                "file": "knowledge/tasks/_MASTER_TASKS.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "task_disaster_tweets_bert_discussion_20260114141258"
+              "title": "_MASTER_TASKS"
             }
           },
           {
-            "id": "1b438a4ab44796f0",
+            "id": "dd7d99625870f121",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "knowledge/tasks/projects/project_docs_revision.md",
+                "file": "knowledge/tasks/projects/project_git_repository_setup.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "project_docs_revision"
-            }
-          },
-          {
-            "id": "83d5428caf386802",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "knowledge/tasks/active/task_disaster_tweets_improvement_loop_20260105120030.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "task_disaster_tweets_improvement_loop_20260105120030"
-            }
-          },
-          {
-            "id": "8ceb56fb15cd0c77",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "knowledge/tasks/projects/project_kaggle_disaster_tweets_baseline_improvement.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "project_kaggle_disaster_tweets_baseline_improvement"
-            }
-          },
-          {
-            "id": "3ed118c2f15e0ea1",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "knowledge/tasks/active/task_disaster_tweets_bert_discussion_20260114141258.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "task_disaster_tweets_bert_discussion_20260114141258"
-            }
-          },
-          {
-            "id": "5bfcac3cc8d59f02",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "docs/workflow_guide.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "workflow_guide"
+              "title": "project_git_repository_setup"
             }
           }
-        ],
-        "currentTab": 4
+        ]
       }
     ],
     "direction": "vertical"
   },
   "left": {
-    "id": "eb59e7cb5e224b85",
+    "id": "37cfaed465bd57af",
     "type": "split",
     "children": [
       {
-        "id": "5b171d9e1bc9d646",
+        "id": "759e2a0ae0682b0c",
         "type": "tabs",
         "children": [
           {
-            "id": "b91babb90d5e250d",
+            "id": "3d98620d20205c57",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -119,12 +62,12 @@
             }
           },
           {
-            "id": "684b3c766a1aed6d",
+            "id": "f6b8dc3c552b7ee9",
             "type": "leaf",
             "state": {
               "type": "search",
               "state": {
-                "query": "tag:#obsidian",
+                "query": "tag:#revision",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -136,7 +79,7 @@
             }
           },
           {
-            "id": "8069d09803aaace4",
+            "id": "f150514d5c8981e2",
             "type": "leaf",
             "state": {
               "type": "bookmarks",
@@ -145,28 +88,28 @@
               "title": "ブックマーク"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 208.5
   },
   "right": {
-    "id": "285deb46a5ccc1c0",
+    "id": "4baf3adb270f5259",
     "type": "split",
     "children": [
       {
-        "id": "1b9a0eaebdbec6c9",
+        "id": "e35bcad556f28e80",
         "type": "tabs",
         "children": [
           {
-            "id": "14f1b73ecf76e961",
+            "id": "2386360f0edf8e42",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/project_architecture.md",
+                "file": "knowledge/tasks/projects/project_docs_revision.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -176,25 +119,25 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "project_architectureへのバックリンク"
+              "title": "project_docs_revisionへのバックリンク"
             }
           },
           {
-            "id": "bc15845e71798160",
+            "id": "f702c4ff20918359",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/project_architecture.md",
+                "file": "knowledge/tasks/projects/project_docs_revision.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "project_architectureからのアウトゴーイングリンク"
+              "title": "project_docs_revisionからのアウトゴーイングリンク"
             }
           },
           {
-            "id": "e951aff5766c0e67",
+            "id": "39588a9ef9ed79bc",
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -209,7 +152,7 @@
             }
           },
           {
-            "id": "9afc27d1b4f65af8",
+            "id": "6bb4cbd1a8b39134",
             "type": "leaf",
             "state": {
               "type": "all-properties",
@@ -223,18 +166,18 @@
             }
           },
           {
-            "id": "5b30667e52e2f1b8",
+            "id": "ebb45e945e4f7b4e",
             "type": "leaf",
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/project_architecture.md",
+                "file": "knowledge/tasks/projects/project_docs_revision.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "project_architectureのアウトライン"
+              "title": "project_docs_revisionのアウトライン"
             }
           }
         ]
@@ -248,52 +191,51 @@
     "hiddenItems": {
       "switcher:クイックスイッチャーを開く": false,
       "graph:グラフビューを開く": false,
-      "canvas:新規キャンバスを作成": true,
+      "canvas:新規キャンバスを作成": false,
       "daily-notes:今日のデイリーノートを開く": false,
       "templates:テンプレートを挿入": false,
       "command-palette:コマンドパレットを開く": false,
       "bases:Create new base": false
     }
   },
-  "active": "3ed118c2f15e0ea1",
+  "active": "c346cbab2968ee3a",
   "lastOpenFiles": [
-    "docs/portfolio_evaluation_technical_vs_nontechnical.md",
-    "docs/scripts_guide.md",
-    "docs/portfolio_evaluation_rank.md",
-    "results/exp20260115_bert_colab/exp20260115_report.md",
-    "results/exp20260115_bert_colab/exp20260115_metrics.json",
-    "results/exp20260115_bert_colab/exp20260115_submission.csv",
-    "exp20260115_submission.csv",
-    "submission.csv",
-    "experiments/exp20260115_bert_colab/bert.ipynb",
-    "results/exp20260115_bert_colab/README.md",
-    "experiments/exp20260115_bert_colab/README.md",
-    "results/exp20260115_bert_colab",
-    "experiments/exp20260115_bert_colab",
-    "knowledge/inbox/memo_external_gpu_execution_workflow_20260115060219.md",
-    "knowledge/tasks/projects/project_kaggle_disaster_tweets_baseline_improvement.md",
-    "knowledge/tasks/projects/project_kaggle_disaster_tweets_improvement.md",
-    "docs/workflow_guide.md",
-    "knowledge/tasks/active/task_disaster_tweets_bert_discussion_20260114141258.md",
+    "knowledge/tasks/projects/project_git_repository_setup.md",
     "knowledge/tasks/_MASTER_TASKS.md",
-    "README.md",
     "knowledge/tasks/projects/project_docs_revision.md",
-    "knowledge/tasks/active/task_disaster_tweets_improvement_loop_20260105120030.md",
-    "bert.ipynb",
-    "knowledge/tasks/active/task_docs_revision_experiment_flow_20260113000005.md",
+    "knowledge/tasks/someday/task_gtd_next_dataview_query_polish_20260104171000.md",
+    "knowledge/tasks/projects/project_gtd_next.md",
     "results/_template_experiment/expYYYYMMDDHHMMSS_report.md",
-    "docs/experiment_flow_revision_analysis.md",
-    "knowledge/tasks/active/task_docs_revision_kaggle_team_20260113000004.md",
-    "knowledge/tasks/completed/task_docs_revision_kaggle_team_20260113000004.md",
-    "docs/kaggle_team_revision_analysis.md",
-    "knowledge/tasks/active/task_docs_revision_scripts_guide_20260113000003.md",
-    "knowledge/tasks/completed/task_docs_revision_scripts_guide_20260113000003.md",
-    "docs/scripts_guide_revision_analysis.md",
-    "scripts/workflow/move_task.py",
-    "knowledge/tasks/active/task_docs_revision_workflow_guide_20260113000002.md",
-    "knowledge/tasks/completed/task_docs_revision_workflow_guide_20260113000002.md",
-    "scripts/kaggle/submit_with_token.sh",
-    "無題のファイル.canvas",
-    "無題のファイル 1.canvas"
+    "knowledge/tasks/active/task_newcomer_setup_guide_20260121080738.md",
+    "knowledge/tasks/active/task_001_git_setup_20251228.md",
+    "knowledge/templates/zettelkasten/structure/_template_structure.md",
+    "knowledge/templates/zettelkasten/references/_template_reference.md",
+    "knowledge/templates/zettelkasten/permanent/_template_permanent.md",
+    "knowledge/templates/zettelkasten/index/_template_index.md",
+    "knowledge/templates/zettelkasten/structure",
+    "knowledge/templates/zettelkasten/references",
+    "knowledge/templates/zettelkasten/permanent",
+    "knowledge/templates/zettelkasten/index",
+    "knowledge/templates/zettelkasten",
+    "knowledge/templates/inbox/archive/_template_archive_log.md",
+    "knowledge/templates/inbox/archive",
+    "knowledge/templates/inbox/_template_task_candidate.md",
+    "knowledge/templates/inbox/_template_reference.md",
+    "knowledge/templates/inbox/_template_memo.md",
+    "knowledge/templates/inbox/_template_idea.md",
+    "knowledge/templates/inbox/_template_aphorism.md",
+    "knowledge/templates/inbox",
+    "knowledge/templates/tasks/waiting/_template_task_waiting.md",
+    "knowledge/templates/tasks/someday/_template_task_someday.md",
+    "knowledge/templates/tasks/projects/_template_project.md",
+    "knowledge/templates/tasks/completed/_template_task_completed.md",
+    "knowledge/templates/tasks/active/_template_task_active.md",
+    "knowledge/templates/tasks/waiting",
+    "knowledge/templates/tasks/someday",
+    "knowledge/templates/tasks/projects",
+    "knowledge/tasks/templates/zettelkasten/structure/_template_structure.md",
+    "knowledge/tasks/templates/zettelkasten/references/_template_reference.md",
+    "knowledge/tasks/templates/zettelkasten/permanent/_template_permanent.md",
+    "無題のファイル.canvas"
   ]
 }

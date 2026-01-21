@@ -10,11 +10,11 @@ mode: setup
 due_date: 2025-12-30
 context: []
 tags:
-- git
-- setup
-- infrastructure
+  - git
+  - setup
+  - infrastructure
 related_notes: []
-assignee: null
+assignee:
 assigned_agent: developer
 dependencies: []
 created: 2025-12-28
@@ -22,9 +22,9 @@ updated: 2026-01-05
 expected_outcome:
   type: setup
   deliverables:
-  - .gitignore設定
-  - ブランチ戦略ドキュメント
-  - 初回コミット
+    - .gitignore設定
+    - ブランチ戦略ドキュメント
+    - 初回コミット
 ---
 
 # Git初期設定とブランチ戦略策定

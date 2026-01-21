@@ -2,7 +2,7 @@
   "collapse-filter": false,
   "search": "path:knowledge/ -path:inbox/ -path:archive/ -path:templates/ -file:_guide -file:*template* OR path:results/ file:report.md",
   "showTags": true,
-  "showAttachments": true,
+  "showAttachments": false,
   "hideUnresolved": true,
   "showOrphans": true,
   "collapse-color-groups": false,
@@ -18,48 +18,48 @@
       "query": "[\"type\": structure",
       "color": {
         "a": 1,
-        "rgb": 13666597
+        "rgb": 14069084
       }
     },
     {
       "query": "[\"type\": permanent",
       "color": {
         "a": 1,
-        "rgb": 5658327
+        "rgb": 4666030
       }
     },
     {
       "query": "[\"type\": project",
       "color": {
         "a": 1,
-        "rgb": 13162076
+        "rgb": 11659914
       }
     },
     {
       "query": "[\"type\": task",
       "color": {
         "a": 1,
-        "rgb": 1085940
+        "rgb": 3440869
       }
     },
     {
       "query": "[\"type\": report",
       "color": {
         "a": 1,
-        "rgb": 12171493
+        "rgb": 11573733
       }
     }
   ],
   "collapse-display": false,
   "showArrow": false,
-  "textFadeMultiplier": -2,
-  "nodeSizeMultiplier": 2.32350260416667,
-  "lineSizeMultiplier": 4.03060709635417,
+  "textFadeMultiplier": -1.7,
+  "nodeSizeMultiplier": 2.36901475694444,
+  "lineSizeMultiplier": 4.59060329861111,
   "collapse-forces": false,
-  "centerStrength": 0.187093098958333,
+  "centerStrength": 0.266059027777778,
   "repelStrength": 20,
   "linkStrength": 1,
   "linkDistance": 500,
-  "scale": 0.3869668512486387,
+  "scale": 0.152039464254036,
   "close": false
 }

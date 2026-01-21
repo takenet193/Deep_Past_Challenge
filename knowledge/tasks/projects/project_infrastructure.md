@@ -93,7 +93,5 @@ SORT default(completed_date, updated) DESC
 
 ### active
 - [[task_001_git_setup_20251228|task-001: Git初期設定とブランチ戦略策定]]
-
-### completed
-- [[task_002_task_converter_20251228|task-002: task_converter.py の実装]]
+- [[task_newcomer_setup_guide_20260121080738|task-20260121080738: 新しい参加者のためのセットアップガイドを作る]]
 <!-- AUTO:tasks:end -->

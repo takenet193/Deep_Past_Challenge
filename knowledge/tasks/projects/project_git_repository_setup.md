@@ -1,15 +1,18 @@
 ---
 type: project
-id: project-<project>
-title: ""
-project: ""
-created: YYYY-MM-DD
-updated: YYYY-MM-DD
-tags: [project]
+id: project-git_repository_setup
+title: Git Repository Setup
+project: git_repository_setup
+created: 2026-01-21
+updated: 2026-01-21
+tags:
+- project
+- infrastructure
+- git
 links: []
 ---
 
-# Project: （project）
+# Project: Git Repository Setup
 
 ## タスク一覧（Dataview）
 
@@ -31,17 +34,20 @@ SORT choice(status="active",0, choice(status="waiting",1, choice(status="someday
 ```
 
 ## 目的 / 成果物
-- 
+
+このプロジェクトのGitリポジトリを作成し、適切な初期設定を行う。
 
 ## 状態メモ
-- 
+
+- 現在、ローカルにプロジェクトファイルは存在するが、Gitリポジトリがまだ作成されていない状態
 
 ## 関連ノート（情報ハブ）
+
 - 
 
 <!-- AUTO:tasks:start -->
 ## タスク一覧（AUTO）
 
 ### active
-- （自動生成されます）
+- [[task_file_cleanup_20260121071626|task-20260121071626: 旧プロジェクトファイルの整理・削除]]
 <!-- AUTO:tasks:end -->

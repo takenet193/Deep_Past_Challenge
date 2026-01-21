@@ -3,7 +3,7 @@
     { "pattern": "kaggle_team.mdc", "apply": "always" },
     { "pattern": "experiment_flow_instructions.mdc", "apply": "always" },
     { "pattern": "docs_manager_rules.mdc", "apply": "always" },
-    { "pattern": "kaggle_disaster_tweets_project_rules.mdc", "apply": "always" },
-    { "pattern": "developer_experiment_rules.mdc", "apply": "always" }
+    { "pattern": "developer_experiment_rules.mdc", "apply": "always" },
+    { "pattern": "version_controller_rules.mdc", "apply": "always" }
   ]
 }

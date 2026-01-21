@@ -3,9 +3,9 @@ type: task
 id: task-YYYYMMDDHHMMSS
 title: ""
 author: takeikumi
-status: active
+status: template
 priority: medium
-project: ""
+project: null
 mode: ""
 context: []
 dependencies: []
@@ -26,20 +26,12 @@ updated: YYYY-MM-DD
 - [ ] 
 - [ ] 
 
-## 結果
-- （完了後に記入）
+## 結果（実施報告）/ 学び / 次のアクション
+- **結果**: 何を達成したか（完了後に記入）
+- **学び**: 次に活かせること（完了後に記入）
+- **次のアクション**: 必要に応じて（完了後に記入）
 
-## 学び
-- （完了後に記入）
-
-## 次のアクション
-- （必要なら新規タスク化。無ければ「なし」）
-
-
-
-
-
-
+> 注: タスク完了時（`status: completed`に変更時）は、必ずこのセクションに実施報告を記載してください。
 
 
 
