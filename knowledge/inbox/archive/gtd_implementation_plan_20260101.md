@@ -188,6 +188,7 @@ Dataviewで拾いやすく、かつ既存ファイルとの整合を保つ最小
 - `knowledge/inbox/` に「いつ何を思いついたか」の履歴を残せる（後から追跡可能）
 
 ※ 既存の `knowledge/inbox/` はガイド/アーカイブがあるため、運用ルールは `knowledge/inbox/_inbox_guide.md` にも反映する。
+関連タスク候補: [[task_dataviewjs_master_prompt_dependencies_20260121170000|DataviewJSでマスタープロンプト用の依存関係ビューを追加する]]
 
 ### 推奨（SHOULD）
 - `context`（例: `experiment`, `setup`, `development`）

@@ -36,3 +36,4 @@ dependencies: []
 ## メモ
 - 確定したら `knowledge/tasks/{active|waiting|someday}/` にコピーしてSSOT化し、元ファイルは `knowledge/inbox/archive/` へ
 
+

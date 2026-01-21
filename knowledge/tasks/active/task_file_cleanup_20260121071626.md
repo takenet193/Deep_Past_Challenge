@@ -3,7 +3,8 @@ type: task
 id: task-20260121071626
 title: 旧プロジェクトファイルの整理・削除
 author: takeikumi
-status: active
+status: completed
+completed_date: 2026-01-21
 priority: high
 project: git_repository_setup
 mode: cleanup

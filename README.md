@@ -1,4 +1,4 @@
-# Kaggle Competition Sandbox
+# Kaggle Competition 
 
 Kaggleコンペ参加のための統合的な開発環境
 

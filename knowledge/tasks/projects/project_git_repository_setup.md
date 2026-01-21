@@ -50,4 +50,6 @@ SORT choice(status="active",0, choice(status="waiting",1, choice(status="someday
 
 ### active
 - [[task_file_cleanup_20260121071626|task-20260121071626: 旧プロジェクトファイルの整理・削除]]
+- [[task_mcp_setup_20260121090000|task-20260121090000: MCP環境の設定と運用フロー整理]]
+- [[task_initial_commit_20260121161453|task-20260121161453: 初回コミットを行う]]
 <!-- AUTO:tasks:end -->

@@ -50,4 +50,6 @@ dependencies: []
 
 ## メモ
 - 確定したら `knowledge/tasks/{active|waiting|someday}/` にコピーしてSSOT化し、元ファイルは `knowledge/inbox/archive/` へ
+- 関連タスク: [[task_dataviewjs_master_prompt_dependencies_20260121170000|DataviewJSでマスタープロンプト用の依存関係ビューを追加する]]
+
 

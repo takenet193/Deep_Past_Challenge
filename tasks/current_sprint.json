@@ -1,6 +1,27 @@
 {
-  "generated_at": "2026-01-21T08:33:54",
+  "generated_at": "2026-01-21T16:35:14",
   "tasks": [
+    {
+      "assigned_agent": null,
+      "assignee": null,
+      "context": [],
+      "dependencies": [
+        "task-20260121071626",
+        "task-20260121090000"
+      ],
+      "due_date": null,
+      "id": "task-20260121161453",
+      "mode": "setup",
+      "priority": "high",
+      "project": "git_repository_setup",
+      "related_notes": [],
+      "source_file": "knowledge/tasks/active/task_initial_commit_20260121161453.md",
+      "status": "in_progress",
+      "tags": [],
+      "title": "初回コミットを行う",
+      "type": "task",
+      "updated_at": "2026-01-21T00:00:00"
+    },
     {
       "assigned_agent": "developer",
       "assignee": null,
@@ -67,7 +88,30 @@
       "title": "新しい参加者のためのセットアップガイドを作る",
       "type": "task",
       "updated_at": "2026-01-21T00:00:00"
+    },
+    {
+      "assigned_agent": null,
+      "assignee": null,
+      "context": [],
+      "dependencies": [],
+      "due_date": null,
+      "id": "task-20260121090000",
+      "mode": "setup",
+      "priority": "high",
+      "project": "git_repository_setup",
+      "related_notes": [],
+      "source_file": "knowledge/tasks/active/task_mcp_setup_20260121090000.md",
+      "status": "in_progress",
+      "tags": [
+        "git",
+        "mcp",
+        "setup",
+        "infrastructure"
+      ],
+      "title": "MCP環境の設定と運用フロー整理",
+      "type": "task",
+      "updated_at": "2026-01-21T00:00:00"
     }
   ],
-  "total_tasks": 3
+  "total_tasks": 5
 }
