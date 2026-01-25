@@ -30,3 +30,6 @@ Skills 採用に伴いワークフローを再設計するための参考資料�
   - これは GitHub Copilot 向けで、基本的に参照したいのは「カスタム命令」の項です
   - GitHub Copilot 自体が割と統一的な思想で作られているのもあって AI ツールロックインを避ける設計がされている印象
   - Cursor, GitHub Copilot, Claude Code など複数ツールを使っていたり、検討中の段階での設計に参考になるかも
+- [Agent Skills](https://agentskills.io/home)
+  - 先日一緒に話した Agent Skills の公式サイト
+- 
