@@ -66,7 +66,7 @@ mkdir -p tasks experiments results data/{raw,processed} scripts
 
 ### ✅ 実装済みコンポーネント
 
-#### 1. 知識とタスクのデータベース
+### 1. 知識とタスクのデータベース
 - **Zettelkasten**: 知識ノートの管理（`knowledge/zettelkasten/`）
   - `permanent/`: 永続的な知識ノート
   - `references/`: 外部資料の要約やリンク
@@ -81,13 +81,13 @@ mkdir -p tasks experiments results data/{raw,processed} scripts
 - **Inbox**: 未整理の情報（`knowledge/inbox/`）
 - Obsidianで編集、Gitで管理
 
-#### 2. JSON形式タスク管理
+### 2. JSON形式タスク管理
 - `scripts/workflow/task_converter.py`: MarkdownタスクをJSONに変換
 - `scripts/workflow/task_loader.py`: タスクJSONを読み込むユーティリティ
 - `scripts/workflow/sync_project_links.py`: プロジェクトとタスクの相互リンクを同期
 - `tasks/current_sprint.json`: タスクのSSOTスナップショット（生成物だがGit管理）
 
-#### 3. マルチエージェントシステム
+### 3. マルチエージェントシステム
 - **Planner**: タスク分解・計画立案
 - **Developer**: 実装（実験コードと結果ファイルの作成）
 - **Validator**: 評価と実験レポート作成
@@ -96,7 +96,7 @@ mkdir -p tasks experiments results data/{raw,processed} scripts
 
 詳細は `.cursor/kaggle_team.mdc` を参照してください。
 
-#### 4. 実験・結果管理
+### 4. 実験・結果管理
 - **実験ディレクトリ**: `experiments/exp[YYYYMMDDHHMMSS]_[description]/`
   - `exp[timestamp]_config.yaml`: 実験設定ファイル
   - `exp[timestamp]_train.py`: 学習スクリプト
@@ -111,7 +111,7 @@ mkdir -p tasks experiments results data/{raw,processed} scripts
 
 ### ⏳ 将来実装予定コンポーネント
 
-#### 5. MLOpsパイプライン
+### 5. MLOpsパイプライン
 - GitHub Actionsによる自動実験実行
 - MLflowによる実験管理
 - Weights & Biasesによる可視化
@@ -119,7 +119,7 @@ mkdir -p tasks experiments results data/{raw,processed} scripts
 
 詳細は `docs/project_architecture.md` の「将来実装機能の詳細設計」セクションを参照してください。
 
-#### 監視スクリプトシステム
+### 監視スクリプトシステム
 - `task_watcher.py`: タスクファイルの変更を監視
 - `knowledge_watcher.py`: 知識ノートの変更を監視
 - `experiment_watcher.py`: 実験ファイルの変更を監視
@@ -329,8 +329,8 @@ pip install -r requirements.txt
 ### 2. ディレクトリの作成
 
 ```bash
-mkdir -p knowledge/{inbox,zettelkasten/{permanent,references,structure,index},tasks/{active,waiting,someday,completed,archive,projects/{archive}},templates}
-mkdir -p tasks experiments results data/{raw,processed} scripts
+mkdir -p knowledge/{inbox,zettelkasten/{permanent,references,structure,index},tasks/{active,waiting,someday,completed,archive,projects/{archive}},templates} \
+  tasks experiments results data/{raw,processed} scripts
 ```
 
 ### 3. Obsidianの設定

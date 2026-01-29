@@ -4,104 +4,109 @@
     "type": "split",
     "children": [
       {
-        "id": "e1fa089305f98c29",
+        "id": "ab6e27d6f0098398",
         "type": "tabs",
         "children": [
           {
-            "id": "c346cbab2968ee3a",
+            "id": "888c717f382c172e",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "knowledge/tasks/_MASTER_TASKS.md",
+                "file": "knowledge/inbox/task_refactor_20260124.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "_MASTER_TASKS"
+              "title": "task_refactor_20260124"
             }
           },
           {
-            "id": "dd7d99625870f121",
+            "id": "cd7a29a99ca73a7a",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "knowledge/tasks/projects/project_git_repository_setup.md",
+                "file": "docs/components/multi_agent_system.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "project_git_repository_setup"
+              "title": "multi_agent_system"
             }
           },
           {
-            "id": "ce0f3a9c10a5247f",
+            "id": "5e6ca933527d1f43",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "knowledge/tasks/active/task_initial_commit_20260121161453.md",
+                "file": "docs/system_overview.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "task_initial_commit_20260121161453"
+              "title": "system_overview"
             }
           },
           {
-            "id": "3a79cd126511d885",
+            "id": "615f7b658673ee45",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "knowledge/tasks/active/task_initial_commit_20260121161453.md",
+                "file": "knowledge/tasks/projects/project_docs_refactor.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "task_initial_commit_20260121161453"
+              "title": "project_docs_refactor"
             }
           },
           {
-            "id": "3b1f7b4ce9de7e47",
+            "id": "285d67db492598db",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "knowledge/tasks/active/task_mcp_setup_20260121090000.md",
+                "file": "knowledge/tasks/projects/project_docs_refactor.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "task_mcp_setup_20260121090000"
+              "title": "project_docs_refactor"
             }
           },
           {
-            "id": "fbcb92aa61e07103",
+            "id": "74583ab0caec0bd1",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "knowledge/tasks/active/task_mcp_setup_20260121090000.md",
+                "file": "knowledge/tasks/active/task_docs_refactor_execute_20260123130000.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "task_mcp_setup_20260121090000"
+              "title": "task_docs_refactor_execute_20260123130000"
             }
           },
           {
-            "id": "d1f4f02ee0b6de29",
+            "id": "f5f87ab1efb69a45",
             "type": "leaf",
             "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "グラフビュー"
+              "type": "markdown",
+              "state": {
+                "file": "docs/components/knowledge_database.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "knowledge_database"
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -133,7 +138,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "tag:#revision",
+                "query": "task_re",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -154,8 +159,7 @@
               "title": "ブックマーク"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -264,44 +268,43 @@
       "bases:Create new base": false
     }
   },
-  "active": "c346cbab2968ee3a",
+  "active": "615f7b658673ee45",
   "lastOpenFiles": [
-    "knowledge/tasks/projects/project_git_repository_setup.md",
-    "knowledge/tasks/active/task_mcp_setup_20260121090000.md",
-    "knowledge/tasks/active/task_initial_commit_20260121161453.md",
+    "docs/components/multi_agent_system.md",
+    "results/docs_audit_check.json",
+    "results/docs_audit_20260129234102.json",
+    "docs/scripts/scripts_troubleshooting.md",
+    "docs/scripts/scripts_workflow.md",
+    "docs/scripts/kaggle_scripts.md",
+    "docs/scripts/workflow_scripts.md",
+    "docs/scripts",
+    "docs/project_architecture.md",
+    "docs/system_overview.md",
+    "docs/workflow/workflow_best_practices.md",
+    "knowledge/tasks/projects/project_docs_refactor.md",
+    "docs/workflow/workflow_troubleshooting.md",
+    "knowledge/tasks/active/task_docs_refactor_execute_20260123130000.md",
+    "docs/workflow/workflow_examples.md",
+    "docs/components/knowledge_database.md",
+    "docs/workflow/workflow_agent_flow.md",
+    "docs/workflow/workflow_steps.md",
+    "docs/workflow",
+    "results/docs_audit_20260129232608.json",
+    "docs/future_features.md",
+    "docs/roadmap.md",
+    "docs/components/experiment_management.md",
+    "docs/components/task_management.md",
+    "docs/components",
+    "knowledge/tasks/active/task_docs_audit_20260123120000.md",
+    "completed",
+    "results/docs_audit_20260129224432.json",
+    "scripts/docs/audit_docs.py",
+    "scripts/docs",
+    "knowledge/inbox/task_refactor_20260124.md",
+    "knowledge/zettelkasten/permanent/context_engineering_human_role_ssot_20260104183000.md",
+    "knowledge/tasks/active/task_docs_manager_rules_update_20260123140000.md",
+    "knowledge/inbox/task_refactor_20260123.md",
     "knowledge/tasks/_MASTER_TASKS.md",
-    "knowledge/inbox/task_dataviewjs_master_prompt_dependencies_20260121170000.md",
-    "env.example",
-    "mcp_config.json",
-    "mcp_setup/env.example",
-    "mcp_setup/scripts/generate_mcp_config.sh",
-    "mcp_setup/scripts/generate_mcp_config.ps1",
-    "mcp_setup/scripts",
-    "mcp_setup/README.md",
-    "mcp_setup/mcp_config.template.json",
-    "mcp_setup",
-    "knowledge/tasks/active/task_001_git_setup_20251228.md",
-    "knowledge/tasks/projects/project_docs_revision.md",
-    "knowledge/tasks/someday/task_gtd_next_dataview_query_polish_20260104171000.md",
-    "knowledge/tasks/projects/project_gtd_next.md",
-    "results/_template_experiment/expYYYYMMDDHHMMSS_report.md",
-    "knowledge/tasks/active/task_newcomer_setup_guide_20260121080738.md",
-    "knowledge/templates/zettelkasten/structure/_template_structure.md",
-    "knowledge/templates/zettelkasten/references/_template_reference.md",
-    "knowledge/templates/zettelkasten/permanent/_template_permanent.md",
-    "knowledge/templates/zettelkasten/index/_template_index.md",
-    "knowledge/templates/zettelkasten/structure",
-    "knowledge/templates/zettelkasten/references",
-    "knowledge/templates/inbox/archive/_template_archive_log.md",
-    "knowledge/templates/inbox/_template_task_candidate.md",
-    "knowledge/templates/inbox/_template_reference.md",
-    "knowledge/templates/inbox/_template_memo.md",
-    "knowledge/templates/inbox/_template_idea.md",
-    "knowledge/templates/inbox/_template_aphorism.md",
-    "knowledge/templates/tasks/waiting/_template_task_waiting.md",
-    "knowledge/templates/tasks/someday/_template_task_someday.md",
-    "knowledge/templates/tasks/projects/_template_project.md",
-    "knowledge/templates/tasks/completed/_template_task_completed.md",
     "無題のファイル.canvas"
   ]
 }

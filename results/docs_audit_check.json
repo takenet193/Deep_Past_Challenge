@@ -1,0 +1,1563 @@
+{
+  "line_count_violations": [
+    {
+      "file": "README.md",
+      "lines": 374
+    },
+    {
+      "file": "docs/components/multi_agent_system.md",
+      "lines": 468
+    },
+    {
+      "file": "docs/workflow/workflow_steps.md",
+      "lines": 335
+    },
+    {
+      "file": "knowledge/inbox/archive/gtd_implementation_plan_20260101.md",
+      "lines": 332
+    },
+    {
+      "file": "knowledge/inbox/langchain_implementation_plan_20260112.md",
+      "lines": 1249
+    },
+    {
+      "file": "knowledge/inbox/reference_experiment_workflow_comparison_20260105.md",
+      "lines": 323
+    },
+    {
+      "file": "knowledge/tasks/active/task_docs_manager_rules_update_20260123140000.md",
+      "lines": 316
+    }
+  ],
+  "heading_level_violations": [
+    {
+      "file": "knowledge/inbox/archive/gtd_implementation_plan_20260101.md",
+      "line": 159,
+      "heading": "id生成規則（提案：プロジェクト全体で統一）",
+      "level": 4
+    },
+    {
+      "file": "knowledge/inbox/archive/gtd_implementation_plan_20260101.md",
+      "line": 202,
+      "heading": "人間担当（assignee）とAI担当（assigned_agent）の違い",
+      "level": 4
+    },
+    {
+      "file": "knowledge/inbox/langchain_implementation_plan_20260112.md",
+      "line": 579,
+      "heading": "Plannerエージェント",
+      "level": 4
+    },
+    {
+      "file": "knowledge/inbox/langchain_implementation_plan_20260112.md",
+      "line": 624,
+      "heading": "Developerエージェント",
+      "level": 4
+    },
+    {
+      "file": "knowledge/inbox/langchain_implementation_plan_20260112.md",
+      "line": 675,
+      "heading": "Validatorエージェント",
+      "level": 4
+    },
+    {
+      "file": "knowledge/inbox/langchain_implementation_plan_20260112.md",
+      "line": 866,
+      "heading": "高評価項目（8点以上）",
+      "level": 4
+    },
+    {
+      "file": "knowledge/inbox/langchain_implementation_plan_20260112.md",
+      "line": 893,
+      "heading": "中評価項目（6-7点）",
+      "level": 4
+    },
+    {
+      "file": "knowledge/inbox/langchain_implementation_plan_20260112.md",
+      "line": 905,
+      "heading": "低評価項目（5点以下）",
+      "level": 4
+    },
+    {
+      "file": "knowledge/inbox/langchain_implementation_plan_20260112.md",
+      "line": 933,
+      "heading": "1. 厳密な制御",
+      "level": 4
+    },
+    {
+      "file": "knowledge/inbox/langchain_implementation_plan_20260112.md",
+      "line": 945,
+      "heading": "2. 可観測性とデバッグ",
+      "level": 4
+    },
+    {
+      "file": "knowledge/inbox/langchain_implementation_plan_20260112.md",
+      "line": 957,
+      "heading": "3. テスト容易性",
+      "level": 4
+    },
+    {
+      "file": "knowledge/inbox/langchain_implementation_plan_20260112.md",
+      "line": 969,
+      "heading": "4. 拡張性",
+      "level": 4
+    },
+    {
+      "file": "knowledge/inbox/langchain_implementation_plan_20260112.md",
+      "line": 981,
+      "heading": "5. 自動化の可能性",
+      "level": 4
+    },
+    {
+      "file": "knowledge/inbox/langchain_implementation_plan_20260112.md",
+      "line": 992,
+      "heading": "6. 再現性",
+      "level": 4
+    },
+    {
+      "file": "knowledge/inbox/langchain_implementation_plan_20260112.md",
+      "line": 1005,
+      "heading": "1. 実装コスト",
+      "level": 4
+    },
+    {
+      "file": "knowledge/inbox/langchain_implementation_plan_20260112.md",
+      "line": 1017,
+      "heading": "2. 複雑性の増加",
+      "level": 4
+    },
+    {
+      "file": "knowledge/inbox/langchain_implementation_plan_20260112.md",
+      "line": 1029,
+      "heading": "3. Cursor IDEとの統合",
+      "level": 4
+    },
+    {
+      "file": "knowledge/inbox/langchain_implementation_plan_20260112.md",
+      "line": 1041,
+      "heading": "4. パフォーマンス",
+      "level": 4
+    },
+    {
+      "file": "knowledge/inbox/langchain_implementation_plan_20260112.md",
+      "line": 1052,
+      "heading": "5. メンテナンス",
+      "level": 4
+    },
+    {
+      "file": "knowledge/inbox/langchain_implementation_plan_20260112.md",
+      "line": 1063,
+      "heading": "6. 学習曲線",
+      "level": 4
+    },
+    {
+      "file": "knowledge/inbox/langchain_implementation_plan_20260112.md",
+      "line": 1074,
+      "heading": "7. ユーザー体験",
+      "level": 4
+    },
+    {
+      "file": "knowledge/inbox/langchain_implementation_plan_20260112.md",
+      "line": 1093,
+      "heading": "フェーズ1: 選択的実装（1-2週間）",
+      "level": 4
+    },
+    {
+      "file": "knowledge/inbox/langchain_implementation_plan_20260112.md",
+      "line": 1115,
+      "heading": "フェーズ2: 統合レイヤー（1週間）",
+      "level": 4
+    },
+    {
+      "file": "knowledge/inbox/langchain_implementation_plan_20260112.md",
+      "line": 1135,
+      "heading": "フェーズ3: 段階的移行（2-4週間）",
+      "level": 4
+    },
+    {
+      "file": "knowledge/tasks/active/task_docs_audit_20260123120000.md",
+      "line": 107,
+      "heading": "1. ファイル行数違反（300行超）",
+      "level": 4
+    },
+    {
+      "file": "knowledge/tasks/active/task_docs_audit_20260123120000.md",
+      "line": 120,
+      "heading": "2. 見出しレベル違反（#### 以降使用）",
+      "level": 4
+    },
+    {
+      "file": "knowledge/tasks/active/task_docs_audit_20260123120000.md",
+      "line": 134,
+      "heading": "3. リンク切れ",
+      "level": 4
+    },
+    {
+      "file": "knowledge/tasks/active/task_docs_audit_20260123120000.md",
+      "line": 148,
+      "heading": "4. ファイル名と内容の不一致",
+      "level": 4
+    },
+    {
+      "file": "knowledge/tasks/active/task_docs_audit_20260123120000.md",
+      "line": 160,
+      "heading": "5. 内容重複・冗長な説明",
+      "level": 4
+    },
+    {
+      "file": "knowledge/tasks/active/task_docs_audit_20260123120000.md",
+      "line": 170,
+      "heading": "6. リポジトリに含めるべきでないファイル",
+      "level": 4
+    },
+    {
+      "file": "knowledge/tasks/active/task_docs_audit_20260123120000.md",
+      "line": 174,
+      "heading": "7. リンク表記の不統一",
+      "level": 4
+    },
+    {
+      "file": "knowledge/tasks/active/task_docs_audit_20260123120000.md",
+      "line": 178,
+      "heading": "8. 長い行（100文字超）",
+      "level": 4
+    },
+    {
+      "file": "knowledge/tasks/active/task_docs_manager_rules_update_20260123140000.md",
+      "line": 49,
+      "heading": "ルール",
+      "level": 4
+    },
+    {
+      "file": "knowledge/tasks/active/task_docs_manager_rules_update_20260123140000.md",
+      "line": 56,
+      "heading": "実装方針",
+      "level": 4
+    },
+    {
+      "file": "knowledge/tasks/active/task_docs_manager_rules_update_20260123140000.md",
+      "line": 63,
+      "heading": "ルール",
+      "level": 4
+    },
+    {
+      "file": "knowledge/tasks/active/task_docs_manager_rules_update_20260123140000.md",
+      "line": 70,
+      "heading": "実装方針",
+      "level": 4
+    },
+    {
+      "file": "knowledge/tasks/active/task_docs_manager_rules_update_20260123140000.md",
+      "line": 76,
+      "heading": "ルール",
+      "level": 4
+    },
+    {
+      "file": "knowledge/tasks/active/task_docs_manager_rules_update_20260123140000.md",
+      "line": 83,
+      "heading": "実装方針",
+      "level": 4
+    },
+    {
+      "file": "knowledge/tasks/active/task_docs_manager_rules_update_20260123140000.md",
+      "line": 89,
+      "heading": "ルール",
+      "level": 4
+    },
+    {
+      "file": "knowledge/tasks/active/task_docs_manager_rules_update_20260123140000.md",
+      "line": 95,
+      "heading": "実装方針",
+      "level": 4
+    },
+    {
+      "file": "knowledge/tasks/active/task_docs_manager_rules_update_20260123140000.md",
+      "line": 101,
+      "heading": "ルール",
+      "level": 4
+    },
+    {
+      "file": "knowledge/tasks/active/task_docs_manager_rules_update_20260123140000.md",
+      "line": 110,
+      "heading": "実装方針",
+      "level": 4
+    },
+    {
+      "file": "knowledge/tasks/active/task_docs_manager_rules_update_20260123140000.md",
+      "line": 116,
+      "heading": "ルール",
+      "level": 4
+    },
+    {
+      "file": "knowledge/tasks/active/task_docs_manager_rules_update_20260123140000.md",
+      "line": 124,
+      "heading": "実装方針",
+      "level": 4
+    },
+    {
+      "file": "knowledge/tasks/active/task_docs_manager_rules_update_20260123140000.md",
+      "line": 130,
+      "heading": "ルール",
+      "level": 4
+    },
+    {
+      "file": "knowledge/tasks/active/task_docs_manager_rules_update_20260123140000.md",
+      "line": 137,
+      "heading": "実装方針",
+      "level": 4
+    },
+    {
+      "file": "knowledge/tasks/active/task_docs_manager_rules_update_20260123140000.md",
+      "line": 143,
+      "heading": "ルール",
+      "level": 4
+    },
+    {
+      "file": "knowledge/tasks/active/task_docs_manager_rules_update_20260123140000.md",
+      "line": 149,
+      "heading": "実装方針",
+      "level": 4
+    },
+    {
+      "file": "knowledge/tasks/active/task_docs_refactor_execute_20260123130000.md",
+      "line": 42,
+      "heading": "分割基準",
+      "level": 4
+    },
+    {
+      "file": "knowledge/tasks/active/task_docs_refactor_execute_20260123130000.md",
+      "line": 50,
+      "heading": "分割後の構成",
+      "level": 4
+    },
+    {
+      "file": "knowledge/tasks/active/task_docs_refactor_execute_20260123130000.md",
+      "line": 57,
+      "heading": "修正方法",
+      "level": 4
+    },
+    {
+      "file": "knowledge/tasks/active/task_docs_refactor_execute_20260123130000.md",
+      "line": 68,
+      "heading": "修正方法",
+      "level": 4
+    },
+    {
+      "file": "knowledge/tasks/active/task_docs_refactor_execute_20260123130000.md",
+      "line": 74,
+      "heading": "修正方法",
+      "level": 4
+    },
+    {
+      "file": "knowledge/tasks/active/task_docs_refactor_execute_20260123130000.md",
+      "line": 83,
+      "heading": "修正方法",
+      "level": 4
+    },
+    {
+      "file": "knowledge/tasks/active/task_docs_refactor_execute_20260123130000.md",
+      "line": 92,
+      "heading": "修正方法",
+      "level": 4
+    },
+    {
+      "file": "knowledge/tasks/active/task_docs_refactor_execute_20260123130000.md",
+      "line": 98,
+      "heading": "対応方法",
+      "level": 4
+    },
+    {
+      "file": "knowledge/zettelkasten/references/niklas_luhmann_archiv_ms_2906_0001_20260104.md",
+      "line": 61,
+      "heading": "1)",
+      "level": 4
+    },
+    {
+      "file": "knowledge/zettelkasten/references/niklas_luhmann_archiv_ms_2906_0001_20260104.md",
+      "line": 64,
+      "heading": "2)",
+      "level": 4
+    },
+    {
+      "file": "knowledge/zettelkasten/references/niklas_luhmann_archiv_ms_2906_0001_20260104.md",
+      "line": 69,
+      "heading": "3)",
+      "level": 4
+    },
+    {
+      "file": "knowledge/zettelkasten/references/niklas_luhmann_archiv_ms_2906_0001_20260104.md",
+      "line": 72,
+      "heading": "4)",
+      "level": 4
+    },
+    {
+      "file": "knowledge/zettelkasten/references/niklas_luhmann_archiv_ms_2906_0001_20260104.md",
+      "line": 77,
+      "heading": "5)",
+      "level": 4
+    }
+  ],
+  "broken_links": [
+    {
+      "file": "knowledge/inbox/archive/aphorism_mutual_surprise_communication_20260104.md",
+      "line": 19,
+      "link": "luhmann_communicating_with_slip_boxes_20260104|Communicating with Slip Boxes（ルーマン）",
+      "text": "luhmann_communicating_with_slip_boxes_20260104|Communicating with Slip Boxes（ルーマン）",
+      "link_type": "wiki"
+    },
+    {
+      "file": "knowledge/inbox/archive/aphorism_note_quality_network_links_20260104.md",
+      "line": 19,
+      "link": "luhmann_communicating_with_slip_boxes_20260104|Communicating with Slip Boxes（ルーマン）",
+      "text": "luhmann_communicating_with_slip_boxes_20260104|Communicating with Slip Boxes（ルーマン）",
+      "link_type": "wiki"
+    },
+    {
+      "file": "knowledge/inbox/archive/gtd_implementation_plan_20260101.md",
+      "line": 26,
+      "link": "context_engineering_human_role_ssot_20260104183000|コンテクストエンジニアリングにおける「人間の役割＝SSOT整備」という再定義",
+      "text": "context_engineering_human_role_ssot_20260104183000|コンテクストエンジニアリングにおける「人間の役割＝SSOT整備」という再定義",
+      "link_type": "wiki"
+    },
+    {
+      "file": "knowledge/inbox/archive/gtd_implementation_plan_20260101.md",
+      "line": 191,
+      "link": "task_dataviewjs_master_prompt_dependencies_20260121170000|DataviewJSでマスタープロンプト用の依存関係ビューを追加する",
+      "text": "task_dataviewjs_master_prompt_dependencies_20260121170000|DataviewJSでマスタープロンプト用の依存関係ビューを追加する",
+      "link_type": "wiki"
+    },
+    {
+      "file": "knowledge/inbox/archive/idea_20251227.md",
+      "line": 60,
+      "link": "https://www.jhiblog.org/2019/04/17/ruminant-machines-a-twentieth-century-episode-in-the-material-history-of-ideas/",
+      "text": "Ruminant Machines - 知識管理の歴史",
+      "link_type": "markdown"
+    },
+    {
+      "file": "knowledge/inbox/archive/idea_20251227.md",
+      "line": 61,
+      "link": "https://www.unibas.ch/en/Research/Research-in-Basel/Researchers/Portraet-Markus-Krajewski.html",
+      "text": "Markus Krajewski - 研究者ポートレート",
+      "link_type": "markdown"
+    },
+    {
+      "file": "knowledge/inbox/archive/idea_20251227.md",
+      "line": 65,
+      "link": "https://www.amazon.co.jp/dp/B0G3587Z2J",
+      "text": "GTDでチームを強化する（Amazon）",
+      "link_type": "markdown"
+    },
+    {
+      "file": "knowledge/inbox/task_dataviewjs_master_prompt_dependencies_20260121170000.md",
+      "line": 31,
+      "link": "gtd_implementation_plan_20260101|GTD実装計画書（Obsidian/Dataview中心）",
+      "text": "gtd_implementation_plan_20260101|GTD実装計画書（Obsidian/Dataview中心）",
+      "link_type": "wiki"
+    },
+    {
+      "file": "knowledge/inbox/task_dataviewjs_master_prompt_dependencies_20260121170000.md",
+      "line": 38,
+      "link": "gtd_implementation_plan_20260101|GTD実装計画書（Obsidian/Dataview中心） - Kaggle_sandbox",
+      "text": "gtd_implementation_plan_20260101|GTD実装計画書（Obsidian/Dataview中心） - Kaggle_sandbox",
+      "link_type": "wiki"
+    },
+    {
+      "file": "knowledge/inbox/task_dataviewjs_master_prompt_dependencies_20260121170000.md",
+      "line": 39,
+      "link": "task_parent_project_concept_20260121062656|親プロジェクトの概念考える",
+      "text": "task_parent_project_concept_20260121062656|親プロジェクトの概念考える",
+      "link_type": "wiki"
+    },
+    {
+      "file": "knowledge/inbox/task_parent_project_concept_20260121062656.md",
+      "line": 53,
+      "link": "task_dataviewjs_master_prompt_dependencies_20260121170000|DataviewJSでマスタープロンプト用の依存関係ビューを追加する",
+      "text": "task_dataviewjs_master_prompt_dependencies_20260121170000|DataviewJSでマスタープロンプト用の依存関係ビューを追加する",
+      "link_type": "wiki"
+    },
+    {
+      "file": "knowledge/inbox/task_refactor_20260123.md",
+      "line": 71,
+      "link": "./docs/title.md",
+      "text": "title",
+      "link_type": "markdown"
+    },
+    {
+      "file": "knowledge/inbox/task_refactor_20260123.md",
+      "line": 76,
+      "link": "docs/project_architecture.md",
+      "text": "project_architecture",
+      "link_type": "markdown"
+    },
+    {
+      "file": "knowledge/inbox/task_refactor_20260123.md",
+      "line": 86,
+      "link": "docs/project_architecture.md",
+      "text": "project_architecture",
+      "link_type": "markdown"
+    },
+    {
+      "file": "knowledge/inbox/task_refactor_20260124.md",
+      "line": 26,
+      "link": "https://zenn.dev/ttks/articles/a54c7520f827be",
+      "text": "Anthropicハッカソン優勝者のClaude Code設定集「everything-claude-code」を読み解く",
+      "link_type": "markdown"
+    },
+    {
+      "file": "knowledge/inbox/task_refactor_20260124.md",
+      "line": 29,
+      "link": "https://zenn.dev/microsoft/articles/github_copilot_advanced",
+      "text": "GitHub Copilot を極める会",
+      "link_type": "markdown"
+    },
+    {
+      "file": "knowledge/inbox/task_refactor_20260124.md",
+      "line": 33,
+      "link": "https://agentskills.io/home",
+      "text": "Agent Skills",
+      "link_type": "markdown"
+    },
+    {
+      "file": "knowledge/tasks/active/task_001_git_setup_20251228.md",
+      "line": 64,
+      "link": "project_infrastructure|project: infrastructure",
+      "text": "project_infrastructure|project: infrastructure",
+      "link_type": "wiki"
+    },
+    {
+      "file": "knowledge/tasks/active/task_docs_audit_20260123120000.md",
+      "line": 68,
+      "link": "./docs/title.md",
+      "text": "title",
+      "link_type": "markdown"
+    },
+    {
+      "file": "knowledge/tasks/active/task_docs_audit_20260123120000.md",
+      "line": 287,
+      "link": "project_docs_refactor|project: docs_refactor",
+      "text": "project_docs_refactor|project: docs_refactor",
+      "link_type": "wiki"
+    },
+    {
+      "file": "knowledge/tasks/active/task_docs_manager_rules_update_20260123140000.md",
+      "line": 131,
+      "link": "./docs/title.md",
+      "text": "title",
+      "link_type": "markdown"
+    },
+    {
+      "file": "knowledge/tasks/active/task_docs_refactor_execute_20260123130000.md",
+      "line": 77,
+      "link": "./docs/title.md",
+      "text": "title",
+      "link_type": "markdown"
+    },
+    {
+      "file": "knowledge/tasks/active/task_docs_refactor_execute_20260123130000.md",
+      "line": 201,
+      "link": "project_docs_refactor|project: docs_refactor",
+      "text": "project_docs_refactor|project: docs_refactor",
+      "link_type": "wiki"
+    },
+    {
+      "file": "knowledge/tasks/active/task_file_cleanup_20260121071626.md",
+      "line": 68,
+      "link": "project_git_repository_setup|project: git_repository_setup",
+      "text": "project_git_repository_setup|project: git_repository_setup",
+      "link_type": "wiki"
+    },
+    {
+      "file": "knowledge/tasks/active/task_initial_commit_20260121161453.md",
+      "line": 41,
+      "link": "project_git_repository_setup|project: git_repository_setup",
+      "text": "project_git_repository_setup|project: git_repository_setup",
+      "link_type": "wiki"
+    },
+    {
+      "file": "knowledge/tasks/active/task_mcp_setup_20260121090000.md",
+      "line": 62,
+      "link": "project_git_repository_setup|project: git_repository_setup",
+      "text": "project_git_repository_setup|project: git_repository_setup",
+      "link_type": "wiki"
+    },
+    {
+      "file": "knowledge/tasks/active/task_newcomer_setup_guide_20260121080738.md",
+      "line": 63,
+      "link": "project_infrastructure|project: infrastructure",
+      "text": "project_infrastructure|project: infrastructure",
+      "link_type": "wiki"
+    },
+    {
+      "file": "knowledge/tasks/projects/project_infrastructure.md",
+      "line": 95,
+      "link": "task_001_git_setup_20251228|task-001: Git初期設定とブランチ戦略策定",
+      "text": "task_001_git_setup_20251228|task-001: Git初期設定とブランチ戦略策定",
+      "link_type": "wiki"
+    },
+    {
+      "file": "knowledge/tasks/projects/project_infrastructure.md",
+      "line": 96,
+      "link": "task_newcomer_setup_guide_20260121080738|task-20260121080738: 新しい参加者のためのセットアップガイドを作る",
+      "text": "task_newcomer_setup_guide_20260121080738|task-20260121080738: 新しい参加者のためのセットアップガイドを作る",
+      "link_type": "wiki"
+    },
+    {
+      "file": "knowledge/zettelkasten/permanent/ai_knowledge_reference_in_cursor_20260104190000.md",
+      "line": 21,
+      "link": "リンク",
+      "text": "リンク",
+      "link_type": "wiki"
+    },
+    {
+      "file": "knowledge/zettelkasten/permanent/ai_knowledge_reference_in_cursor_20260104190000.md",
+      "line": 42,
+      "link": "...",
+      "text": "...",
+      "link_type": "wiki"
+    },
+    {
+      "file": "knowledge/zettelkasten/permanent/ai_knowledge_reference_in_cursor_20260104190000.md",
+      "line": 51,
+      "link": "...",
+      "text": "...",
+      "link_type": "wiki"
+    },
+    {
+      "file": "knowledge/zettelkasten/permanent/ai_knowledge_reference_in_cursor_20260104190000.md",
+      "line": 58,
+      "link": "A",
+      "text": "A",
+      "link_type": "wiki"
+    },
+    {
+      "file": "knowledge/zettelkasten/permanent/ai_knowledge_reference_in_cursor_20260104190000.md",
+      "line": 61,
+      "link": "リンク",
+      "text": "リンク",
+      "link_type": "wiki"
+    },
+    {
+      "file": "knowledge/zettelkasten/permanent/ai_knowledge_reference_in_cursor_20260104190000.md",
+      "line": 64,
+      "link": "wikilink",
+      "text": "wikilink",
+      "link_type": "wiki"
+    },
+    {
+      "file": "knowledge/zettelkasten/permanent/ai_knowledge_reference_in_cursor_20260104190000.md",
+      "line": 75,
+      "link": "design_philosophy_20251228|本プロジェクトの設計思想 - 情報の内的経済圏",
+      "text": "design_philosophy_20251228|本プロジェクトの設計思想 - 情報の内的経済圏",
+      "link_type": "wiki"
+    },
+    {
+      "file": "knowledge/zettelkasten/permanent/ai_knowledge_reference_in_cursor_20260104190000.md",
+      "line": 76,
+      "link": "context_engineering_human_role_ssot_20260104183000|コンテクストエンジニアリングにおける「人間の役割＝SSOT整備」という再定義",
+      "text": "context_engineering_human_role_ssot_20260104183000|コンテクストエンジニアリングにおける「人間の役割＝SSOT整備」という再定義",
+      "link_type": "wiki"
+    },
+    {
+      "file": "knowledge/zettelkasten/permanent/ai_knowledge_reference_in_cursor_20260104190000.md",
+      "line": 77,
+      "link": "obsidian_graph_filter_20251228|Obsidianグラフビューのフィルター使い方",
+      "text": "obsidian_graph_filter_20251228|Obsidianグラフビューのフィルター使い方",
+      "link_type": "wiki"
+    },
+    {
+      "file": "knowledge/zettelkasten/permanent/ai_knowledge_reference_in_cursor_20260104190000.md",
+      "line": 78,
+      "link": "obsidian_dataview_cursor_dynamic_context_20260102|Obsidian Dataview×Cursorで「動的プロジェクトコンテクスト」を作る手順",
+      "text": "obsidian_dataview_cursor_dynamic_context_20260102|Obsidian Dataview×Cursorで「動的プロジェクトコンテクスト」を作る手順",
+      "link_type": "wiki"
+    },
+    {
+      "file": "knowledge/zettelkasten/permanent/context_engineering_human_role_ssot_20260104183000.md",
+      "line": 69,
+      "link": "design_philosophy_20251228|本プロジェクトの設計思想 - 情報の内的経済圏",
+      "text": "design_philosophy_20251228|本プロジェクトの設計思想 - 情報の内的経済圏",
+      "link_type": "wiki"
+    },
+    {
+      "file": "knowledge/zettelkasten/permanent/context_engineering_human_role_ssot_20260104183000.md",
+      "line": 70,
+      "link": "obsidian_dataview_cursor_dynamic_context_20260102|Obsidian Dataview×Cursorで「動的プロジェクトコンテキスト」を作る手順",
+      "text": "obsidian_dataview_cursor_dynamic_context_20260102|Obsidian Dataview×Cursorで「動的プロジェクトコンテキスト」を作る手順",
+      "link_type": "wiki"
+    },
+    {
+      "file": "knowledge/zettelkasten/permanent/context_engineering_human_role_ssot_20260104183000.md",
+      "line": 71,
+      "link": "gtd_implementation_plan_20260101|GTD実装計画書（Obsidian/Dataview中心）",
+      "text": "gtd_implementation_plan_20260101|GTD実装計画書（Obsidian/Dataview中心）",
+      "link_type": "wiki"
+    },
+    {
+      "file": "knowledge/zettelkasten/permanent/context_engineering_human_role_ssot_20260104183000.md",
+      "line": 72,
+      "link": "luhmann_communicating_with_slip_boxes_20260104|Communicating with Slip Boxes（ルーマン）",
+      "text": "luhmann_communicating_with_slip_boxes_20260104|Communicating with Slip Boxes（ルーマン）",
+      "link_type": "wiki"
+    },
+    {
+      "file": "knowledge/zettelkasten/permanent/gtd_implement_20260104223000.md",
+      "line": 21,
+      "link": "gtd_implementation_plan_20260101|GTD実装計画書（Obsidian/Dataview中心）",
+      "text": "gtd_implementation_plan_20260101|GTD実装計画書（Obsidian/Dataview中心）",
+      "link_type": "wiki"
+    },
+    {
+      "file": "knowledge/zettelkasten/permanent/gtd_implement_20260104223000.md",
+      "line": 72,
+      "link": "context_engineering_human_role_ssot_20260104183000|CE: 人はSSOT整備／実行はAI",
+      "text": "context_engineering_human_role_ssot_20260104183000|CE: 人はSSOT整備／実行はAI",
+      "link_type": "wiki"
+    },
+    {
+      "file": "knowledge/zettelkasten/permanent/gtd_implement_20260104223000.md",
+      "line": 75,
+      "link": "../tasks/_MASTER_TASKS|_MASTER_TASKS",
+      "text": "../tasks/_MASTER_TASKS|_MASTER_TASKS",
+      "link_type": "wiki"
+    },
+    {
+      "file": "knowledge/zettelkasten/permanent/gtd_implement_20260104223000.md",
+      "line": 76,
+      "link": "../tasks/projects/project_gtd_next|GTD運用（次フェーズ）",
+      "text": "../tasks/projects/project_gtd_next|GTD運用（次フェーズ）",
+      "link_type": "wiki"
+    },
+    {
+      "file": "knowledge/zettelkasten/permanent/gtd_implement_20260104223000.md",
+      "line": 77,
+      "link": "obsidian_gtd_dataview_20251228|Obsidian×GTD×Dataview参考",
+      "text": "obsidian_gtd_dataview_20251228|Obsidian×GTD×Dataview参考",
+      "link_type": "wiki"
+    },
+    {
+      "file": "knowledge/zettelkasten/permanent/gtd_system_obsidian_dataview_ssot_20260104223000.md",
+      "line": 16,
+      "link": "gtd_implementation_plan_20260101|GTD実装計画書（Obsidian/Dataview中心）",
+      "text": "gtd_implementation_plan_20260101|GTD実装計画書（Obsidian/Dataview中心）",
+      "link_type": "wiki"
+    },
+    {
+      "file": "knowledge/zettelkasten/permanent/gtd_system_obsidian_dataview_ssot_20260104223000.md",
+      "line": 67,
+      "link": "context_engineering_human_role_ssot_20260104183000|CE: 人はSSOT整備／実行はAI",
+      "text": "context_engineering_human_role_ssot_20260104183000|CE: 人はSSOT整備／実行はAI",
+      "link_type": "wiki"
+    },
+    {
+      "file": "knowledge/zettelkasten/permanent/gtd_system_obsidian_dataview_ssot_20260104223000.md",
+      "line": 70,
+      "link": "../tasks/_MASTER_TASKS|_MASTER_TASKS",
+      "text": "../tasks/_MASTER_TASKS|_MASTER_TASKS",
+      "link_type": "wiki"
+    },
+    {
+      "file": "knowledge/zettelkasten/permanent/gtd_system_obsidian_dataview_ssot_20260104223000.md",
+      "line": 71,
+      "link": "../tasks/projects/project_gtd_next|GTD運用（次フェーズ）",
+      "text": "../tasks/projects/project_gtd_next|GTD運用（次フェーズ）",
+      "link_type": "wiki"
+    },
+    {
+      "file": "knowledge/zettelkasten/permanent/gtd_system_obsidian_dataview_ssot_20260104223000.md",
+      "line": 72,
+      "link": "obsidian_gtd_dataview_20251228|Obsidian×GTD×Dataview参考",
+      "text": "obsidian_gtd_dataview_20251228|Obsidian×GTD×Dataview参考",
+      "link_type": "wiki"
+    },
+    {
+      "file": "knowledge/zettelkasten/references/basis_of_organization_flow_20260104235030.md",
+      "line": 30,
+      "link": "ruminant_machines_20251228|Ruminant machines（参照ノート）",
+      "text": "ruminant_machines_20251228|Ruminant machines（参照ノート）",
+      "link_type": "wiki"
+    },
+    {
+      "file": "knowledge/zettelkasten/references/dla_marbach_zettelkasten_maschinen_der_phantasie_20260104.md",
+      "line": 30,
+      "link": "luhmann_communicating_with_slip_boxes_20260104|Communicating with Slip Boxes（ルーマン）",
+      "text": "luhmann_communicating_with_slip_boxes_20260104|Communicating with Slip Boxes（ルーマン）",
+      "link_type": "wiki"
+    },
+    {
+      "file": "knowledge/zettelkasten/references/dla_marbach_zettelkasten_maschinen_der_phantasie_20260104.md",
+      "line": 31,
+      "link": "design_philosophy_20251228|本プロジェクトの設計思想（情報の内的経済圏 / Context Engineering）",
+      "text": "design_philosophy_20251228|本プロジェクトの設計思想（情報の内的経済圏 / Context Engineering）",
+      "link_type": "wiki"
+    },
+    {
+      "file": "knowledge/zettelkasten/references/gtd_team_book_20251228.md",
+      "line": 45,
+      "link": "_gtd_guide|GTDタスク管理ガイド",
+      "text": "_gtd_guide|GTDタスク管理ガイド",
+      "link_type": "wiki"
+    },
+    {
+      "file": "knowledge/zettelkasten/references/hovering_ideas_gunpowder_20260104235000.md",
+      "line": 31,
+      "link": "design_philosophy_20251228|本プロジェクトの設計思想",
+      "text": "design_philosophy_20251228|本プロジェクトの設計思想",
+      "link_type": "wiki"
+    },
+    {
+      "file": "knowledge/zettelkasten/references/hovering_ideas_gunpowder_20260104235000.md",
+      "line": 32,
+      "link": "context_engineering_human_role_ssot_20260104183000|CE: 人はSSOT整備／実行はAI",
+      "text": "context_engineering_human_role_ssot_20260104183000|CE: 人はSSOT整備／実行はAI",
+      "link_type": "wiki"
+    },
+    {
+      "file": "knowledge/zettelkasten/references/krajewski_portrait_20251228.md",
+      "line": 44,
+      "link": "ruminant_machines_20251228|Ruminant Machines",
+      "text": "ruminant_machines_20251228|Ruminant Machines",
+      "link_type": "wiki"
+    },
+    {
+      "file": "knowledge/zettelkasten/references/krajewski_portrait_20251228.md",
+      "line": 45,
+      "link": "lichtenberg_notebooks_20251228|リヒテンベルクの雑記帳",
+      "text": "lichtenberg_notebooks_20251228|リヒテンベルクの雑記帳",
+      "link_type": "wiki"
+    },
+    {
+      "file": "knowledge/zettelkasten/references/lichtenberg_notebooks_20251228.md",
+      "line": 47,
+      "link": "ruminant_machines_20251228|Ruminant Machines",
+      "text": "ruminant_machines_20251228|Ruminant Machines",
+      "link_type": "wiki"
+    },
+    {
+      "file": "knowledge/zettelkasten/references/lichtenberg_notebooks_20251228.md",
+      "line": 48,
+      "link": "krajewski_portrait_20251228|Markus Krajewski",
+      "text": "krajewski_portrait_20251228|Markus Krajewski",
+      "link_type": "wiki"
+    },
+    {
+      "file": "knowledge/zettelkasten/references/luhmann_communicating_with_slip_boxes_20260104.md",
+      "line": 38,
+      "link": "design_philosophy_20251228|本プロジェクトの設計思想（情報の内的経済圏 / Context Engineering）",
+      "text": "design_philosophy_20251228|本プロジェクトの設計思想（情報の内的経済圏 / Context Engineering）",
+      "link_type": "wiki"
+    },
+    {
+      "file": "knowledge/zettelkasten/references/luhmann_communicating_with_slip_boxes_20260104.md",
+      "line": 39,
+      "link": "context_engineering_human_role_ssot_20260104183000|コンテクストエンジニアリングにおける「人間の役割＝SSOT整備」という再定義",
+      "text": "context_engineering_human_role_ssot_20260104183000|コンテクストエンジニアリングにおける「人間の役割＝SSOT整備」という再定義",
+      "link_type": "wiki"
+    },
+    {
+      "file": "knowledge/zettelkasten/references/muse_article_715738_20260101.md",
+      "line": 45,
+      "link": "ruminant_machines_20251228|Ruminant Machines（要約/解説）",
+      "text": "ruminant_machines_20251228|Ruminant Machines（要約/解説）",
+      "link_type": "wiki"
+    },
+    {
+      "file": "knowledge/zettelkasten/references/mutual_surprise_communication_20260104235010.md",
+      "line": 23,
+      "link": "luhmann_communicating_with_slip_boxes_20260104|Communicating with Slip Boxes（ルーマン）",
+      "text": "luhmann_communicating_with_slip_boxes_20260104|Communicating with Slip Boxes（ルーマン）",
+      "link_type": "wiki"
+    },
+    {
+      "file": "knowledge/zettelkasten/references/mutual_surprise_communication_20260104235010.md",
+      "line": 31,
+      "link": "context_engineering_human_role_ssot_20260104183000|CE: 人はSSOT整備／実行はAI",
+      "text": "context_engineering_human_role_ssot_20260104183000|CE: 人はSSOT整備／実行はAI",
+      "link_type": "wiki"
+    },
+    {
+      "file": "knowledge/zettelkasten/references/niklas_luhmann_archiv_ms_2906_0001_20260104.md",
+      "line": 102,
+      "link": "luhmann_communicating_with_slip_boxes_20260104|Communicating with Slip Boxes（ルーマン：スリップボックスとのコミュニケーション）",
+      "text": "luhmann_communicating_with_slip_boxes_20260104|Communicating with Slip Boxes（ルーマン：スリップボックスとのコミュニケーション）",
+      "link_type": "wiki"
+    },
+    {
+      "file": "knowledge/zettelkasten/references/niklas_luhmann_archiv_ms_2906_0001_20260104.md",
+      "line": 103,
+      "link": "dla_marbach_zettelkasten_maschinen_der_phantasie_20260104|Zettelkästen. Maschinen der Phantasie（DLA Marbach 展示案内 2013）",
+      "text": "dla_marbach_zettelkasten_maschinen_der_phantasie_20260104|Zettelkästen. Maschinen der Phantasie（DLA Marbach 展示案内 2013）",
+      "link_type": "wiki"
+    },
+    {
+      "file": "knowledge/zettelkasten/references/note_quality_network_links_20260104235020.md",
+      "line": 23,
+      "link": "luhmann_communicating_with_slip_boxes_20260104|Communicating with Slip Boxes（ルーマン）",
+      "text": "luhmann_communicating_with_slip_boxes_20260104|Communicating with Slip Boxes（ルーマン）",
+      "link_type": "wiki"
+    },
+    {
+      "file": "knowledge/zettelkasten/references/note_quality_network_links_20260104235020.md",
+      "line": 32,
+      "link": "design_philosophy_20251228|本プロジェクトの設計思想",
+      "text": "design_philosophy_20251228|本プロジェクトの設計思想",
+      "link_type": "wiki"
+    },
+    {
+      "file": "knowledge/zettelkasten/references/obsidian_dataview_cursor_dynamic_context_20260102.md",
+      "line": 59,
+      "link": "obsidian_gtd_dataview_20251228|GTD with Obsidian（DataviewベースのGTDシステム紹介）",
+      "text": "obsidian_gtd_dataview_20251228|GTD with Obsidian（DataviewベースのGTDシステム紹介）",
+      "link_type": "wiki"
+    },
+    {
+      "file": "knowledge/zettelkasten/references/obsidian_dataview_cursor_dynamic_context_20260102.md",
+      "line": 60,
+      "link": "design_philosophy_20251228|本プロジェクトの設計思想（Context Engineering）",
+      "text": "design_philosophy_20251228|本プロジェクトの設計思想（Context Engineering）",
+      "link_type": "wiki"
+    },
+    {
+      "file": "knowledge/zettelkasten/references/obsidian_dataview_cursor_dynamic_context_20260102.md",
+      "line": 61,
+      "link": "context_engineering_human_role_ssot_20260104183000|コンテクストエンジニアリングにおける「人間の役割＝SSOT整備」という再定義",
+      "text": "context_engineering_human_role_ssot_20260104183000|コンテクストエンジニアリングにおける「人間の役割＝SSOT整備」という再定義",
+      "link_type": "wiki"
+    },
+    {
+      "file": "knowledge/zettelkasten/references/obsidian_gtd_dataview_20251228.md",
+      "line": 41,
+      "link": "gtd_team_book_20251228|GTDでチームを強化する",
+      "text": "gtd_team_book_20251228|GTDでチームを強化する",
+      "link_type": "wiki"
+    },
+    {
+      "file": "knowledge/zettelkasten/references/ruminant_machines_20251228.md",
+      "line": 36,
+      "link": "krajewski_portrait_20251228|Markus Krajewski",
+      "text": "krajewski_portrait_20251228|Markus Krajewski",
+      "link_type": "wiki"
+    },
+    {
+      "file": "knowledge/zettelkasten/references/ruminant_machines_20251228.md",
+      "line": 37,
+      "link": "lichtenberg_notebooks_20251228|リヒテンベルクの雑記帳",
+      "text": "lichtenberg_notebooks_20251228|リヒテンベルクの雑記帳",
+      "link_type": "wiki"
+    },
+    {
+      "file": "knowledge/zettelkasten/references/ruminant_machines_20251228.md",
+      "line": 38,
+      "link": "muse_article_715738_20260101|Project MUSE 記事メモ: article/715738（未取得）",
+      "text": "muse_article_715738_20260101|Project MUSE 記事メモ: article/715738（未取得）",
+      "link_type": "wiki"
+    },
+    {
+      "file": "knowledge/zettelkasten/references/wastebook_journal_ledger_20260104235040.md",
+      "line": 32,
+      "link": "context_engineering_human_role_ssot_20260104183000|CE: 人はSSOT整備／実行はAI",
+      "text": "context_engineering_human_role_ssot_20260104183000|CE: 人はSSOT整備／実行はAI",
+      "link_type": "wiki"
+    },
+    {
+      "file": "knowledge/zettelkasten/references/wastebook_journal_ledger_20260104235040.md",
+      "line": 33,
+      "link": "gtd_implement_20260104223000|GTDシステム（SSOT=Markdown）の要点",
+      "text": "gtd_implement_20260104223000|GTDシステム（SSOT=Markdown）の要点",
+      "link_type": "wiki"
+    },
+    {
+      "file": "knowledge/zettelkasten/structure/aphorism_capture_method_20260104235110.md",
+      "line": 44,
+      "link": "luhmann_communicating_with_slip_boxes_20260104|Communicating with Slip Boxes（ルーマン）",
+      "text": "luhmann_communicating_with_slip_boxes_20260104|Communicating with Slip Boxes（ルーマン）",
+      "link_type": "wiki"
+    },
+    {
+      "file": "knowledge/zettelkasten/structure/design_philosophy_20251228.md",
+      "line": 81,
+      "link": "lichtenberg_notebooks_20251228|リヒテンベルクの雑記帳",
+      "text": "lichtenberg_notebooks_20251228|リヒテンベルクの雑記帳",
+      "link_type": "wiki"
+    },
+    {
+      "file": "knowledge/zettelkasten/structure/design_philosophy_20251228.md",
+      "line": 82,
+      "link": "krajewski_portrait_20251228|Markus Krajewski",
+      "text": "krajewski_portrait_20251228|Markus Krajewski",
+      "link_type": "wiki"
+    },
+    {
+      "file": "knowledge/zettelkasten/structure/design_philosophy_20251228.md",
+      "line": 83,
+      "link": "ruminant_machines_20251228|Ruminant Machines",
+      "text": "ruminant_machines_20251228|Ruminant Machines",
+      "link_type": "wiki"
+    },
+    {
+      "file": "knowledge/zettelkasten/structure/design_philosophy_20251228.md",
+      "line": 84,
+      "link": "obsidian_dataview_cursor_dynamic_context_20260102|Dataview×Cursorの動的コンテクスト（文献）",
+      "text": "obsidian_dataview_cursor_dynamic_context_20260102|Dataview×Cursorの動的コンテクスト（文献）",
+      "link_type": "wiki"
+    },
+    {
+      "file": "knowledge/zettelkasten/structure/design_philosophy_20251228.md",
+      "line": 88,
+      "link": "obsidian_gtd_dataview_20251228|GTD with Obsidian（DataviewベースのGTDシステム紹介）",
+      "text": "obsidian_gtd_dataview_20251228|GTD with Obsidian（DataviewベースのGTDシステム紹介）",
+      "link_type": "wiki"
+    },
+    {
+      "file": "knowledge/zettelkasten/structure/design_philosophy_20251228.md",
+      "line": 89,
+      "link": "luhmann_communicating_with_slip_boxes_20260104|Communicating with Slip Boxes（ルーマン：スリップボックスとのコミュニケーション）",
+      "text": "luhmann_communicating_with_slip_boxes_20260104|Communicating with Slip Boxes（ルーマン：スリップボックスとのコミュニケーション）",
+      "link_type": "wiki"
+    },
+    {
+      "file": "knowledge/zettelkasten/structure/design_philosophy_20251228.md",
+      "line": 90,
+      "link": "dla_marbach_zettelkasten_maschinen_der_phantasie_20260104|Zettelkästen. Maschinen der Phantasie（DLA Marbach 展示案内 2013）",
+      "text": "dla_marbach_zettelkasten_maschinen_der_phantasie_20260104|Zettelkästen. Maschinen der Phantasie（DLA Marbach 展示案内 2013）",
+      "link_type": "wiki"
+    },
+    {
+      "file": "knowledge/zettelkasten/structure/design_philosophy_20251228.md",
+      "line": 91,
+      "link": "context_engineering_human_role_ssot_20260104183000|コンテクストエンジニアリングにおける「人間の役割＝SSOT整備」という再定義",
+      "text": "context_engineering_human_role_ssot_20260104183000|コンテクストエンジニアリングにおける「人間の役割＝SSOT整備」という再定義",
+      "link_type": "wiki"
+    },
+    {
+      "file": "knowledge/zettelkasten/structure/design_philosophy_20251228.md",
+      "line": 95,
+      "link": "idea_docs_manager_review_mode_20260102|Docs Manager 機能案：レビュー・モード + Inbox運用指示",
+      "text": "idea_docs_manager_review_mode_20260102|Docs Manager 機能案：レビュー・モード + Inbox運用指示",
+      "link_type": "wiki"
+    },
+    {
+      "file": "knowledge/zettelkasten/structure/design_philosophy_20251228.md",
+      "line": 97,
+      "link": "idea_obsidian_plugins_selection_20260102|Obsidianプラグイン導入検討ノート",
+      "text": "idea_obsidian_plugins_selection_20260102|Obsidianプラグイン導入検討ノート",
+      "link_type": "wiki"
+    }
+  ],
+  "filename_content_mismatch": [
+    {
+      "file": "docs/project_architecture.md",
+      "reason": "ロードマップ、タスク管理、チーム運用など複数のトピックが含まれている可能性: ロードマップ, roadmap, タスク管理"
+    },
+    {
+      "file": "knowledge/tasks/active/task_docs_audit_20260123120000.md",
+      "reason": "多数の主要セクション（8個）が含まれており、分割を検討すべき"
+    },
+    {
+      "file": "knowledge/tasks/active/task_docs_manager_rules_update_20260123140000.md",
+      "reason": "多数の主要セクション（10個）が含まれており、分割を検討すべき"
+    },
+    {
+      "file": "knowledge/tasks/active/task_docs_refactor_execute_20260123130000.md",
+      "reason": "多数の主要セクション（7個）が含まれており、分割を検討すべき"
+    },
+    {
+      "file": "knowledge/tasks/projects/project_docs_refactor.md",
+      "reason": "多数の主要セクション（6個）が含まれており、分割を検討すべき"
+    }
+  ],
+  "content_duplication": [
+    {
+      "pattern": "フォルダ構造の説明",
+      "files": [
+        "README.md",
+        "docs/components/experiment_management.md",
+        "docs/components/knowledge_database.md",
+        "docs/project_architecture.md",
+        "docs/roadmap.md",
+        "docs/scripts_guide.md",
+        "knowledge/inbox/memo_external_gpu_execution_workflow_20260115060219.md",
+        "knowledge/inbox/reference_experiment_workflow_comparison_20260105.md",
+        "knowledge/inbox/task_refactor_20260123.md",
+        "knowledge/tasks/active/task_docs_audit_20260123120000.md",
+        "knowledge/tasks/active/task_docs_manager_rules_update_20260123140000.md",
+        "knowledge/tasks/active/task_docs_refactor_execute_20260123130000.md",
+        "knowledge/tasks/projects/project_docs_refactor.md",
+        "knowledge/zettelkasten/permanent/ai_knowledge_reference_in_cursor_20260104190000.md"
+      ],
+      "count": 14
+    },
+    {
+      "pattern": "json説明",
+      "files": [
+        "README.md",
+        "docs/components/experiment_management.md",
+        "docs/components/knowledge_database.md",
+        "docs/components/multi_agent_system.md",
+        "docs/components/task_management.md",
+        "docs/future_features.md",
+        "docs/project_architecture.md",
+        "docs/scripts/kaggle_scripts.md",
+        "docs/scripts/scripts_troubleshooting.md",
+        "docs/scripts/scripts_workflow.md",
+        "docs/scripts/workflow_scripts.md",
+        "docs/system_overview.md",
+        "docs/workflow/workflow_examples.md",
+        "docs/workflow/workflow_steps.md",
+        "docs/workflow/workflow_troubleshooting.md",
+        "knowledge/inbox/archive/gtd_implementation_plan_20260101.md",
+        "knowledge/inbox/archive/idea_20251227.md",
+        "knowledge/inbox/langchain_implementation_plan_20260112.md",
+        "knowledge/inbox/reference_experiment_workflow_comparison_20260105.md",
+        "knowledge/inbox/task_dataviewjs_master_prompt_dependencies_20260121170000.md",
+        "knowledge/inbox/task_refactor_20260123.md",
+        "knowledge/tasks/active/task_docs_audit_20260123120000.md",
+        "knowledge/tasks/active/task_docs_manager_rules_update_20260123140000.md",
+        "knowledge/tasks/active/task_docs_refactor_execute_20260123130000.md",
+        "knowledge/tasks/projects/project_docs_refactor.md",
+        "knowledge/zettelkasten/permanent/ai_knowledge_reference_in_cursor_20260104190000.md",
+        "knowledge/zettelkasten/permanent/context_engineering_human_role_ssot_20260104183000.md",
+        "knowledge/zettelkasten/permanent/gtd_implement_20260104223000.md",
+        "knowledge/zettelkasten/permanent/gtd_system_obsidian_dataview_ssot_20260104223000.md",
+        "knowledge/zettelkasten/permanent/obsidian_graph_filter_20251228.md",
+        "knowledge/zettelkasten/references/gtd_team_book_20251228.md"
+      ],
+      "count": 31
+    },
+    {
+      "pattern": "templates説明",
+      "files": [
+        "README.md",
+        "docs/components/experiment_management.md",
+        "docs/components/knowledge_database.md",
+        "docs/components/multi_agent_system.md",
+        "docs/project_architecture.md",
+        "docs/roadmap.md",
+        "docs/system_overview.md",
+        "knowledge/inbox/archive/idea_obsidian_plugins_selection_20260102.md",
+        "knowledge/inbox/langchain_implementation_plan_20260112.md",
+        "knowledge/inbox/reference_experiment_workflow_comparison_20260105.md",
+        "knowledge/tasks/active/task_docs_audit_20260123120000.md",
+        "knowledge/tasks/active/task_docs_manager_rules_update_20260123140000.md",
+        "knowledge/tasks/active/task_docs_refactor_execute_20260123130000.md",
+        "knowledge/tasks/active/task_file_cleanup_20260121071626.md",
+        "knowledge/tasks/projects/project_docs_refactor.md",
+        "knowledge/zettelkasten/permanent/obsidian_graph_filter_20251228.md",
+        "knowledge/zettelkasten/references/obsidian_gtd_dataview_20251228.md",
+        "knowledge/zettelkasten/structure/obsidian_plugins_selection_20260104235120.md"
+      ],
+      "count": 18
+    },
+    {
+      "pattern": "pythonコード説明",
+      "files": [
+        "README.md",
+        "docs/components/multi_agent_system.md",
+        "docs/components/task_management.md",
+        "docs/future_features.md",
+        "docs/roadmap.md",
+        "docs/scripts/scripts_troubleshooting.md",
+        "docs/scripts/scripts_workflow.md",
+        "docs/scripts/workflow_scripts.md",
+        "docs/workflow/workflow_agent_flow.md",
+        "docs/workflow/workflow_examples.md",
+        "docs/workflow/workflow_steps.md",
+        "docs/workflow/workflow_troubleshooting.md",
+        "docs/workflow_guide.md",
+        "knowledge/inbox/langchain_implementation_plan_20260112.md",
+        "knowledge/inbox/task_refactor_20260123.md",
+        "knowledge/tasks/active/task_docs_audit_20260123120000.md",
+        "knowledge/tasks/active/task_docs_manager_rules_update_20260123140000.md",
+        "knowledge/tasks/active/task_docs_refactor_execute_20260123130000.md",
+        "knowledge/tasks/projects/project_docs_refactor.md"
+      ],
+      "count": 19
+    },
+    {
+      "pattern": "gitignore説明",
+      "files": [
+        "docs/components/multi_agent_system.md",
+        "knowledge/inbox/task_refactor_20260123.md",
+        "knowledge/tasks/active/task_001_git_setup_20251228.md",
+        "knowledge/tasks/active/task_docs_audit_20260123120000.md",
+        "knowledge/tasks/active/task_docs_manager_rules_update_20260123140000.md",
+        "knowledge/tasks/active/task_docs_refactor_execute_20260123130000.md",
+        "knowledge/tasks/projects/project_docs_refactor.md"
+      ],
+      "count": 7
+    }
+  ],
+  "long_lines": [
+    {
+      "file": "README.md",
+      "line": 332,
+      "length": 158,
+      "content": "mkdir -p knowledge/{inbox,zettelkasten/{permanent,references,structure,index},tasks/{active,waiting,..."
+    },
+    {
+      "file": "docs/components/task_management.md",
+      "line": 6,
+      "length": 101,
+      "content": "SSOT（`knowledge/tasks/`）から `scripts/workflow/task_converter.py` で `tasks/current_sprint.json` を生成します..."
+    },
+    {
+      "file": "docs/workflow/workflow_steps.md",
+      "line": 160,
+      "length": 123,
+      "content": "User → Document Manager → Planner → User → Developer → Validator → User → Validator → Document Manag..."
+    },
+    {
+      "file": "knowledge/inbox/archive/aphorism_hovering_ideas_gunpowder_20260104.md",
+      "line": 14,
+      "length": 349,
+      "content": "> “Oh how many ideas aren’t hovering dispersed in my head! Quite a few pairs among those could provo..."
+    },
+    {
+      "file": "knowledge/inbox/archive/aphorism_mutual_surprise_communication_20260104.md",
+      "line": 15,
+      "length": 113,
+      "content": "> “One of the most basic presuppositions of communication is that the partners can mutually surprise..."
+    },
+    {
+      "file": "knowledge/inbox/archive/aphorism_mutual_surprise_communication_20260104.md",
+      "line": 23,
+      "length": 194,
+      "content": "なぜ対話術が哲学の方法になるのか。それは対話術が驚きを生み出す技術（θαυματοποιία）だからだ。驚きはプラトン以来、哲学の唯一の始まりと考えられてきたにもかかわらず、哲学史によって不当に軽視さ..."
+    },
+    {
+      "file": "knowledge/inbox/archive/aphorism_note_quality_network_links_20260104.md",
+      "line": 15,
+      "length": 348,
+      "content": "> “Every note is only an element which receives its quality only from the network of links and back-..."
+    },
+    {
+      "file": "knowledge/inbox/archive/aphorism_organization_flow_quote_20260104.md",
+      "line": 16,
+      "length": 133,
+      "content": "- 孫引き元（自分が読んだ）: Daniela K. Helbig, “Ruminant machines: a twentieth-century episode in the material h..."
+    },
+    {
+      "file": "knowledge/inbox/archive/aphorism_waste_book_journal_ledger_20260104.md",
+      "line": 14,
+      "length": 513,
+      "content": "> “Merchants have their waste book, Sudelbuch or Klitterbuch in German I believe, in which they list..."
+    },
+    {
+      "file": "knowledge/inbox/archive/aphorism_waste_book_journal_ledger_20260104.md",
+      "line": 18,
+      "length": 107,
+      "content": "- “waste book（wastebook）→ journal → ledger（double-entry）” という **三段階の記録プロセス**が、学者（learned）にも模倣に値するとされ..."
+    },
+    {
+      "file": "knowledge/inbox/archive/gtd_implementation_plan_20260101.md",
+      "line": 14,
+      "length": 102,
+      "content": "この計画書は、`knowledge/tasks/` を中核に **GTD（Getting Things Done）を運用できる状態**を、このプロジェクトに実装するための設計・手順をまとめたものです。..."
+    },
+    {
+      "file": "knowledge/inbox/archive/gtd_implementation_plan_20260101.md",
+      "line": 38,
+      "length": 106,
+      "content": "本計画の「基本形」は **タスクを `knowledge/tasks/` 配下の“タスクノート（frontmatter付き）”として管理**し、Dataview（クエリ or DataviewJS）で..."
+    },
+    {
+      "file": "knowledge/inbox/archive/gtd_implementation_plan_20260101.md",
+      "line": 168,
+      "length": 161,
+      "content": "- inbox内のタスクメモは **`status` を書かない（省略）**（=未整理のまま）とし、タスクとして確定したら `knowledge/tasks/*` 側へ **コピーしてSSOT化**し..."
+    },
+    {
+      "file": "knowledge/inbox/archive/gtd_implementation_plan_20260101.md",
+      "line": 191,
+      "length": 105,
+      "content": "関連タスク候補: [[task_dataviewjs_master_prompt_dependencies_20260121170000|DataviewJSでマスタープロンプト用の依存関係ビューを追..."
+    },
+    {
+      "file": "knowledge/inbox/archive/gtd_implementation_plan_20260101.md",
+      "line": 236,
+      "length": 106,
+      "content": "    - ルール: `dependencies` に未完了タスク（`status != completed`）が含まれる場合、そのタスクは **blocked（着手不可）**として後回し（または別セ..."
+    },
+    {
+      "file": "knowledge/inbox/archive/idea_20251227.md",
+      "line": 60,
+      "length": 147,
+      "content": "- [Ruminant Machines - 知識管理の歴史](https://www.jhiblog.org/2019/04/17/ruminant-machines-a-twentieth-cen..."
+    },
+    {
+      "file": "knowledge/inbox/archive/idea_20251227.md",
+      "line": 61,
+      "length": 128,
+      "content": "- [Markus Krajewski - 研究者ポートレート](https://www.unibas.ch/en/Research/Research-in-Basel/Researchers/Por..."
+    },
+    {
+      "file": "knowledge/inbox/archive/idea_docs_manager_review_mode_20260102.md",
+      "line": 25,
+      "length": 115,
+      "content": "  - タスクとして確定したら `knowledge/tasks/{active|waiting|someday}/` に **コピーしてSSOT化**し、元ファイルは `knowledge/inbo..."
+    },
+    {
+      "file": "knowledge/inbox/idea_toon_usage_20260106015954.md",
+      "line": 18,
+      "length": 307,
+      "content": "- 参照記事: https://www.ai-souken.com/article/what-is-toon#json-%E3%81%AE%E6%96%B9%E3%81%8C%E5%90%91%E3%..."
+    },
+    {
+      "file": "knowledge/inbox/kaggle_bert_implementation_summary.md",
+      "line": 7,
+      "length": 112,
+      "content": "source: https://www.kaggle.com/code/josephtk/disaster-tweets-classification-using-bert?scriptVersion..."
+    },
+    {
+      "file": "knowledge/inbox/langchain_implementation_plan_20260112.md",
+      "line": 18,
+      "length": 159,
+      "content": "現在のCursor IDEベースのマルチエージェントシステムを、LangChain/LangGraphで再実装する際の詳細な実装プラン。現在のシステム仕様（`.cursor/experiment_fl..."
+    },
+    {
+      "file": "knowledge/inbox/memo_external_gpu_execution_workflow_20260115060219.md",
+      "line": 17,
+      "length": 107,
+      "content": "- 現在の実験フロー（`experiments/`、`results/`ディレクトリ構造、`train.py`、`predict.py`）は**ローカル実行前提**のため、外部GPU環境での実行に対応..."
+    },
+    {
+      "file": "knowledge/inbox/reference_experiment_workflow_comparison_20260105.md",
+      "line": 44,
+      "length": 171,
+      "content": "- ✅ エージェント定義ルール: 5ファイル（kaggle_team.mdc, developer_experiment_rules.mdc, docs_manager_rules.mdc, expe..."
+    },
+    {
+      "file": "knowledge/inbox/task_dataviewjs_master_prompt_dependencies_20260121170000.md",
+      "line": 18,
+      "length": 103,
+      "content": "- Obsidianのマスターノート（`knowledge/tasks/_MASTER_TASKS.md` 想定）において、DataviewJSを使って **タスク間の依存関係** を表現できるように..."
+    },
+    {
+      "file": "knowledge/inbox/task_dataviewjs_master_prompt_dependencies_20260121170000.md",
+      "line": 19,
+      "length": 107,
+      "content": "- AI向けマスタープロンプトの中で、`dependencies` 情報を活かした「ブロック中 / 着手可能」判定や、プロジェクトの多層構造（親プロジェクト / 子プロジェクト）を分かりやすく説明でき..."
+    },
+    {
+      "file": "knowledge/inbox/task_dataviewjs_master_prompt_dependencies_20260121170000.md",
+      "line": 31,
+      "length": 128,
+      "content": "- [ ] 既存の GTD 実装計画（[[gtd_implementation_plan_20260101|GTD実装計画書（Obsidian/Dataview中心）]]) の要件を再確認し、Data..."
+    },
+    {
+      "file": "knowledge/inbox/task_parent_project_concept_20260121062656.md",
+      "line": 53,
+      "length": 105,
+      "content": "- 関連タスク: [[task_dataviewjs_master_prompt_dependencies_20260121170000|DataviewJSでマスタープロンプト用の依存関係ビューを追..."
+    },
+    {
+      "file": "knowledge/inbox/task_refactor_20260123.md",
+      "line": 70,
+      "length": 102,
+      "content": "一旦 wiki リンクでもいいとはおもいますが、AI が内部的に使用するコマンド (`cd ./docs/~`) を考慮すると、できればリポジトリトップからの相対パスで統一するのが望ましいかもしれませ..."
+    },
+    {
+      "file": "knowledge/inbox/task_refactor_20260123.md",
+      "line": 81,
+      "length": 114,
+      "content": "検索時にも関係ない記述が引っかかってしまうため、ロードマップは「roadmap.md」、タスク管理は「task_management.md」、チーム運用は「team_operations.md」などに..."
+    },
+    {
+      "file": "knowledge/inbox/task_refactor_20260124.md",
+      "line": 26,
+      "length": 112,
+      "content": "- [Anthropicハッカソン優勝者のClaude Code設定集「everything-claude-code」を読み解く](https://zenn.dev/ttks/articles/a54..."
+    },
+    {
+      "file": "knowledge/tasks/active/task_docs_audit_20260123120000.md",
+      "line": 155,
+      "length": 108,
+      "content": "- `knowledge/tasks/active/task_docs_manager_rules_update_20260123140000.md`: 多数の主要セクション（10個）が含まれており、..."
+    },
+    {
+      "file": "knowledge/tasks/active/task_docs_audit_20260123120000.md",
+      "line": 156,
+      "length": 103,
+      "content": "- `knowledge/tasks/active/task_docs_refactor_execute_20260123130000.md`: 多数の主要セクション（7個）が含まれており、分割を検討..."
+    },
+    {
+      "file": "knowledge/tasks/active/task_docs_audit_20260123120000.md",
+      "line": 168,
+      "length": 103,
+      "content": "- **gitignore説明**: 7ファイルで重複（docs/project_architecture.md, knowledge/inbox/task_refactor_20260123.md ..."
+    },
+    {
+      "file": "knowledge/tasks/active/task_docs_manager_rules_update_20260123140000.md",
+      "line": 32,
+      "length": 108,
+      "content": "ドキュメントリファクタリングプロジェクトで定めたルールを、Docs Manager（AIエージェント）が常に遵守するように、設定ファイル（`.cursor/docs_manager_rules.mdc..."
+    },
+    {
+      "file": "knowledge/zettelkasten/permanent/ai_knowledge_reference_in_cursor_20260104190000.md",
+      "line": 6,
+      "length": 108,
+      "content": "tags: [cursor, ai, llm, knowledge-management, obsidian, zettelkasten, search, workflow, context-engi..."
+    },
+    {
+      "file": "knowledge/zettelkasten/permanent/ai_knowledge_reference_in_cursor_20260104190000.md",
+      "line": 78,
+      "length": 102,
+      "content": "- [[obsidian_dataview_cursor_dynamic_context_20260102|Obsidian Dataview×Cursorで「動的プロジェクトコンテクスト」を作る手順..."
+    },
+    {
+      "file": "knowledge/zettelkasten/permanent/context_engineering_human_role_ssot_20260104183000.md",
+      "line": 70,
+      "length": 102,
+      "content": "- [[obsidian_dataview_cursor_dynamic_context_20260102|Obsidian Dataview×Cursorで「動的プロジェクトコンテキスト」を作る手順..."
+    },
+    {
+      "file": "knowledge/zettelkasten/references/basis_of_organization_flow_20260104235030.md",
+      "line": 21,
+      "length": 133,
+      "content": "- 孫引き元（自分が読んだ）: Daniela K. Helbig, “Ruminant machines: a twentieth-century episode in the material h..."
+    },
+    {
+      "file": "knowledge/zettelkasten/references/dla_marbach_zettelkasten_maschinen_der_phantasie_20260104.md",
+      "line": 16,
+      "length": 307,
+      "content": "ドイツ文学アーカイブ・マールバッハ（DLA Marbach）で2013年に開催された展示「Zettelkästen. Maschinen der Phantasie（ツェッテルカステン：想像力の機械）..."
+    },
+    {
+      "file": "knowledge/zettelkasten/references/hovering_ideas_gunpowder_20260104235000.md",
+      "line": 17,
+      "length": 349,
+      "content": "> “Oh how many ideas aren’t hovering dispersed in my head! Quite a few pairs among those could provo..."
+    },
+    {
+      "file": "knowledge/zettelkasten/references/krajewski_portrait_20251228.md",
+      "line": 6,
+      "length": 102,
+      "content": "source: https://www.unibas.ch/en/Research/Research-in-Basel/Researchers/Portraet-Markus-Krajewski.ht..."
+    },
+    {
+      "file": "knowledge/zettelkasten/references/lichtenberg_notebooks_20251228.md",
+      "line": 40,
+      "length": 173,
+      "content": "リヒテンベルクは計り知れない人物で、この計画のもとなる原理を多分知っていたように思える。まだ当時はAIもコンピュータもカードボックスもなかったのだが、彼は推論や発見のプロセスの中で、そうした手段がいか..."
+    },
+    {
+      "file": "knowledge/zettelkasten/references/lichtenberg_notebooks_20251228.md",
+      "line": 42,
+      "length": 160,
+      "content": "リヒテンベルクが手本にしていたのは、商人がビジネスという不確実性に満ちた環境の中で、自分の取引を記録したり、コントロールしたりするやり方だった。私たちのプロジェクトにあっても重要なのは、このような情報..."
+    },
+    {
+      "file": "knowledge/zettelkasten/references/luhmann_communicating_with_slip_boxes_20260104.md",
+      "line": 19,
+      "length": 145,
+      "content": "「高度な思考は書くことなしに成立しない」という前提のもと、スリップボックス（Zettelkasten）を“コミュニケーション相手”として設計・運用する方法を、経験に基づいて説明する。固定番地の番号付け..."
+    },
+    {
+      "file": "knowledge/zettelkasten/references/mutual_surprise_communication_20260104235010.md",
+      "line": 19,
+      "length": 113,
+      "content": "> “One of the most basic presuppositions of communication is that the partners can mutually surprise..."
+    },
+    {
+      "file": "knowledge/zettelkasten/references/mutual_surprise_communication_20260104235010.md",
+      "line": 27,
+      "length": 194,
+      "content": "なぜ対話術が哲学の方法になるのか。それは対話術が驚きを生み出す技術（θαυματοποιία）だからだ。驚きはプラトン以来、哲学の唯一の始まりと考えられてきたにもかかわらず、哲学史によって不当に軽視さ..."
+    },
+    {
+      "file": "knowledge/zettelkasten/references/niklas_luhmann_archiv_ms_2906_0001_20260104.md",
+      "line": 30,
+      "length": 236,
+      "content": "- 逐次的に流入する情報を、後から「順序に依存せず」再発見できるようにするための **Zettelkastenの技法メモ**。核心は、(1) 各カードの **固定番地（不変の位置）** とそれを支える..."
+    },
+    {
+      "file": "knowledge/zettelkasten/references/niklas_luhmann_archiv_ms_2906_0001_20260104.md",
+      "line": 33,
+      "length": 103,
+      "content": "- **問題設定**: 情報は「列（reihenförmig）」で入ってくるが、後で参照できる状態で保持したい。人間の記憶は順序から独立して見つけられるが能力に限界がある。ノートも同じ問題（講義ノート..."
+    },
+    {
+      "file": "knowledge/zettelkasten/references/niklas_luhmann_archiv_ms_2906_0001_20260104.md",
+      "line": 37,
+      "length": 115,
+      "content": "- **参照が秩序問題を解く**: すべての秩序問題は参照で解ける。誤配置は“並べ替え”でなく参照で補正する。関連が離れた番号に散っていても原理的に問題ない（問いが変われば「何が関連するか」も変わるた..."
+    },
+    {
+      "file": "knowledge/zettelkasten/references/niklas_luhmann_archiv_ms_2906_0001_20260104.md",
+      "line": 39,
+      "length": 103,
+      "content": "- **抽象化は学習プロセス**: 例（薬剤採用のリスク処理）では、具体的分類より「不確実性/信頼」など抽象度を上げ、参照で「リスク/誤り/複雑性削減」等へ連結する。抽象化は既存の箱に接続しながら進む..."
+    },
+    {
+      "file": "knowledge/zettelkasten/references/niklas_luhmann_archiv_ms_2906_0001_20260104.md",
+      "line": 75,
+      "length": 141,
+      "content": "互いに関連するカードが、まったく異なる番号の下に置かれていることは、原理的には（ときに煩わしいとしても）問題ではない。何が「一緒に属するか」は、問いの立て方とともに変わっていくので、最初から図式的に決..."
+    },
+    {
+      "file": "knowledge/zettelkasten/references/niklas_luhmann_archiv_ms_2906_0001_20260104.md",
+      "line": 102,
+      "length": 108,
+      "content": "- [[luhmann_communicating_with_slip_boxes_20260104|Communicating with Slip Boxes（ルーマン：スリップボックスとのコミュニ..."
+    },
+    {
+      "file": "knowledge/zettelkasten/references/niklas_luhmann_archiv_ms_2906_0001_20260104.md",
+      "line": 103,
+      "length": 124,
+      "content": "- [[dla_marbach_zettelkasten_maschinen_der_phantasie_20260104|Zettelkästen. Maschinen der Phantasie（..."
+    },
+    {
+      "file": "knowledge/zettelkasten/references/note_quality_network_links_20260104235020.md",
+      "line": 19,
+      "length": 348,
+      "content": "> “Every note is only an element which receives its quality only from the network of links and back-..."
+    },
+    {
+      "file": "knowledge/zettelkasten/references/obsidian_gtd_dataview_20251228.md",
+      "line": 6,
+      "length": 158,
+      "content": "source: https://forum.obsidian.md/t/gtd-with-obsidian-a-ready-to-go-gtd-system-with-task-sequencing-..."
+    },
+    {
+      "file": "knowledge/zettelkasten/references/ruminant_machines_20251228.md",
+      "line": 6,
+      "length": 122,
+      "content": "source: https://www.jhiblog.org/2019/04/17/ruminant-machines-a-twentieth-century-episode-in-the-mate..."
+    },
+    {
+      "file": "knowledge/zettelkasten/references/wastebook_journal_ledger_20260104235040.md",
+      "line": 17,
+      "length": 513,
+      "content": "> “Merchants have their waste book, Sudelbuch or Klitterbuch in German I believe, in which they list..."
+    },
+    {
+      "file": "knowledge/zettelkasten/references/wastebook_journal_ledger_20260104235040.md",
+      "line": 21,
+      "length": 107,
+      "content": "- “waste book（wastebook）→ journal → ledger（double-entry）” という **三段階の記録プロセス**が、学者（learned）にも模倣に値するとされ..."
+    },
+    {
+      "file": "knowledge/zettelkasten/structure/design_philosophy_20251228.md",
+      "line": 25,
+      "length": 127,
+      "content": "私たちのプロジェクトにあっても重要なのは、このような**情報の内的な経済圏**（\"paper slip economy\" - Krajewski）を確立することであり、それによって私たちが環境がもたら..."
+    },
+    {
+      "file": "knowledge/zettelkasten/structure/design_philosophy_20251228.md",
+      "line": 31,
+      "length": 121,
+      "content": "リヒテンベルクは計り知れない人物で、この計画のもとなるに原理を多分知っていたように思える。まだ当時はAIもコンピュータもカードボックスもなかったのだが、彼は推論や発見のプロセスの中で、そうした手段がい..."
+    },
+    {
+      "file": "knowledge/zettelkasten/structure/design_philosophy_20251228.md",
+      "line": 89,
+      "length": 108,
+      "content": "- [[luhmann_communicating_with_slip_boxes_20260104|Communicating with Slip Boxes（ルーマン：スリップボックスとのコミュニ..."
+    },
+    {
+      "file": "knowledge/zettelkasten/structure/design_philosophy_20251228.md",
+      "line": 90,
+      "length": 124,
+      "content": "- [[dla_marbach_zettelkasten_maschinen_der_phantasie_20260104|Zettelkästen. Maschinen der Phantasie（..."
+    }
+  ]
+}
