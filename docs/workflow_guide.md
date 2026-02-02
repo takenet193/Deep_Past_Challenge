@@ -21,7 +21,7 @@
 
 ## 関連ドキュメント
 
-- **プロジェクト全体アーキテクチャ**: `docs/project_architecture.md`
+- **システム概要・アーキテクチャ**: `docs/system_overview.md`
 - **スクリプトガイド**: `docs/scripts_guide.md`
 - **エージェント定義（チーム憲法）**: `.cursor/kaggle_team.mdc`
 - **実験フロー指示**: `.cursor/experiment_flow_instructions.mdc`

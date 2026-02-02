@@ -90,7 +90,6 @@ graph TB
 
 詳細な設計については、以下のドキュメントを参照してください：
 
-- [プロジェクトアーキテクチャ](./project_architecture.md) - システム設計の概要と各コンポーネントへのリンク
 - [コンポーネント詳細設計](./components/) - 各コンポーネントの詳細
   - [知識・タスクデータベース](./components/knowledge_database.md)
   - [JSON形式タスク管理システム](./components/task_management.md)
@@ -98,3 +97,15 @@ graph TB
   - [実験・結果管理](./components/experiment_management.md)
 - [実装ロードマップ](./roadmap.md) - 実装計画と進捗
 - [将来実装機能の詳細設計](./future_features.md) - 将来実装予定の機能
+
+## ディレクトリ構造
+
+- `knowledge/`: Obsidian知識ベース（Zettelkasten + GTD）
+- `tasks/`: エージェント用タスクJSON
+- `experiments/`: 実験コード（テンプレートベース）
+- `results/`: 実験結果（Git管理/非管理の分離）
+- `scripts/`: ワークフロー支援・Kaggle用スクリプト
+- `docs/`: プロジェクトドキュメント
+- `.cursor/`: AIエージェント定義ファイル
+
+より詳細な構造については、各コンポーネント詳細ドキュメントを参照してください。

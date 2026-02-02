@@ -274,7 +274,5 @@ Kaggle APIを使用してディスカッションを定期的に取得し、`kno
 
 ## 関連ドキュメント
 
-- [プロジェクトアーキテクチャ](../project_architecture.md) - システム設計の概要
-- [システム概要](../system_overview.md) - システム全体の概要
+- [システム概要・アーキテクチャ](../system_overview.md) - システム全体の概要と設計
 - [JSON形式タスク管理システム](./task_management.md) - タスク管理システムの詳細
-

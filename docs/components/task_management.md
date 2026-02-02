@@ -87,8 +87,6 @@ python scripts/workflow/task_converter.py
 
 ## 関連ドキュメント
 
-- [プロジェクトアーキテクチャ](../project_architecture.md) - システム設計の概要
-- [システム概要](../system_overview.md) - システム全体の概要
+- [システム概要・アーキテクチャ](../system_overview.md) - システム全体の概要と設計
 - [知識・タスクデータベース](./knowledge_database.md) - 知識管理システムの詳細
 - [マルチエージェントシステム](./multi_agent_system.md) - エージェントシステムの詳細
-

@@ -69,7 +69,5 @@
 
 ## 関連ドキュメント
 
-- [プロジェクトアーキテクチャ](./project_architecture.md) - システム設計の概要
-- [システム概要](./system_overview.md) - システム全体の概要
+- [システム概要](./system_overview.md) - システム全体の概要と設計
 - [将来実装機能の詳細設計](./future_features.md) - 将来実装予定の機能の詳細設計
-

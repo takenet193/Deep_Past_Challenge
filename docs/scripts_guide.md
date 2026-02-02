@@ -29,7 +29,7 @@ scripts/
 ## 関連ドキュメント
 
 - **ワークフローガイド**: `docs/workflow_guide.md`
-- **プロジェクトアーキテクチャ**: `docs/project_architecture.md`
+- **システム概要・アーキテクチャ**: `docs/system_overview.md`
 - **タスク管理（GTD）**: `knowledge/tasks/_gtd_guide.md`（存在する場合）
 - **Docs Managerルール**: `.cursor/docs_manager_rules.mdc`
 - **Developer 実験運用ルール**: `.cursor/developer_experiment_rules.mdc`
