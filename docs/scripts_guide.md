@@ -4,18 +4,11 @@
 
 ## 概要
 
-### スクリプトの分類
-
-プロジェクトのスクリプトは以下の2つのカテゴリに分類されます：
-
-1. **ワークフロー管理スクリプト** (`scripts/workflow/`): タスク管理、プロジェクトリンク同期など
-2. **Kaggle提出スクリプト** (`scripts/kaggle/`): Kaggle APIを使用した提出処理
-
 ### ディレクトリ構造
 
 ```
 scripts/
-├── workflow/          # ワークフロー管理用
+├── workflow/          # タスク管理、プロジェクトリンク同期など
 │   ├── task_converter.py
 │   ├── task_loader.py
 │   ├── sync_project_links.py
@@ -28,20 +21,9 @@ scripts/
 
 ## 詳細ドキュメント
 
-### ワークフロー管理スクリプト
-
 - [ワークフロー管理スクリプト](./scripts/workflow_scripts.md) - タスク変換、タスク読み込み、プロジェクトリンク同期、タスク移動
-
-### Kaggle提出スクリプト
-
 - [Kaggle提出スクリプト](./scripts/kaggle_scripts.md) - Kaggle API認証確認、提出処理
-
-### スクリプト実行のワークフロー
-
 - [スクリプト実行のワークフロー](./scripts/scripts_workflow.md) - 典型的な使用フロー
-
-### トラブルシューティング
-
 - [トラブルシューティング](./scripts/scripts_troubleshooting.md) - よくある問題と解決方法
 
 ## 関連ドキュメント

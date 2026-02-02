@@ -1,24 +1,10 @@
 # システム概要
 
-> **📊 図の表示について**: このドキュメントにはMermaid図が含まれています。
-> 図が表示されない場合は、**Markdownプレビュー**を開いてください（`Cmd+Shift+V`）。
-
 ## エグゼクティブサマリー
 
 本プロジェクトは、Kaggleコンペティションに参加するための統合開発プラットフォームです。
 知識管理（Zettelkasten + GTD）、JSON形式のタスク管理、マルチエージェントシステム、実験管理の4つの主要コンポーネントが実装済みです。
 MLOpsパイプラインは将来実装予定です。
-
-### 実装状況一覧（2026年1月時点）
-
-| コンポーネント | 実装状況 | 主要機能 |
-|:---|:---|:---|
-| 1. 知識・タスクデータベース | ✅ 実装済み | Obsidian、Zettelkasten、GTD |
-| 2. JSON形式タスク管理 | ✅ 実装済み | task_converter.py、task_loader.py、sync_project_links.py |
-| 3. マルチエージェントシステム | ✅ 実装済み | Planner、Developer、Validator、Docs Manager、Version Controller |
-| 4. 実験・結果管理 | ✅ 実装済み | experiments/、results/、テンプレートシステム |
-| 5. MLOpsパイプライン | ⏳ 未実装 | GitHub Actions、MLflow、W&B、DVC |
-| 監視スクリプトシステム | ⏳ 未実装 | task_watcher.py、knowledge_watcher.py等 |
 
 ### プロジェクトの目的
 
@@ -27,14 +13,9 @@ MLOpsパイプラインは将来実装予定です。
 - **半自動化された実験フロー**: マルチエージェントによる実験の自動実行 ✅ 実装済み
 - **スケーラブルなMLOps**: 将来的な本格運用への拡張性 ⏳ 将来実装
 
----
-
 ## システム全体構成図
 
-> **注**: この図はMarkdownプレビュー（`Cmd+Shift+V`または右上のプレビューアイコン）で表示されます。
-> プレビューが表示されない場合は、下記のテキスト版をご参照ください。
-
-### Mermaid図
+VSCode で閲覧するには Markdown Preview Mermaid Support 拡張機能をインストールしてください。
 
 ```mermaid
 graph TB
@@ -105,8 +86,6 @@ graph TB
     style MLOPS fill:#f5e1ff
 ```
 
----
-
 ## 関連ドキュメント
 
 詳細な設計については、以下のドキュメントを参照してください：
@@ -119,4 +98,3 @@ graph TB
   - [実験・結果管理](./components/experiment_management.md)
 - [実装ロードマップ](./roadmap.md) - 実装計画と進捗
 - [将来実装機能の詳細設計](./future_features.md) - 将来実装予定の機能
-
