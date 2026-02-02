@@ -233,15 +233,6 @@ graph TD
 3. Obsidianが自動的にグラフを生成
 4. タグ `#best-score` で最良モデルをマーキング
 
-### 実験テンプレート自動生成スクリプト ⏳ **未実装**
-
-実験テンプレートの自動生成スクリプトは現在未実装です。新規実験の作成時は、`experiments/_template_experiment/`をコピーして手動で作成します。
-
-**将来実装予定の機能**:
-- `scripts/workflow/create_experiment.py`: タイムスタンプ形式の実験IDでディレクトリとテンプレートファイルを自動生成（将来実装）
-- 親実験からの`config.yaml`継承機能
-- 実験ディレクトリ名の自動生成（`expYYYYMMDDHHMMSS_[description]`）
-
 ## 関連ドキュメント
 
 - [システム概要・アーキテクチャ](../system_overview.md) - システム全体の概要と設計

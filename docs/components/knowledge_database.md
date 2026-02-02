@@ -264,14 +264,6 @@ SORT choice(status="active",0, choice(status="waiting",1, choice(status="someday
 [関連する知識ノートへのリンク]
 ```
 
-## 将来実装予定
-
-### Kaggle Discussion自動取り込みパイプライン
-
-Kaggle APIを使用してディスカッションを定期的に取得し、`knowledge/references/kaggle_discussions/`に保存する機能。
-
-詳細は「[将来実装機能の詳細設計](../future_features.md)」セクションを参照してください。
-
 ## 関連ドキュメント
 
 - [システム概要・アーキテクチャ](../system_overview.md) - システム全体の概要と設計

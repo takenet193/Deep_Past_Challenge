@@ -39,6 +39,7 @@
   - [ ] results_watcher.py（結果自動知識化）
   - [ ] experiment_watcher.py（コード品質検証）
   - [ ] watch_all.py（統合監視システム）
+- [ ] 実験テンプレート自動生成スクリプト (`create_experiment.py`)
 - [ ] Kaggle Discussion自動取り込みパイプライン
   - [ ] Kaggle API連携
   - [ ] 定期実行スクリプト

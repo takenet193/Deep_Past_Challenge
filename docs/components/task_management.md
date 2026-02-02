@@ -77,14 +77,6 @@ python scripts/workflow/task_converter.py
 - `scripts/workflow/task_loader.py`: タスクJSONを読み込むユーティリティ
 - `scripts/workflow/sync_project_links.py`: プロジェクトとタスク間のリンクを自動同期
 
-## 将来実装予定
-
-### タスク優先度計算と計算資源割り当て
-
-タスクの優先度と計算資源を考慮した実行計画の立案機能。W&B (Weights & Biases) との統合も検討。
-
-詳細は「[将来実装機能の詳細設計](../future_features.md)」セクションを参照してください。
-
 ## 関連ドキュメント
 
 - [システム概要・アーキテクチャ](../system_overview.md) - システム全体の概要と設計
