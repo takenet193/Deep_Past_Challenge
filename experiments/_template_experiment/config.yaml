@@ -1,12 +1,12 @@
-# Experiment Configuration Template
-# Copy this file to your experiment directory and customize
+# 実験設定ファイルテンプレート
+# このファイルをコピーして、新しい実験ごとに編集してください。
 
 experiment:
-  id: "expYYYYMMDDHHMMSS"  # タイムスタンプ形式（例: exp20260105180000）
+  id: "expYYYYMMDDHHMMSS"  # タイムスタンプ形式
   name: "[description]"
   description: "[詳細な説明]"
   created_at: "YYYY-MM-DDTHH:MM:SS"
-  parent_experiment: null  # 派生元の実験ID（初回はnull）
+  parent_experiment: null  # 派生元の実験ID（初回はnull）、派生元の場合は指定
   tags:
     - baseline  # or: feature_engineering, model_tuning, etc.
 
@@ -52,5 +52,3 @@ output:
   save_plots: false
 
 seed: 42
-
-

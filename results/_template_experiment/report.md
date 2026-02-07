@@ -98,18 +98,14 @@ cv_folds: 5
 
 ```
 experiments/expYYYYMMDDHHMMSS_[description]/
-├── expYYYYMMDDHHMMSS_config.yaml       # 設定ファイル
-├── expYYYYMMDDHHMMSS_train.py          # 学習スクリプト
-└── expYYYYMMDDHHMMSS_predict.py        # 推論スクリプト
+├── config.yaml       # 設定ファイル
+├── train.py          # 学習スクリプト
+└── predict.py        # 推論スクリプト
 
 results/expYYYYMMDDHHMMSS_[description]/
-├── expYYYYMMDDHHMMSS_report.md         # このファイル（実験レポート）
-├── expYYYYMMDDHHMMSS_metrics.json      # 評価指標
-├── expYYYYMMDDHHMMSS_cv_results.json   # CV結果
-├── expYYYYMMDDHHMMSS_submission.csv    # 提出ファイル
-└── expYYYYMMDDHHMMSS_model.pkl         # モデルファイル
+├── report.md         # このファイル（実験レポート）
+├── metrics.json      # 評価指標
+├── cv_results.json   # CV結果
+├── submission.csv    # 提出ファイル
+└── model.pkl         # モデルファイル
 ```
-
-
-
-
