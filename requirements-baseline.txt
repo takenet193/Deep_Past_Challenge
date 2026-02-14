@@ -1,0 +1,17 @@
+# ベースライン（ByT5 再現）用の追加依存関係
+# インストール: pip install -r requirements.txt -r requirements-baseline.txt
+
+# 深層学習（ByT5 用）
+torch>=2.0.0
+transformers>=4.30.0
+tokenizers>=0.13.0
+accelerate>=0.20.0
+
+# ハイパーパラメータチューニング
+optuna>=3.0.0
+
+# 評価
+sacrebleu>=2.3.0
+
+# 補助
+sentencepiece>=0.1.99

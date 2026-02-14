@@ -1,0 +1,375 @@
+C:\Users\ND003\OneDrive\Desktop\Deep_Past_Challenge\scripts\baseline_eda.py:164: MatplotlibDeprecationWarning: The 'labels' parameter of boxplot() has been renamed 'tick_labels' since Matplotlib 3.9; support for the old name will be dropped in 3.11.
+  axes[0].boxplot([train['translit_len_words'].dropna()], labels=['Transliteration'])
+C:\Users\ND003\OneDrive\Desktop\Deep_Past_Challenge\scripts\baseline_eda.py:169: MatplotlibDeprecationWarning: The 'labels' parameter of boxplot() has been renamed 'tick_labels' since Matplotlib 3.9; support for the old name will be dropped in 3.11.
+  axes[1].boxplot([train['translation_len_words'].dropna()], labels=['Translation'])
+================================================================================
+  Deep Past Challenge - Baseline EDA
+  繧ｿ繧ｹ繧ｯ: task_baseline_eda_20260211123000
+================================================================================
+
+================================================================================
+  1. 蝓ｺ譛ｬ讒矩縺ｮ謚頑升
+================================================================================
+
+
+--- train.csv ---
+  Shape: (1561, 3) (陦梧焚=1561, 蛻玲焚=3)
+  Columns: ['oare_id', 'transliteration', 'translation']
+  NULL: 縺ｪ縺・
+
+--- test.csv ---
+  Shape: (4, 5) (陦梧焚=4, 蛻玲焚=5)
+  Columns: ['id', 'text_id', 'line_start', 'line_end', 'transliteration']
+  NULL: 縺ｪ縺・
+
+--- sample_submission.csv ---
+  Shape: (4, 2) (陦梧焚=4, 蛻玲焚=2)
+  Columns: ['id', 'translation']
+  NULL: 縺ｪ縺・
+
+--- Sentences_Oare_FirstWord_LinNum.csv ---
+  Shape: (9782, 12) (陦梧焚=9782, 蛻玲焚=12)
+  Columns: ['display_name', 'text_uuid', 'sentence_uuid', 'sentence_obj_in_text', 'translation', 'first_word_transcription', 'first_word_spelling', 'first_word_number', 'first_word_obj_in_text', 'line_number', 'side', 'column']
+  NULL counts:
+    translation: 10
+    first_word_transcription: 1247
+
+--- published_texts.csv ---
+  Shape: (7953, 19) (陦梧焚=7953, 蛻玲焚=19)
+  Columns: ['oare_id', 'online transcript', 'cdli_id', 'aliases', 'label', 'publication_catalog', 'description', 'genre_label', 'inventory_position', 'online_catalog', 'note', 'interlinear_commentary', 'online_information', 'excavation_no', 'oatp_key', 'eBL_id', 'AICC_translation', 'transliteration_orig', 'transliteration']
+  NULL counts:
+    cdli_id: 251
+    aliases: 1
+    label: 1
+    publication_catalog: 6011
+    genre_label: 10
+    inventory_position: 131
+    online_catalog: 7914
+    note: 2846
+    interlinear_commentary: 5107
+    online_information: 7876
+    excavation_no: 4400
+    oatp_key: 2760
+    eBL_id: 6481
+    AICC_translation: 251
+
+--- OA_Lexicon_eBL.csv ---
+  Shape: (39332, 9) (陦梧焚=39332, 蛻玲焚=9)
+  Columns: ['type', 'form', 'norm', 'lexeme', 'eBL', 'I_IV', 'A_D', 'Female(f)', 'Alt_lex']
+  NULL counts:
+    form: 2
+    I_IV: 38557
+    A_D: 38557
+    Female(f): 39310
+    Alt_lex: 38446
+
+--- 繝・・繧ｿ縺ｮ髢｢菫・---
+  train: 1561 譁・嶌・域枚譖ｸ蜊倅ｽ搾ｼ・
+  test: 4 譁・ｼ域悽逡ｪ縺ｯ邏・,000譁・ｼ・
+  sample_submission: 4 陦鯉ｼ・est.id 縺ｨ蟇ｾ蠢懶ｼ・
+  test 縺ｮ text_id 繝ｦ繝九・繧ｯ謨ｰ: 1 譁・嶌
+
+================================================================================
+  2. 髟ｷ縺輔・蛻・ｸ・・遒ｺ隱・
+================================================================================
+
+
+--- 霆｢蜀呻ｼ・ransliteration・峨・髟ｷ縺慕ｵｱ險・---
+譁・ｭ玲焚:
+count    1561.000000
+mean      426.459321
+std       269.688193
+min        21.000000
+25%       204.000000
+50%       365.000000
+75%       632.000000
+95%       897.000000
+99%       913.000000
+max       932.000000
+Name: translit_len_char, dtype: float64
+
+蜊倩ｪ樊焚:
+count    1561.000000
+mean       57.531710
+std        37.025067
+min         3.000000
+25%        28.000000
+50%        49.000000
+75%        84.000000
+95%       124.000000
+99%       148.400000
+max       187.000000
+Name: translit_len_words, dtype: float64
+
+--- 鄙ｻ險ｳ・・ranslation・峨・髟ｷ縺慕ｵｱ險・---
+譁・ｭ玲焚:
+count    1561.000000
+mean      499.723895
+std       466.365112
+min         6.000000
+25%       172.000000
+50%       383.000000
+75%       681.000000
+95%      1351.000000
+99%      2533.000000
+max      3895.000000
+Name: translation_len_char, dtype: float64
+
+蜊倩ｪ樊焚:
+count    1561.000000
+mean       90.497758
+std        85.203641
+min         1.000000
+25%        31.000000
+50%        68.000000
+75%       125.000000
+95%       248.000000
+99%       458.600000
+max       744.000000
+Name: translation_len_words, dtype: float64
+
+--- 髟ｷ縺墓ｯ費ｼ・ranslation / transliteration・・--
+count    1561.000000
+mean        1.474496
+std         0.670551
+min         0.014706
+25%         1.250000
+50%         1.476190
+75%         1.653333
+95%         2.285714
+99%         4.055046
+max        11.000000
+Name: length_ratio, dtype: float64
+
+讌ｵ遶ｯ縺ｫ髟ｷ縺・し繝ｳ繝励Ν・・5繝代・繧ｻ繝ｳ繧ｿ繧､繝ｫ莉･荳奇ｼ・ 72 莉ｶ
+
+蜿ｯ隕門喧繧剃ｽ懈・荳ｭ...
+  菫晏ｭ・ C:\Users\ND003\OneDrive\Desktop\Deep_Past_Challenge\results\figures\length_distribution.png
+  菫晏ｭ・ C:\Users\ND003\OneDrive\Desktop\Deep_Past_Challenge\results\figures\length_correlation.png
+  菫晏ｭ・ C:\Users\ND003\OneDrive\Desktop\Deep_Past_Challenge\results\figures\length_boxplot.png
+
+--- 譁・腰菴阪〒縺ｮ髟ｷ縺募・蟶・ｼ・entences_Oare_FirstWord_LinNum.csv・・---
+  Sentences 莉ｶ謨ｰ: 9782
+  譁・腰菴阪・鄙ｻ險ｳ髟ｷ縺包ｼ亥腰隱樊焚・臥ｵｱ險・
+count    9772.000000
+mean       13.056590
+std        10.727816
+min         0.000000
+25%         6.000000
+50%        11.000000
+75%        17.000000
+95%        32.000000
+99%        51.000000
+max       178.000000
+Name: sent_len_words, dtype: float64
+
+================================================================================
+  3. 險伜捷繝ｻ陦ｨ險倥・蜃ｺ迴ｾ迥ｶ豕・
+================================================================================
+
+--- 險伜捷縺ｮ蜃ｺ迴ｾ鬆ｻ蠎ｦ ---
+  豎ｺ螳夊ｩ・{}: 0 / 1561 (0.0%)
+  荳ｸ諡ｬ蠑ｧ determinatives (): 527 / 1561 (33.8%)
+  隗呈峡蠑ｧ []: 152 / 1561 (9.7%)
+  逵∫払險伜捷 窶ｦ: 393 / 1561 (25.2%)
+  gap 繝槭・繧ｫ繝ｼ: 0 / 1561 (0.0%)
+  ! (遒ｺ螳溘↑隱ｭ隗｣): 0 / 1561 (0.0%)
+  ? (荳咲｢ｺ螳溘↑隱ｭ隗｣): 0 / 1561 (0.0%)
+  / (陦悟玄蛻・ｊ): 0 / 1561 (0.0%)
+  : (隱槫玄蛻・ｊ): 0 / 1561 (0.0%)
+
+--- 豎ｺ螳夊ｩ槭・蜀・ｨｳ・・OP 20・・---
+  {d}: 482 蝗・
+  {ki}: 383 蝗・
+
+--- 迚ｹ谿頑枚蟄励・蜃ｺ迴ｾ鬆ｻ蠎ｦ ---
+  盧ｪ: 383 蝗・
+  盧ｫ: 4552 蝗・
+  ﾅ｡: 20354 蝗・
+  ﾅ: 1966 蝗・
+  盪｣: 2533 蝗・
+  盪｢: 1 蝗・
+  盪ｭ: 1215 蝗・
+  盪ｬ: 0 蝗・
+
+--- 荳倶ｻ倥″謨ｰ蟄励・蜃ｺ迴ｾ鬆ｻ蠎ｦ ---
+  竄: 255 蝗・
+  竄・ 299 蝗・
+  竄・ 41 蝗・
+  竄・ 1769 蝗・
+  竄・ 1194 蝗・
+  竄・ 47 蝗・
+  竄・ 1 蝗・
+  竄・ 62 蝗・
+  竄・ 4 蝗・
+
+================================================================================
+  4. 隱槫ｽ吶・霎樊嶌諠・ｱ縺ｨ縺ｮ髢｢菫・
+================================================================================
+
+--- OA_Lexicon_eBL.csv 縺ｨ縺ｮ繝槭ャ繝√Φ繧ｰ ---
+  Lexicon 邱丈ｻｶ謨ｰ: 39332
+  Lexicon 繧ｫ繝ｩ繝: ['type', 'form', 'norm', 'lexeme', 'eBL', 'I_IV', 'A_D', 'Female(f)', 'Alt_lex']
+
+  train 縺ｮ繝ｦ繝九・繧ｯ蜊倩ｪ樊焚: 11761
+  lexicon.form 縺ｮ繝ｦ繝九・繧ｯ謨ｰ: 35048
+  繧ｫ繝舌Ξ繝・ず: 8205 / 11761 (69.8%)
+
+  Lexicon 蜀・・蝗ｺ譛牙錐隧・
+    PN (Person Name): 13424 莉ｶ
+    GN (Geographic Name): 334 莉ｶ
+
+--- 繝ｭ繧ｴ繧ｰ繝ｩ繝・亥・螟ｧ譁・ｭ・+ 繝峨ャ繝茨ｼ峨・鬆ｻ蠎ｦ TOP 30 ---
+  BABBAR: 3391 蝗・
+  DUMU: 1932 蝗・
+  IGI: 1128 蝗・
+  URUDU: 578 蝗・
+  AN.NA: 490 蝗・
+  DINGIR: 345 蝗・
+  A: 333 蝗・
+  SIG竄・ 325 蝗・
+  PUZUR竄・ 291 蝗・
+  TA: 255 蝗・
+  DU竄≫・: 247 蝗・
+  KI: 212 蝗・
+  DAM: 211 蝗・
+  ITU.KAM: 200 蝗・
+  UTU: 188 蝗・
+  BA: 144 蝗・
+  GAL: 138 蝗・
+  GI: 116 蝗・
+  KAM: 112 蝗・
+  ITU: 111 蝗・
+  DIRI: 88 蝗・
+  EN: 82 蝗・
+  IM: 76 蝗・
+  MAR.TU: 66 蝗・
+  ILLAT: 61 蝗・
+  DUG: 55 蝗・
+  SIPA: 48 蝗・
+  GIG: 38 蝗・
+  NINDA: 36 蝗・
+  LUGAL: 28 蝗・
+
+================================================================================
+  5. 闍ｱ險ｳ蛛ｴ縺ｮ迚ｹ蠕ｴ
+================================================================================
+
+--- 鄙ｻ險ｳ繝・く繧ｹ繝医・髟ｷ縺慕ｵｱ險茨ｼ亥腰隱樊焚・・---
+count    1561.000000
+mean       90.497758
+std        85.203641
+min         1.000000
+25%        31.000000
+50%        68.000000
+75%       125.000000
+95%       248.000000
+99%       458.600000
+max       744.000000
+Name: translation_len_words, dtype: float64
+
+--- 蝗ｺ譛牙錐隧槫呵｣懶ｼ亥､ｧ譁・ｭ鈴幕蟋九ヨ繝ｼ繧ｯ繝ｳ・欝OP 30 ---
+  Aﾅ｡ﾅ｡ur: 2104 蝗・
+  Ennam-: 788 蝗・
+  Iﾅ｡tar: 682 蝗・
+  Ali-ahum: 531 蝗・
+  City: 468 蝗・
+  The: 453 蝗・
+  If: 401 蝗・
+  Suen: 392 蝗・
+  To: 386 蝗・
+  Puzur-: 324 蝗・
+  Amur-: 309 蝗・
+  Witnessed: 253 蝗・
+  From: 248 蝗・
+  He: 238 蝗・
+  My: 224 蝗・
+  In: 211 蝗・
+  Iddin-: 207 蝗・
+  Kanesh: 206 蝗・
+  Elamma: 199 蝗・
+  As: 197 蝗・
+  Iddin-abum: 182 蝗・
+  Seal: 166 蝗・
+  We: 160 蝗・
+  You: 158 蝗・
+  Bﾄ斗um: 156 蝗・
+  Enna-: 135 蝗・
+  Kﾅｫbum: 133 蝗・
+  Aﾅ｡ﾅ｡ur-imittﾄｫ: 128 蝗・
+  Aﾅ｡ﾅ｡ur-盪ｭﾄ｜: 128 蝗・
+  When: 123 蝗・
+
+--- 蜿･隱ｭ轤ｹ縺ｮ鬆ｻ蠎ｦ ---
+  ',': 8490 蝗・
+  '.': 16960 蝗・
+  ':': 1629 蝗・
+  ';': 1039 蝗・
+  '?': 405 蝗・
+  '!': 352 蝗・
+  '...': 2996 蝗・
+  '"': 1440 蝗・
+  '(': 1061 蝗・
+  ')': 1060 蝗・
+
+  蠑慕畑隨ｦ繧貞性繧繧ｵ繝ｳ繝励Ν: 394 / 1561 (25.2%)
+  諡ｬ蠑ｧ () 繧貞性繧繧ｵ繝ｳ繝励Ν: 560 / 1561 (35.9%)
+  逵∫払險伜捷 ... 繧貞性繧繧ｵ繝ｳ繝励Ν: 623 / 1561 (39.9%)
+
+--- 謨ｰ蛟､陦ｨ迴ｾ縺ｮ繝代ち繝ｼ繝ｳ・医し繝ｳ繝励Ν・・---
+  1 mina: 302 蝗・
+  0.5 mina: 184 蝗・
+  2 mina: 181 蝗・
+  10 shekel: 179 蝗・
+  5 shekel: 147 蝗・
+  10 mina: 145 蝗・
+  0.3333 mina: 138 蝗・
+  3 shekel: 131 蝗・
+  1 shekel: 126 蝗・
+  2 shekel: 124 蝗・
+  4 shekel: 113 蝗・
+  1.5 shekel: 110 蝗・
+  15 shekel: 102 蝗・
+  1 talent: 100 蝗・
+  5 mina: 99 蝗・
+  3 mina: 88 蝗・
+  4 mina: 78 蝗・
+  12 shekel: 71 蝗・
+  0.6666 mina: 68 蝗・
+  1.5 mina: 67 蝗・
+
+================================================================================
+  6. 繝吶・繧ｹ繝ｩ繧､繝ｳ螳溯｣・∈縺ｮ繝輔ぅ繝ｼ繝峨ヰ繝・け
+================================================================================
+
+--- 蜑榊・逅・・蜆ｪ蜈亥ｺｦ・医∪縺ｨ繧・ｼ・---
+
+縲仙━蜈亥ｺｦ・夐ｫ倥大ｿ・医・蜑榊・逅・
+  1. 盧ｪ/盧ｫ 竊・H/h 縺ｮ鄂ｮ謠幢ｼ・est 縺ｯ H/h 縺ｮ縺ｿ・・
+  2. 譖ｸ險倩ｨ伜捷縺ｮ髯､蜴ｻ・・ ? / : < > ﾋｹ ﾋｺ [ ]・・
+  3. determinatives 縺ｮ邨ｱ荳・・d) 竊・{d} 縺ｪ縺ｩ・・
+  4. train 縺ｮ譁・腰菴榊・蜑ｲ・・entences_Oare_FirstWord_LinNum.csv 蛻ｩ逕ｨ・・
+
+縲仙━蜈亥ｺｦ・壻ｸｭ縲第耳螂ｨ縺ｮ蜑榊・逅・
+  5. 谺謳阪・繝ｼ繧ｫ繝ｼ縺ｮ邨ｱ荳・・x] 竊・<gap>, 窶ｦ 竊・<big_gap>・・
+  6. 荳倶ｻ倥″謨ｰ蟄励・ ASCII 蛹厄ｼ遺ｅ 竊・5・・
+
+縲仙━蜈亥ｺｦ・壻ｽ弱第､懆ｨ弱・蜑榊・逅・
+  7. 鄙ｻ險ｳ縺ｮ蠑慕畑隨ｦ豁｣隕丞喧
+  8. 繧｢繧ｯ繧ｻ繝ｳ繝井ｻ倥″豈埼浹縺ｮ邨ｱ荳・亥ｿ・ｦ√↓蠢懊§縺ｦ・・
+
+--- 髟ｷ縺募宛蠕｡縺ｮ譁ｹ驥・---
+  霆｢蜀・ 蟷ｳ蝮・57.5 蜊倩ｪ槭・5%ile 124.0 蜊倩ｪ・
+  鄙ｻ險ｳ: 蟷ｳ蝮・90.5 蜊倩ｪ槭・5%ile 248.0 蜊倩ｪ・
+  竊・繝｢繝・Ν蜈･蜉幃聞: 148 繝医・繧ｯ繝ｳ遞句ｺｦ
+  竊・繝｢繝・Ν蜃ｺ蜉幃聞: 297 繝医・繧ｯ繝ｳ遞句ｺｦ
+
+--- 霑ｽ蜉繝・・繧ｿ縺ｮ豢ｻ逕ｨ蜆ｪ蜈亥ｺｦ ---
+  繝吶・繧ｹ繝ｩ繧､繝ｳ: 縺ｾ縺・train.csv・育ｴ・,500莉ｶ・峨・縺ｿ縺ｧ讒狗ｯ・
+  蟆・擂: published_texts.csv + publications.csv 縺九ｉ霑ｽ蜉蟄ｦ鄙偵ョ繝ｼ繧ｿ繧呈歓蜃ｺ
+  霎樊嶌: OA_Lexicon_eBL.csv 繧貞崋譛牙錐隧槭・豁｣隕丞喧縺ｫ豢ｻ逕ｨ
+
+================================================================================
+  EDA 螳御ｺ・
+  邨先棡縺ｯ results/eda_output.txt 縺ｨ results/figures/ 縺ｫ菫晏ｭ倥＆繧後※縺・∪縺・
+================================================================================
