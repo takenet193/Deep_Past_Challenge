@@ -50,3 +50,5 @@ logs/
 .env
 .env.local
 
+# Generated local MCP config (contains local absolute paths)
+mcp_config.json

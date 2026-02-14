@@ -29,7 +29,7 @@ bash ./scripts/generate_mcp_config.sh /path/to/workspace
 - GitHubトークンはどこで設定しますか？
   - `.env` に `GITHUB_PERSONAL_ACCESS_TOKEN` を設定してください。Cursor/MCP 実行環境から参照されます。
 - workspace の相対パスは使えますか？
-  - いいえ。`filesystem` MCP は絶対パスが必要です。
+  - `filesystem` MCP は**絶対パス**が必要です。ただしCursorの設定では `${workspaceFolder}` がワークスペースの絶対パスに展開されるため、`mcp.json`側でこの変数を使うのはOKです。
 
 
 ## プレースホルダ

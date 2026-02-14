@@ -4,109 +4,111 @@
     "type": "split",
     "children": [
       {
-        "id": "ab6e27d6f0098398",
+        "id": "f967b8398d9a2278",
         "type": "tabs",
         "children": [
           {
-            "id": "888c717f382c172e",
+            "id": "f8fe501555616621",
             "type": "leaf",
+            "pinned": true,
             "state": {
               "type": "markdown",
               "state": {
-                "file": "knowledge/inbox/task_refactor_20260124.md",
+                "file": "knowledge/tasks/_MASTER_TASKS.md",
                 "mode": "source",
                 "source": false
               },
+              "pinned": true,
               "icon": "lucide-file",
-              "title": "task_refactor_20260124"
+              "title": "_MASTER_TASKS"
             }
           },
           {
-            "id": "cd7a29a99ca73a7a",
+            "id": "38351a8be3491c18",
             "type": "leaf",
+            "pinned": true,
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/components/multi_agent_system.md",
+                "file": "knowledge/tasks/projects/project_baseline.md",
                 "mode": "source",
                 "source": false
               },
+              "pinned": true,
               "icon": "lucide-file",
-              "title": "multi_agent_system"
+              "title": "project_baseline"
             }
           },
           {
-            "id": "5e6ca933527d1f43",
+            "id": "36446d4d734b879a",
             "type": "leaf",
+            "pinned": true,
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "docs/system_overview.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "system_overview"
+              "type": "graph",
+              "state": {},
+              "pinned": true,
+              "icon": "lucide-git-fork",
+              "title": "グラフビュー"
             }
           },
           {
-            "id": "615f7b658673ee45",
+            "id": "8cd9947d865adfec",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "knowledge/tasks/projects/project_docs_refactor.md",
+                "file": "knowledge/zettelkasten/permanent/deep_past_eda_results_20260211140000.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "project_docs_refactor"
+              "title": "deep_past_eda_results_20260211140000"
             }
           },
           {
-            "id": "285d67db492598db",
+            "id": "ab551dac99875c53",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "knowledge/tasks/projects/project_docs_refactor.md",
+                "file": "knowledge/zettelkasten/permanent/deep_past_train_document_genre_20260211150000.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "project_docs_refactor"
+              "title": "deep_past_train_document_genre_20260211150000"
             }
           },
           {
-            "id": "74583ab0caec0bd1",
+            "id": "77de3f3d8d25b535",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "knowledge/tasks/active/task_docs_refactor_execute_20260123130000.md",
+                "file": "knowledge/zettelkasten/references/harukiharada_byt5_optuna_chunked_beam_search_reference_20260213000000.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "task_docs_refactor_execute_20260123130000"
+              "title": "harukiharada_byt5_optuna_chunked_beam_search_reference_20260213000000"
             }
           },
           {
-            "id": "f5f87ab1efb69a45",
+            "id": "8a13f6ff458768ca",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/components/knowledge_database.md",
+                "file": "knowledge/zettelkasten/references/harukiharada_byt5_optuna_chunked_beam_search_reference_20260213000000.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "knowledge_database"
+              "title": "harukiharada_byt5_optuna_chunked_beam_search_reference_20260213000000"
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 6
       }
     ],
     "direction": "vertical"
@@ -264,47 +266,51 @@
       "canvas:新規キャンバスを作成": false,
       "daily-notes:今日のデイリーノートを開く": false,
       "templates:テンプレートを挿入": false,
-      "command-palette:コマンドパレットを開く": false,
-      "bases:Create new base": false
+      "bases:Create new base": false,
+      "command-palette:コマンドパレットを開く": false
     }
   },
-  "active": "615f7b658673ee45",
+  "active": "8a13f6ff458768ca",
   "lastOpenFiles": [
-    "docs/components/multi_agent_system.md",
+    "knowledge/tasks/projects/project_baseline.md",
+    "knowledge/zettelkasten/references/harukiharada_byt5_optuna_chunked_beam_search_reference_20260213000000.md",
+    "knowledge/zettelkasten/permanent/deep_past_train_document_genre_20260211150000.md",
+    "knowledge/zettelkasten/references/harukiharada_eda_code_20260213000003.md",
+    "knowledge/zettelkasten/references/harukiharada_metrics_fallback_code_20260213000002.md",
+    "knowledge/zettelkasten/references/harukiharada_preprocessor_postprocessor_code_20260213000000.md",
+    "knowledge/zettelkasten/structure/deep_past_competition_overview_structure_20260210110000.md",
+    "knowledge/tasks/_MASTER_TASKS.md",
+    "knowledge/zettelkasten/permanent/deep_past_eda_results_20260211140000.md",
+    "knowledge/zettelkasten/permanent/formulaic_expressions_metrics_strategy_20260213100000.md",
+    "knowledge/tasks/active/task_baseline_create_baseline_20260210100003.md",
+    "knowledge/zettelkasten/references/akkadian_mt_preprocessing_ensemble_reference_20260211130000.md",
+    "requirements-baseline.txt",
+    "docs/baseline_byt5_reproduction_plan.md",
+    "knowledge/inbox/task_refactor_20260123.md",
+    "knowledge/tasks/projects/project_docs_refactor.md",
+    "knowledge/zettelkasten/permanent/deep_past_preprocessing_20260211130000.md",
+    "knowledge/tasks/active/task_baseline_eda_20260211123000.md",
+    "results/figures/length_boxplot.png",
+    "results/figures/length_correlation.png",
+    "results/figures/length_distribution.png",
+    "results/eda_output.txt",
+    "scripts/baseline_eda.py",
+    "knowledge/zettelkasten/permanent/deep_past_preprocessing_guide_20260211130000.md",
+    "knowledge/zettelkasten/permanent/deep_past_dataset_overview_20260211121000.md",
+    "knowledge/zettelkasten/permanent/deep_past_competition_evaluation_submission_20260210130000.md",
+    "knowledge/zettelkasten/permanent/akkadian_mt_preprocessing_ensemble_reference_20260211130000.md",
+    "knowledge/tasks/active/task_baseline_understand_overview_20260210100001.md",
+    "knowledge/tasks/active/task_baseline_download_data_20260210100002.md",
+    "knowledge/zettelkasten/permanent/chrf_plus_plus_metric_explanation_20260211100000.md",
+    "knowledge/zettelkasten/permanent/evaluation_strategy_geometric_mean_20260211120000.md",
+    "docs/kaggle_references.md",
+    "mcp_config.generated.json",
+    "mcp_config.json",
     "results/docs_audit_check.json",
     "results/docs_audit_20260129234102.json",
-    "docs/scripts/scripts_troubleshooting.md",
-    "docs/scripts/scripts_workflow.md",
-    "docs/scripts/kaggle_scripts.md",
-    "docs/scripts/workflow_scripts.md",
     "docs/scripts",
-    "docs/project_architecture.md",
-    "docs/system_overview.md",
-    "docs/workflow/workflow_best_practices.md",
-    "knowledge/tasks/projects/project_docs_refactor.md",
-    "docs/workflow/workflow_troubleshooting.md",
-    "knowledge/tasks/active/task_docs_refactor_execute_20260123130000.md",
-    "docs/workflow/workflow_examples.md",
-    "docs/components/knowledge_database.md",
-    "docs/workflow/workflow_agent_flow.md",
-    "docs/workflow/workflow_steps.md",
     "docs/workflow",
     "results/docs_audit_20260129232608.json",
-    "docs/future_features.md",
-    "docs/roadmap.md",
-    "docs/components/experiment_management.md",
-    "docs/components/task_management.md",
-    "docs/components",
-    "knowledge/tasks/active/task_docs_audit_20260123120000.md",
-    "completed",
-    "results/docs_audit_20260129224432.json",
-    "scripts/docs/audit_docs.py",
-    "scripts/docs",
-    "knowledge/inbox/task_refactor_20260124.md",
-    "knowledge/zettelkasten/permanent/context_engineering_human_role_ssot_20260104183000.md",
-    "knowledge/tasks/active/task_docs_manager_rules_update_20260123140000.md",
-    "knowledge/inbox/task_refactor_20260123.md",
-    "knowledge/tasks/_MASTER_TASKS.md",
     "無題のファイル.canvas"
   ]
 }
