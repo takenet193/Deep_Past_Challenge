@@ -52,3 +52,6 @@ logs/
 
 # Generated local MCP config (contains local absolute paths)
 mcp_config.json
+
+# Cursor MCP config (local; use mcp_setup/ template to generate)
+.cursor/mcp.json
