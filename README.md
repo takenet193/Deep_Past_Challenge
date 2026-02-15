@@ -13,7 +13,7 @@ pip install -r requirements.txt
 
 # ディレクトリの作成
 mkdir -p knowledge/{inbox,zettelkasten/{permanent,references,structure,index},tasks/{active,waiting,someday,completed,archive,projects/{archive}},templates}
-mkdir -p tasks experiments results data/{raw,processed} scripts
+mkdir -p tasks experiments results data/{raw,processed,models} scripts
 
 # Obsidianの設定
 # knowledge/ ディレクトリをObsidianのVaultとして開く
@@ -53,6 +53,7 @@ mkdir -p tasks experiments results data/{raw,processed} scripts
 - `tasks/`: エージェント用タスクJSON
 - `experiments/`: 実験コード
 - `results/`: 実験結果
+- `data/`: データ・モデル（`raw/`: 生データ, `processed/`: 前処理済み, `models/`: 学習済みモデル・チェックポイント）
 - `scripts/`: ユーティリティスクリプト
 - `docs/`: ドキュメント
 - `.cursor/`: AIエージェント定義ファイル

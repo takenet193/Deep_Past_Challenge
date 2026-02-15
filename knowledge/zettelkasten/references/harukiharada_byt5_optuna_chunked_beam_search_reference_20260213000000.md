@@ -11,9 +11,15 @@ tags:
   - optuna
   - baseline
 links:
+  - byt5_overview_architecture_deeppast_20260214120000
   - harukiharada_preprocessor_postprocessor_code_20260213000000
   - harukiharada_metrics_fallback_code_20260213000002
   - harukiharada_eda_code_20260213000003
+  - harukiharada_model_load_code_20260213000004
+  - harukiharada_dataset_sampler_code_20260213000005
+  - harukiharada_optuna_validation_scoring_code_20260213000006
+  - harukiharada_inference_chunked_beam_search_code_20260213000007
+  - harukiharada_submission_code_20260213000008
   - deep_past_competition_overview_20260210120000
   - akkadian_mt_preprocessing_ensemble_reference_20260211130000
   - deep_past_preprocessing_20260211130000
@@ -75,6 +81,8 @@ The Deep Past Challenge は、約 4,000 年前（紀元前 1950–1750 年頃）
 | 元ネタ | AnthonyTherrien のアンサンブルスクリプト |
 
 ## ByT5 の利点（このタスク向け）
+
+> 詳細な解説（概要・アーキテクチャ・開発経緯・コンペ適合性）→ [[byt5_overview_architecture_deeppast_20260214120000|ByT5 概要・アーキテクチャ・開発経緯と Deep Past Challenge への適合性]]
 
 - **バイトレベル**: トークナイザ不要で任意の言語・書記体系に対応
 - **ノイズ耐性**: 古代テキストの欠損・書記記号・表記ゆれに強い
@@ -145,6 +153,106 @@ Kaggle 本番環境（インターネットオフ）での実出力:
 
 - sacrebleu の pip インストールはネットワーク不可のため失敗するが、フォールバックにより **sacrebleu なしでも評価は実行可能**
 - **GPU 16GB** で動作しているため、ByT5-base 程度であればローカル再現も同程度の VRAM で可能と推測
+
+---
+
+## 実装詳細：モデル読込
+
+**完全コード** → [[harukiharada_model_load_code_20260213000004|harukiharada - モデル読込 完全コード]]
+
+### 概要
+
+- **MODEL_PATH**: `/kaggle/input/final-byt5/byt5-akkadian-optimized-34x`（Kaggle 入力にマウントした ByT5 アッカド語向けファインチューニング済みモデル）
+- **読込**: `AutoTokenizer.from_pretrained(MODEL_PATH)` と `AutoModelForSeq2SeqLM.from_pretrained(MODEL_PATH)` でトークナイザとモデルを同一パスからロード
+- **デバイス**: `torch.cuda.is_available()` で CUDA を判定し、`model.to(device).eval()` で推論モードに
+- **パラメータ数**: 全パラメータの `numel()` 合計を表示（ByT5-base 規模の確認用）
+- **BetterTransformer**: `optimum.bettertransformer` で推論を最適化。利用不可の場合は `try/except` でスキップし処理継続
+
+### 実出力（動作確認済み）
+
+| 項目 | 結果 |
+|------|------|
+| パラメータ数 | 581,653,248（約 5.8 億、ByT5-base 規模） |
+| デバイス | cuda |
+| BetterTransformer | スキップ（`No module named 'optimum'`） |
+
+- cuFFT / cuDNN / cuBLAS / computation placer の E/W メッセージは XLA まわりの重複登録警告で、動作には影響しない。無視してよい。
+- 詳細なログ全文は [[harukiharada_model_load_code_20260213000004|モデル読込 完全コード]] の「実行時の出力」を参照。
+
+### ローカル再現時
+
+- Kaggle の `/kaggle/input/final-byt5/...` は、ローカルでは `data/models/byt5-akkadian-optimized-34x` 等にダウンロードしたパスに置き換える。pascalledesma のデータセットや自前ファインチューニング済みチェックポイントを指定可能。
+
+---
+
+## 実装詳細：Dataset と BucketBatchSampler
+
+**完全コード** → [[harukiharada_dataset_sampler_code_20260213000005|harukiharada - Dataset と BucketBatchSampler 完全コード]]
+
+### 概要
+
+- **AkkadianDataset**: `transliteration` 列を持つ DataFrame と前処理オブジェクト（[[harukiharada_preprocessor_postprocessor_code_20260213000000|OptimizedPreprocessor]]）を受け、`preprocess_batch` で転写を正規化したうえで `'translate Akkadian to English: ' + t` を付与。`__getitem__` は `(sample_id, input_text)` を返す。
+- **BucketBatchSampler**: 各サンプルのテキスト長（単語数）でソートし、`num_buckets` 個のバケットに分割。バケット内を `batch_size` ずつ yield し、長さの近いサンプルを同一バッチにまとめてパディングを削減。
+- **利用**: `DataLoader(dataset, batch_sampler=BucketBatchSampler(dataset, batch_size=..., num_buckets=4))` のように組み合わせる。DataLoader には `batch_size` を渡さない。
+
+---
+
+## 実装詳細：Optuna 用検証分割と翻訳・スコア関数
+
+**完全コード** → [[harukiharada_optuna_validation_scoring_code_20260213000006|harukiharada - Optuna チューニングと検証評価 完全コード]]
+
+### 概要
+
+- **検証分割**: `df_train` から `VAL_SIZE=100` 件を seed=42 で重複なしランダム抽出し `df_val` を作成。Optuna の試行ごとに「この 100 件を翻訳 → スコア」で目的関数を評価し、試行時間を抑える。
+- **translate_batch_with_params(texts, length_penalty, num_beams, max_new_tokens=512)**: 転写リストを前処理・プレフィックス付与 → トークナイザでバッチ化（内部 batch_size=4, max_length=512）→ `model.generate`（num_beams, length_penalty, early_stopping, autocast）→ デコード後に後処理して返す。Optuna で `length_penalty` と `num_beams` を変えながら呼ぶ想定。
+- **スコア関数**: `compute_bleu` / `compute_chrf` は USE_SACREBLEU に応じて sacrebleu または [[harukiharada_metrics_fallback_code_20260213000002|built-in フォールバック]] を使用。`compute_competition_score` は BLEU と chrF++ の幾何平均（0 以下は 0.0）を返し、コンペの公式スコアに合わせている。
+
+### Optuna Study（目的関数・最適化・結果表示）
+
+- **PROVEN_PARAMS**: 公開ノートで 35.1 を出した既知の良い組み合わせ 2 つ（length_penalty=1.5 & num_beams=8、1.3 & 8）。`study.enqueue_trial(params)` で最初の 2 試行として必ず評価する。
+- **objective(trial)**: `length_penalty` を 0.8〜2.0、`num_beams` を 4〜12 でサジェスト。df_val を `translate_batch_with_params` で翻訳し、`compute_competition_score` を返す。
+- **最適化**: `optuna.create_study(direction='maximize')` のあと enqueue した 2 試行 + `study.optimize(objective, n_trials=20, timeout=7200)` で最大 2 時間まで探索。
+- **結果**: 最良スコア・最良パラメータを表示し、全試行をスコア降順で上位 10 件表示。PROVEN の試行は `[PROVEN BASELINE]` でタグ付け。完全コードは [[harukiharada_optuna_validation_scoring_code_20260213000006|Optuna チューニングと検証評価 完全コード]] の「Optuna Study」セクションを参照。
+
+### 固定生成パラメータと検証評価
+
+- **方針**: Optuna は分析・探索用とし、**test 推論では chunky_v1_5_0 実績の固定パラメータ**（FIXED_LENGTH_PENALTY=1.5, FIXED_NUM_BEAMS=8）を使う。
+- **処理**: Optuna 最良と Proven を print で比較したあと、df_val を lp=1.5, beams=8 で `translate_batch_with_params` し、`compute_bleu` / `compute_chrf` で BLEU・chrF++・幾何平均を算出して表示。本番提出前の検証確認用。完全コードは上記ノートの「固定生成パラメータと検証評価」を参照。
+
+### 本番推論の設定（FULL INFERENCE CONFIG）
+
+- chunky_v1_5_0 準拠で **test 用**の推論設定を定義。BATCH_SIZE=8, MAX_LENGTH=512, NUM_WORKERS=4, NUM_BUCKETS=4。`test_dataset = AkkadianDataset(df_test, preprocessor)` で test を前処理・プレフィックス付与し、`collate_fn(batch)` で (ids, tokenized) を返す形にまとめる。後続の DataLoader と生成ループ（Chunked Beam Search 等）で使用。完全コードは [[harukiharada_inference_chunked_beam_search_code_20260213000007|本番推論・Chunked Beam Search 完全コード]] の「本番推論の設定」を参照。
+
+### Chunked Beam Search Phase 1（長文のチャンキング翻訳）
+
+- 単語数が **CHUNK_THRESHOLD 超**の test のみ、[[harukiharada_preprocessor_postprocessor_code_20260213000000|split_akkadian]] で節境界チャンクに分割。各チャンクに `gen_config_chunk`（num_beams, length_penalty, max_new_tokens=512 等）で `model.generate` を実行し、デコード結果を空白で結合してから後処理し、`(sample_id, cleaned)` を `results` に追加。`chunked_ids` に対象 idx を記録。短い文は Phase 2 で処理。完全コードは [[harukiharada_inference_chunked_beam_search_code_20260213000007|本番推論・Chunked Beam Search 完全コード]] の「PHASE 1」を参照。
+
+### Chunked Beam Search Phase 2（短い文のバッチ翻訳）
+
+- Phase 1 で処理しなかった**短い転写**（chunked_ids に含まれない idx）を対象に、DataLoader でバッチ化して翻訳。chunked_ids が空なら test_dataset 全体、そうでなければ Subset で短い文だけを [[harukiharada_dataset_sampler_code_20260213000005|BucketBatchSampler]]（サンプル数 ≥ NUM_BUCKETS のとき）または固定 batch_size の DataLoader で処理。**Adaptive beams**: バッチ内の入力トークン長が 100 未満なら num_beams=4（または best_num_beams//2）、100 以上なら best_num_beams（8）。各バッチで generate → batch_decode → postprocess し、`(batch_ids, cleaned)` を `results` に extend。Phase 1 と合わせて提出用リストを完成。完全コードは [[harukiharada_inference_chunked_beam_search_code_20260213000007|本番推論・Chunked Beam Search 完全コード]] の「PHASE 2」を参照。
+
+---
+
+## 実装詳細：提出（Submission）
+
+**完全コード** → [[harukiharada_submission_code_20260213000008|harukiharada - 提出（Submission）完全コード]]
+
+Phase 1・Phase 2 で得た **results**（(id, translation) のリスト）を、列 `id` と `translation` の DataFrame にし、id で昇順ソート。行数が df_test と一致することを assert で確認し、空訳の件数・訳文長の min/max を表示したうえで `submission.csv` に保存。Kaggle ではこの CSV を提出する。
+
+### 実出力（動作確認済み）
+
+| 項目 | 結果 |
+|------|------|
+| 検証セット | 100 samples for Optuna tuning |
+| Metrics backend | built-in fallback（sacrebleu 未使用） |
+| Optuna 最良スコア（検証 100 件） | 25.97（幾何平均） |
+| Optuna 最良パラメータ | length_penalty≈1.79, num_beams=6 |
+| PROVEN Trial 0 (lp=1.5, beams=8) | 25.58 |
+| PROVEN Trial 1 (lp=1.3, beams=8) | 25.38 |
+| 固定パラメータ検証（lp=1.5, beams=8） | BLEU 15.59, chrF++ 41.97, 幾何平均 25.58 |
+
+- 検証は 100 件のみのためスコアは本番リーダーボード（35.1）より低い。本番提出時は Proven (1.5, 8) を全 test に適用。
+- 詳細なログ・全試行一覧は [[harukiharada_optuna_validation_scoring_code_20260213000006|Optuna チューニングと検証評価 完全コード]] の「実行時の出力」を参照。
 
 ---
 
@@ -442,6 +550,11 @@ postprocessor = VectorizedPostprocessor(aggressive=True)
 - [[harukiharada_preprocessor_postprocessor_code_20260213000000|前処理・チャンキング・後処理 完全コード（chunky_v1_5_0）]]
 - [[harukiharada_metrics_fallback_code_20260213000002|ライブラリ・インポート・評価指標フォールバック 完全コード]]
 - [[harukiharada_eda_code_20260213000003|EDA 完全コード]]
+- [[harukiharada_model_load_code_20260213000004|モデル読込 完全コード]]
+- [[harukiharada_dataset_sampler_code_20260213000005|Dataset と BucketBatchSampler 完全コード]]
+- [[harukiharada_optuna_validation_scoring_code_20260213000006|Optuna チューニングと検証評価 完全コード]]
+- [[harukiharada_inference_chunked_beam_search_code_20260213000007|本番推論・Chunked Beam Search 完全コード]]
+- [[harukiharada_submission_code_20260213000008|提出（Submission）完全コード]]
 - [[akkadian_mt_preprocessing_ensemble_reference_20260211130000|Akkadian MT 前処理 & アンサンブル実装リファレンス]]
 - [[deep_past_preprocessing_20260211130000|前処理ガイド（実データ確認済み）]]
 - [[deep_past_eda_results_20260211140000|EDA 結果]]

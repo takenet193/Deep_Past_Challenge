@@ -104,6 +104,7 @@ graph TB
 - `tasks/`: エージェント用タスクJSON
 - `experiments/`: 実験コード（テンプレートベース）
 - `results/`: 実験結果（Git管理/非管理の分離）
+- `data/`: データ・モデル（`raw/`: 生データ, `processed/`: 前処理済み, `models/`: 学習済みモデル・チェックポイント）
 - `scripts/`: ワークフロー支援・Kaggle用スクリプト
 - `docs/`: プロジェクトドキュメント
 - `.cursor/`: AIエージェント定義ファイル
